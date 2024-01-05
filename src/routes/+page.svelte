@@ -9,10 +9,12 @@
 </svelte:head>
 
 <div class="scroll">
-    <div class="wrapper">
+    <div class="wrapper" id="top">
         <Background />
+        <div class="arrow arrow-disabled arrow-up" />
+        <a href="#projects" class="arrow arrow-down" />
         <header>
-            <p class="heading">I am Efim, ...</p>
+            <p class="heading">I am Efim</p>
             <span style="flex: 1;" />
             <a class="contact" href="#contact">Contact me</a>
         </header>
@@ -25,8 +27,10 @@
             <img alt="Svelte" src="https://img.shields.io/badge/-Svelte-black?logo=svelte"/>
         </main>
     </div>
-    <div class="wrapper">
+    <div class="wrapper" id="projects">
         <Background2 />
+        <a href="#top" class="arrow arrow-up" />
+        <a href="#contact" class="arrow arrow-down" />
         <header>
             <p class="heading">My Projects:</p>
         </header>
@@ -36,6 +40,8 @@
     </div>
     <div class="wrapper" id="contact">
         <Background3 />
+        <a href="#projects" class="arrow arrow-up" />
+        <div class="arrow arrow-disabled arrow-down" />
         <header>
             <p class="heading">Contact me</p>
         </header>
@@ -84,7 +90,29 @@
     main {
         padding: 2rem;
     }
-    a {
+    .text > a {
         color: greenyellow;
+    }
+    .arrow {
+        color: rgba(255, 255, 255, 0.6);
+        position: absolute;
+        right: 2rem;
+        width: 0;
+        height: 0;
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+    }
+    .arrow-disabled {
+        color: rgba(128, 128, 128, 0.6);
+    }
+    .arrow-up {
+        border-bottom: 25px solid;
+        bottom: 50%;
+        transform: translateY(-50%);
+    }
+    .arrow-down {
+        border-top: 25px solid;
+        top: 50%;
+        transform: translateY(50%);
     }
 </style>
