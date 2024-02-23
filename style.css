@@ -51,7 +51,6 @@ footer {
     border-radius: 1rem 1rem 0 0;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-bottom: none;
-    /* backdrop-filter: blur(1rem); */
 }
 
 .flag {
@@ -69,13 +68,10 @@ footer {
     translate: -50%;
     left: 50%;
     bottom: calc(100% + 1rem);
+    opacity: 0;
+    transition: opacity 0.2s;
 }
 
 .flag:hover > p {
     opacity: 1;
-}
-
-.hidden {
-    opacity: 0;
-    transition: opacity 0.1s;
 }
