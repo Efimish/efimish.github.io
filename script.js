@@ -1,0 +1,1 @@
+document.getElementById('discord').onclick = () => navigator.clipboard.writeText('@efima');
