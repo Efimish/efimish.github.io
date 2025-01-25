@@ -1,0 +1,20 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import type { Meta } from "../scripts/types";
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+
+const meta: Meta = {
+    title: `${title} | Efim's blog`,
+    description: "",
+    type: "article"
+};
+---
+
+<BaseLayout meta={meta}>
+    <slot />
+</BaseLayout>

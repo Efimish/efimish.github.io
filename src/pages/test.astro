@@ -1,0 +1,22 @@
+---
+import type { Meta } from "../scripts/types";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const meta: Meta = {
+	title: "Test page",
+	description: "The page for testing",
+	type: "website"
+};
+
+const s = (o: any) => JSON.stringify(o, null, 2);
+---
+
+<BaseLayout meta={meta}>
+    <pre>{s(Astro)}</pre>
+    <pre>
+        URL: {s(Astro.url)}
+        Request: {s(Astro)}
+        Site: {Astro.site}
+        Image: {Astro.url.host + '/me.png'}
+    </pre>
+</BaseLayout>

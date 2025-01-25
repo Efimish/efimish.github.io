@@ -1,0 +1,17 @@
+{
+  "name": "astro-personal-website",
+  "description": "My personal website built with Astro",
+  "author": "Efim",
+  "version": "0.0.1",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.1.9"
+  }
+}

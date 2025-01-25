@@ -1,0 +1,24 @@
+---
+import type { Meta } from "../scripts/types";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const meta: Meta = {
+	title: "Efim's personal website",
+	description: "This is a personal website of Efim",
+	type: "website"
+};
+---
+
+<BaseLayout meta={meta}>
+	<p>
+		<a href="/">Home (/)</a>
+	</p>
+	<p>
+		<a href="/blog">Blog (/blog)</a>
+	</p>
+	<p>
+		<a href="/test">Test page (/test)</a>
+	</p>
+	
+	<p>Hello, this is the index page</p>
+</BaseLayout>

@@ -1,0 +1,25 @@
+---
+import type { Meta } from "../../scripts/types";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const meta: Meta = {
+	title: "Blogs | Efim's website",
+	description: "These are Efim's blogs",
+	type: "website"
+};
+
+import { getCollection } from "astro:content";
+const posts = await getCollection("blog");
+const f = (d: Date) => d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+---
+
+<BaseLayout meta={meta}>
+{
+    posts.map((post) => (
+        <a href={`/blog/${post.id}`}>
+            <h2>{post.data.title ?? post.id}</h2>
+            <p>{f(post.data.date)}</p>
+        </a>
+    ))
+}
+</BaseLayout>

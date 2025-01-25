@@ -1,0 +1,49 @@
+---
+import "../styles/shiki.css";
+import "../styles/global.css";
+import type { Meta } from "../scripts/types";
+
+interface Props {
+    meta: Meta;
+}
+
+const { meta } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{meta.title}</title>
+    <meta name="description" content={meta.description}>
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Efim's website">
+    <meta property="og:type" content={meta.type}>
+    <meta property="og:title" content={meta.title}>
+    <meta property="og:description" content={meta.description} />
+    <meta property="og:url" content={Astro.url}>
+    <meta property="og:image" content={Astro.url.host + '/me.png'}>
+
+    <!-- Icons -->
+    <!-- <link rel="icon" href="/icon.png" type="image/png"> -->
+    <!-- <link rel="icon" href="/favicon.ico" sizes="any"> -->
+    <link rel="icon" href="/icon.ico" sizes="any">
+    <!-- <link rel="icon" href="/icon.svg" type="image/svg+xml"> -->
+    <!-- <link rel="apple-touch-icon" href="icon.png"> -->
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <!-- <meta name="theme-color" content="#fafafa"> -->
+    <meta name="color-scheme" content="light dark">
+
+    <!-- Astro -->
+	<meta name="generator" content={Astro.generator} />
+</head>
+
+<body>
+    <slot />
+</body>
+
+</html>
