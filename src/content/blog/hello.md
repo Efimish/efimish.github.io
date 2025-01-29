@@ -1,7 +1,9 @@
 ---
 title: Hello
 date: 2025-01-24
-tags: [a, b]
+tags:
+  - first post
+  - hello
 ---
 
 # Hello

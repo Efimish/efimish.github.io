@@ -3,6 +3,7 @@ title: Lorem Ipsum
 date: 2025-01-25
 tags:
   - test
+  - lorem ipsum
 ---
 
 # Lorem Ipsum

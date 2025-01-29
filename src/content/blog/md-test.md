@@ -3,6 +3,7 @@ title: Markdown test
 date: 1337-01-01
 tags:
   - test
+  - markdown
 ---
 
 Markdown - язык разметки (markup language - игра слов).

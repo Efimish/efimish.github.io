@@ -1,0 +1,41 @@
+---
+import type { Meta } from "../../scripts/types";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
+
+  return tags.map((tag) => {
+    const filteredPosts = posts.filter((post) =>
+      post.data.tags.includes(tag)
+    );
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+
+const meta: Meta = {
+  title: `Tag: #${tag} | Efim's blog`,
+  description: `These are all the post with tag #${tag}`,
+  type: "website",
+};
+
+---
+
+<BaseLayout meta={meta}>
+  <h1>List of posts with tag #{tag}</h1>
+  {
+    posts.map((post) => (
+      <p>
+        <a href={`/blog/${post.id}`}>{post.id}</a>
+      </p>
+    ))
+  }
+</BaseLayout>

@@ -17,5 +17,20 @@ post.data.title ??= post.id;
 ---
 
 <MarkdownLayout title={post.data.title}>
+  <p>
+    <a href="/blog">⇦ Back to all posts</a>
+  </p>
+  <p>
+    date: {post.data.date}
+  </p>
+  {
+    post.data.tags &&
+      post.data.tags.map((tag) => (
+        <p>
+          <a href={`/tags/${tag}`}>#{tag}</a>
+        </p>
+      ))
+  }
+  <hr>
   <Content />
 </MarkdownLayout>

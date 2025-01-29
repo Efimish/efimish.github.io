@@ -25,17 +25,16 @@ const { meta } = Astro.props;
     <meta property="og:title" content={meta.title}>
     <meta property="og:description" content={meta.description} />
     <meta property="og:url" content={Astro.url}>
-    <meta property="og:image" content={Astro.url.host + '/me.png'}>
+    <meta property="og:image" content={Astro.url.host + '/icon-512.png'}>
+    <meta property="og:image:alt" content="Green leaf on a transparent background">
 
     <!-- Icons -->
-    <!-- <link rel="icon" href="/icon.png" type="image/png"> -->
-    <!-- <link rel="icon" href="/favicon.ico" sizes="any"> -->
-    <link rel="icon" href="/icon.ico" sizes="any">
-    <!-- <link rel="icon" href="/icon.svg" type="image/svg+xml"> -->
-    <!-- <link rel="apple-touch-icon" href="icon.png"> -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-    <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <!-- <meta name="theme-color" content="#fafafa"> -->
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#283618">
     <meta name="color-scheme" content="light dark">
 
     <!-- Astro -->
