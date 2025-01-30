@@ -1,4 +1,7 @@
 {
+    "name": "Efim.ish",
+    "short_name": "Efim",
+    "description": "Efim's personal website",
     "icons": [
         {
             "src": "/favicon-192.png",
