@@ -1,0 +1,47 @@
+---
+import "../styles/shiki.css";
+import "../styles/global.css";
+
+interface Props {
+    title: string;
+    description: string;
+    image?: string;
+    author?: string;
+}
+
+const {
+    title,
+    description,
+    image = "favicon-512.png",
+    author = "Efim Ishenin"
+} = Astro.props;
+---
+
+<!-- Always include -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="author" content={author} />
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Efim.ish" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:image" content={new URL(image, Astro.url.origin)} />
+<meta property="og:image:alt" content="Green leaf on a white background" />
+
+<!-- Icons -->
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta name="theme-color" content="#283618" />
+<meta name="color-scheme" content="light dark" />
+
+<!-- Astro -->
+<meta name="generator" content={Astro.generator} />

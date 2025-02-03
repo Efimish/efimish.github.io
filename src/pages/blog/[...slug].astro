@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import MarkdownLayout from "../../layouts/MarkdownLayout.astro";
+import Date from "../../components/Date.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -17,20 +18,15 @@ post.data.title ??= post.id;
 ---
 
 <MarkdownLayout title={post.data.title}>
-  <p>
-    <a href="/blog">⇦ Back to all posts</a>
-  </p>
-  <p>
-    date: {post.data.date}
-  </p>
+  <Date date={post.data.date} />
   {
     post.data.tags &&
       post.data.tags.map((tag) => (
-        <p>
+        <span>
           <a href={`/tags/${tag}`}>#{tag}</a>
-        </p>
+        </span>
       ))
   }
-  <hr>
+  <hr />
   <Content />
 </MarkdownLayout>

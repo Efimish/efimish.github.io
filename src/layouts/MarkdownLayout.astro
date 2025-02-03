@@ -1,20 +1,13 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-import type { Meta } from "../scripts/types";
 
 interface Props {
-    title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
-
-const meta: Meta = {
-    title: `${title} | Efim.ish`,
-    description: "",
-    type: "article"
-};
 ---
 
-<BaseLayout meta={meta}>
-    <slot />
+<BaseLayout title={`${title} | Efim.ish`} description="">
+  <slot />
 </BaseLayout>

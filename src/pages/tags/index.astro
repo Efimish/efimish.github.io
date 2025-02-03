@@ -1,19 +1,15 @@
 ---
-import type { Meta } from "../../scripts/types";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-
-const meta: Meta = {
-  title: "Tags | Efim.ish",
-  description: "These are all the tags found in blogs",
-  type: "website",
-};
 
 const posts = await getCollection("blog");
 const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 ---
 
-<BaseLayout meta={meta}>
+<BaseLayout
+  title="Tags | Efim.ish"
+  description="These are all the tags found in blog posts"
+>
   <h1>List of all tags</h1>
   {
     tags.map((tag) => (
