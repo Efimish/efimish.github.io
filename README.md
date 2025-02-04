@@ -5,6 +5,7 @@
 ```sh
 bun create astro@latest
 bunx astro add sitemap
+bun install @astrojs/rss
 ```
 
 ## 🧞 Commands
