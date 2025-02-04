@@ -4,6 +4,7 @@
 
 ```sh
 bun create astro@latest
+bunx astro add sitemap
 ```
 
 ## 🧞 Commands

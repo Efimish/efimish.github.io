@@ -3,17 +3,17 @@ import "../styles/shiki.css";
 import "../styles/global.css";
 
 interface Props {
-    title: string;
-    description: string;
-    image?: string;
-    author?: string;
+  title: string;
+  description: string;
+  image?: string;
+  author?: string;
 }
 
 const {
-    title,
-    description,
-    image = "favicon-512.png",
-    author = "Efim Ishenin"
+  title,
+  description,
+  image = "favicon-512.png",
+  author = "Efim Ishenin",
 } = Astro.props;
 ---
 
@@ -42,6 +42,9 @@ const {
 <link rel="manifest" href="/manifest.webmanifest" />
 <meta name="theme-color" content="#283618" />
 <meta name="color-scheme" content="light dark" />
+
+<!-- Sitemap -->
+<link rel="sitemap" href="/sitemap-index.xml" />
 
 <!-- Astro -->
 <meta name="generator" content={Astro.generator} />

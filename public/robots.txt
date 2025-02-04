@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://efimish.github.io/sitemap-index.xml
