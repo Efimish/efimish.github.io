@@ -6,16 +6,14 @@ tags:
 - websites
 ---
 
-## Creating a personal website in Astro
+## Choosing a tool (SSG)
 
-### Choosing a tool (SSG)
+## Meta tags
 
-### Meta tags
+## Favicons
 
-### Favicons
+## Resumes and LaTeX
 
-### Resumes and LaTeX
+## SVGs embedding
 
-### SVGs embedding
-
-### Trailing slash
+## Trailing slash

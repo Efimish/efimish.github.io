@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
-import MarkdownLayout from "../../layouts/MarkdownLayout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 import Date from "../../components/Date.astro";
 
 export async function getStaticPaths() {
@@ -13,20 +13,21 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
-
-post.data.title ??= post.id;
 ---
 
-<MarkdownLayout title={post.data.title}>
-  <Date date={post.data.date} />
-  {
-    post.data.tags &&
-      post.data.tags.map((tag) => (
-        <span>
-          <a href={`/tags/${tag}`}>#{tag}</a>
-        </span>
-      ))
-  }
-  <hr />
-  <Content />
-</MarkdownLayout>
+<BaseLayout title={post.data.title} description="">
+  <main>
+    <article>
+      <header>
+        <h1>{post.data.title}</h1>
+        <Date date={post.data.date} />
+        <ul aria-label="Post tags">
+          {post.data.tags?.map((tag) => <li>
+            <a href={`/tags/${tag}`}>#{tag}</a>
+            </li>)}
+        </ul>
+      </header>
+      <Content />
+    </article>
+  </main>
+</BaseLayout>

@@ -47,7 +47,12 @@ const {
 <link rel="sitemap" href="/sitemap-index.xml" />
 
 <!-- RSS Feed -->
-<link rel="alternate" type="application/rss+xml" title={title} href={new URL("feed.xml", Astro.site)} />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title="RSS Feed"
+  href={new URL("feed.xml", Astro.site)}
+/>
 
 <!-- Astro -->
 <meta name="generator" content={Astro.generator} />

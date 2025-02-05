@@ -6,6 +6,4 @@ tags:
   - hello
 ---
 
-# Hello
-
 This is my first blog post!
