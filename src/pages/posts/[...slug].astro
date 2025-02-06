@@ -22,9 +22,13 @@ const { Content } = await render(post);
         <h1>{post.data.title}</h1>
         <Date date={post.data.date} />
         <ul class="flat-list" aria-label="Post tags">
-          {post.data.tags?.map((tag) => <li>
-            <a href={`/tags/${tag}`}>#{tag}</a>
-            </li>)}
+          {
+            post.data.tags?.map((tag) => (
+              <li>
+                <a href={`/tags/${tag}`}>#{tag}</a>
+              </li>
+            ))
+          }
         </ul>
       </header>
       <Content />
