@@ -32,3 +32,9 @@ a:link {
 a:visited {
     color: #FFADFF;
 }
+
+.flat-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;   
+}

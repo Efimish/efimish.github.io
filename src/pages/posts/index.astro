@@ -3,15 +3,15 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Date from "../../components/Date.astro";
 
 import { getCollection } from "astro:content";
-const posts = await getCollection("blog");
+const posts = await getCollection("posts");
 ---
 
-<BaseLayout title="Blog | Efim.ish" description="There are my blog posts">
+<BaseLayout title="Posts | Efim.ish" description="There are my blog posts">
   {
     posts.map((post) => (
-      <a href={`/blog/${post.id}`}>
+      <a href={`/posts/${post.id}`}>
         <h2>{post.data.title ?? post.id}</h2>
-        <Date date={post.data.date}/>
+        <Date date={post.data.date} />
       </a>
     ))
   }

@@ -1,15 +1,16 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
 
-const s = (o: any) => JSON.stringify(o, null, 2);
+const posts = await getCollection("posts");
 ---
 
 <BaseLayout title="Test page" description="The page for testing">
-  <pre>{s(Astro)}</pre>
   <pre>
-        URL: {s(Astro.url)}
-        Request: {s(Astro)}
-        Site: {Astro.site}
-        Image: {new URL("favicon-512.png", Astro.url)}
-    </pre>
+      URL: {Astro.url}
+      URL origin: {Astro.url.origin}
+      Site: {Astro.site}
+      Image: {new URL("favicon-512.png", Astro.url)}
+      One post: {JSON.stringify(posts[0], null, 2)}
+  </pre>
 </BaseLayout>

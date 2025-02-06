@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import rss from "@astrojs/rss";
 
 export const GET: APIRoute = async (context) => {
-    const posts = await getCollection("blog");
+    const posts = await getCollection("posts");
     return rss({
         title: "Efim.ish",
         description: "Efim's blog",
@@ -11,7 +11,7 @@ export const GET: APIRoute = async (context) => {
         items: posts.map(post => ({
             title: post.data.title,
             pubDate: post.data.date,
-            link: `/blog/${post.id}`
+            link: `/posts/${post.id}`
         })),
     });
 }

@@ -13,5 +13,8 @@ export default defineConfig({
           }
       }
   },
-  integrations: [sitemap()]
+  integrations: [sitemap()],
+  experimental: {
+    svg: true
+  }
 });

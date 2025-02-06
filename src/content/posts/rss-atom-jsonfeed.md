@@ -27,14 +27,14 @@ Let's explore the main differences between them 🔍
     <link>https://efimish.github.io/</link>
     <item>
       <title>Hello</title>
-      <link>https://efimish.github.io/blog/hello/</link>
-      <guid isPermaLink="true">https://efimish.github.io/blog/hello/</guid>
+      <link>https://efimish.github.io/posts/hello/</link>
+      <guid isPermaLink="true">https://efimish.github.io/posts/hello/</guid>
       <pubDate>Fri, 24 Jan 2025 00:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Lorem Ipsum</title>
-      <link>https://efimish.github.io/blog/lorem-ipsum/</link>
-      <guid isPermaLink="true">https://efimish.github.io/blog/lorem-ipsum/</guid>
+      <link>https://efimish.github.io/posts/lorem-ipsum/</link>
+      <guid isPermaLink="true">https://efimish.github.io/posts/lorem-ipsum/</guid>
       <pubDate>Sat, 25 Jan 2025 00:00:00 GMT</pubDate>
     </item>
   </channel>
@@ -55,7 +55,7 @@ Let's explore the main differences between them 🔍
   <id>urn:uuid:60a76c80-d399-11d9-b93C-0003939e0af6</id>
   <entry>
     <title>Hello</title>
-    <link href="https://efimish.github.io/blog/hello/"/>
+    <link href="https://efimish.github.io/posts/hello/"/>
     <id>urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a</id>
     <updated>2025-01-24T00:00:00Z</updated>
     <summary>Some text.</summary>
@@ -74,11 +74,11 @@ Let's explore the main differences between them 🔍
   "feed_url": "https://efimish.github.io/feed.json",
   "items": [
     {
-      "id": "https://efimish.github.io/blog/hello/",
+      "id": "https://efimish.github.io/posts/hello/",
       "title": "Hello",
       "content_html": "<p>html content here</p>",
       "date_published": "2025-01-24T00:00:00Z",
-      "url": "https://efimish.github.io/blog/hello/"
+      "url": "https://efimish.github.io/posts/hello/"
     }
   ]
 }
