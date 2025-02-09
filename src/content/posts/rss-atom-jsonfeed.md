@@ -112,10 +112,10 @@ Let's explore the main differences between them 🔍
 
 ```html
 <link
-    rel="alternate"
-    type="application/feed+json"
-    title="JSON feed"
-    href="https://efimish.github.io/feed.json"
+  rel="alternate"
+  type="application/feed+json"
+  title="JSON feed"
+  href="https://efimish.github.io/feed.json"
 >
 ```
 

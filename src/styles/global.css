@@ -1,22 +1,48 @@
+:root {
+    --primary-color: #222;
+    --background-color: #fff;
+    color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #dadada;
+        --background-color: #1e1e1e;
+        color-scheme: dark;
+    }
+}
+
+[data-theme="light"] {
+    --primary-color: #222;
+    --background-color: #fff;
+    color-scheme: light;
+}
+
+[data-theme="dark"] {
+    --primary-color: #dadada;
+    --background-color: #1e1e1e;
+    color-scheme: dark;
+}
+
+[data-theme="sepia"] {
+    --primary-color: #5B4636;
+    --background-color: #F5ECD8;
+    color-scheme: light;
+}
+
 body {
     margin: 40px auto;
     padding: 0 10px;
     /* max-width: 732px; */
+    /* max-width: 680px; */
     max-width: 650px;
     line-height: 1.6;
     font-size: 18px;
 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-    background-color: #FFF;
-    color: #222;
-}
-
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #1E1E1E;
-        color: #DADADA;
-    }
+    color: var(--primary-color);
+    background-color: var(--background-color);
 }
 
 h1,
@@ -36,5 +62,5 @@ a:visited {
 .flat-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 2em;   
+    gap: 2em;
 }
