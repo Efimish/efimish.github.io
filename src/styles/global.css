@@ -64,3 +64,11 @@ a:visited {
     flex-wrap: wrap;
     gap: 2em;
 }
+
+/* blockquote {
+    margin-left: 0;
+    padding-left: 20px;
+    border-left-color: inherit;
+    border-left-style: solid;
+    border-left-width: 4px;
+} */
