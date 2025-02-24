@@ -14,7 +14,7 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
   {
     tags.map((tag) => (
       <p>
-        <a href={`/tags/${tag}`}>{tag}</a>
+        <a href={encodeURI(`/tags/${tag}`)}>{tag}</a>
       </p>
     ))
   }

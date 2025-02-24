@@ -16,22 +16,18 @@ const { Content } = await render(post);
 ---
 
 <BaseLayout title={post.data.title} description="">
-  <main>
-    <article>
-      <header>
-        <h1>{post.data.title}</h1>
-        <Date date={post.data.date} />
-        <ul class="flat-list" aria-label="Post tags">
-          {
-            post.data.tags?.map((tag) => (
-              <li>
-                <a href={`/tags/${tag}`}>#{tag}</a>
-              </li>
-            ))
-          }
-        </ul>
-      </header>
-      <Content />
-    </article>
-  </main>
+  <article>
+    <header>
+      <h1>{post.data.title}</h1>
+      <Date date={post.data.date} />
+      <div class="tags" aria-label="Post tags">
+        {
+          post.data.tags?.map((tag) => (
+            <a href={encodeURI(`/tags/${tag}`)}>#{tag}</a>
+          ))
+        }
+      </div>
+    </header>
+    <Content />
+  </article>
 </BaseLayout>

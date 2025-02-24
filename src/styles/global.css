@@ -1,34 +1,41 @@
 :root {
-    --primary-color: #222;
-    --background-color: #fff;
+    --primary-color: #454545;
+    --secondary-color: #EAEAEA;
+    --background-color: #FFF;
+    --link-color: #007AFF;
     color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --primary-color: #dadada;
-        --background-color: #1e1e1e;
+        --primary-color: #DCDCDC;
+        --secondary-color: #414141;
+        --background-color: #1E1E1E;
         color-scheme: dark;
     }
 }
 
 [data-theme="light"] {
-    --primary-color: #222;
-    --background-color: #fff;
+    --primary-color: #454545;
+    --secondary-color: #EAEAEA;
+    --background-color: #FFF;
     color-scheme: light;
 }
 
 [data-theme="dark"] {
-    --primary-color: #dadada;
-    --background-color: #1e1e1e;
+    --primary-color: #DCDCDC;
+    --secondary-color: #414141;
+    --background-color: #1E1E1E;
     color-scheme: dark;
 }
 
 [data-theme="sepia"] {
     --primary-color: #5B4636;
+    --secondary-color: #E0D7C3;
     --background-color: #F5ECD8;
-    color-scheme: light;
 }
+
+/* base styles */
 
 body {
     margin: 40px auto;
@@ -43,7 +50,10 @@ body {
 
     color: var(--primary-color);
     background-color: var(--background-color);
+    accent-color: var(--link-color);
 }
+
+/* headers */
 
 h1,
 h2,
@@ -51,24 +61,81 @@ h3 {
     line-height: 1.2
 }
 
-a:link {
-    color: #8C8CFF;
+/* block quotes */
+
+blockquote {
+    margin: 1em 0;
+    padding-left: 0.6em;
+    border-left: 3px solid var(--secondary-color);
 }
 
-a:visited {
-    color: #FFADFF;
+/* inline code blocks */
+
+:not(.astro-code) > code {
+    background-color: var(--secondary-color);
+    padding: 0 3px;
+    border-radius: 4px;
 }
 
-.flat-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2em;
+/* links */
+
+a {
+    color: var(--link-color);
 }
 
-/* blockquote {
-    margin-left: 0;
-    padding-left: 20px;
-    border-left-color: inherit;
-    border-left-style: solid;
-    border-left-width: 4px;
-} */
+/* code blocks */
+
+.astro-code {
+    padding: 0.4em 0.6em;
+    border-radius: 4px;
+}
+
+/* tables */
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid var(--secondary-color);
+    padding: 0 0.4em;
+}
+
+/* lists */
+
+ul, ol {
+    padding-left: 1em;
+}
+
+/* other */
+
+select {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 4px;
+}
+
+nav {
+    display: inline;
+}
+
+nav > a, a.tag {
+    text-decoration: none;
+}
+
+ul.flat {
+    padding: 0;
+}
+
+ul.flat > li {
+    display: inline;
+}
+
+div.tags {
+    margin-bottom: 1em;
+}
+
+div.tags > a {
+    margin-right: 1em;
+}

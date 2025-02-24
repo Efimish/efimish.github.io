@@ -9,7 +9,7 @@ const posts = await getCollection("posts");
 <BaseLayout title="Posts | Efim.ish" description="There are my blog posts">
   {
     posts.map((post) => (
-      <a href={`/posts/${post.id}`}>
+      <a href={encodeURI(`/posts/${post.id}`)}>
         <h2>{post.data.title ?? post.id}</h2>
         <Date date={post.data.date} />
       </a>

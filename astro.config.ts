@@ -11,7 +11,8 @@ export default defineConfig({
               light: 'github-light',
               dark: 'github-dark'
           },
-          defaultColor: false
+          defaultColor: false,
+          wrap: true,
       }
   },
   integrations: [sitemap()],

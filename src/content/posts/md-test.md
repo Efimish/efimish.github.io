@@ -29,9 +29,14 @@ Line Divider:
 **Bold**
 
 > Block Quote
+>> Inner Block Quote
 
 - Bullet Point
   - Sub Bullet Point
+
+`Inline code block`
+
+[Link to markdown logo](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
 
 ![Markdown logo](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
 
@@ -52,9 +57,12 @@ Line Divider:
 **Bold**
 
 > Block Quote
+>> Inner Block Quote
 
 - Bullet Point
   - Sub Bullet Point
+
+[Link to markdown logo](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
 
 ![Markdown logo](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
 ```
@@ -153,6 +161,34 @@ Code Snippet:
 - [x] Task 1
 - [ ] Task 2
   - [ ] Subtask 
+```
+
+## Sub/Superscript
+
+To do some basic subscripts or superscripts, just insert the number, word, letter in between ```<sub> </sub>``` or ```<sup> </sup>``` to enable this formatting in Markdown.
+
+### Subscript
+
+<sub>subscript</sub> content example.
+H<sub>2</sub>O
+
+Code Snippet:
+```
+Subscript
+<sub>subscript</sub> content example.
+H<sub>2</sub>O
+```
+
+### Superscript
+
+<sup>superscript</sup> content example.
+x<sup>2</sup>
+
+Code Snippet:
+```
+Superscript
+<sup>superscript</sup> content example.
+x<sup>2</sup>
 ```
 
 ## Footnotes
