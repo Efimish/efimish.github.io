@@ -173,7 +173,8 @@ To do some basic subscripts or superscripts, just insert the number, word, lette
 H<sub>2</sub>O
 
 Code Snippet:
-```
+
+```html
 Subscript
 <sub>subscript</sub> content example.
 H<sub>2</sub>O
@@ -185,7 +186,8 @@ H<sub>2</sub>O
 x<sup>2</sup>
 
 Code Snippet:
-```
+
+```html
 Superscript
 <sup>superscript</sup> content example.
 x<sup>2</sup>
