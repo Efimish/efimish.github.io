@@ -1,5 +1,10 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+
+import LocationPin from "@assets/location-pin.svg";
+import Tool from "@assets/tool.svg";
+import Project from "@assets/project.svg";
+import Books from "@assets/books.svg";
 ---
 
 <BaseLayout title="Efim.ish" description="This is a personal website of Efim">
@@ -8,11 +13,11 @@ import BaseLayout from "@layouts/BaseLayout.astro";
     <p>Hello! I'm Efim, a passionate backend developer</p>
   </header>
   <section>
-    <h2>Location</h2>
+    <h2><LocationPin /> Location</h2>
     <p>Krasnoyarsk, Russia</p>
   </section>
   <section>
-    <h2>Skills</h2>
+    <h2><Tool /> Skills</h2>
     <h3>Programming Languages</h3>
     <ul class="flat">
       <li>JavaScript/TypeScript</li>
@@ -42,7 +47,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
     </ul>
   </section>
   <section>
-    <h2>Projects</h2>
+    <h2><Project /> Projects</h2>
     <ul class="flat">
       <li>Website</li>
       <li>University project</li>
@@ -51,7 +56,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
     </ul>
   </section>
   <section>
-    <h2>Education</h2>
+    <h2><Books /> Education</h2>
     <p>Siberian Federal University - B.Sc. in Computer Science, 2023-2027</p>
   </section>
 </BaseLayout>
