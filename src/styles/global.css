@@ -114,6 +114,17 @@ svg {
     font-size: 1.2em;
 }
 
+/* header, footer */
+
+.header, .footer {
+    display: flex;
+    gap: 1em
+}
+
+span.wide {
+    flex-grow: 1;
+}
+
 /* other */
 
 select {
