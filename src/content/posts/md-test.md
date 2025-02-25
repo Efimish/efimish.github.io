@@ -20,21 +20,27 @@ Markdown - язык разметки (markup language - игра слов).
 
 ###### Header 6
 
-Line Divider:
-
----
-
-*Italics*
+Paragraph
 
 **Bold**
 
-> Block Quote
->> Inner Block Quote
+*Italics*
 
-- Bullet Point
-  - Sub Bullet Point
+~~Strikethrough~~
 
-`Inline code block`
+> Quote
+>> Inner quote
+
+`Inline code`
+
+```js
+// code
+console.log('Hello, world!');
+```
+
+Line Divider:
+
+---
 
 [Link to markdown logo](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
 
@@ -48,19 +54,27 @@ Line Divider:
 ##### Header 5
 ###### Header 6
 
-Line Divider:
-
----
-
-*Italics*
+Paragraph
 
 **Bold**
 
-> Block Quote
->> Inner Block Quote
+*Italics*
 
-- Bullet Point
-  - Sub Bullet Point
+~~Strikethrough~~
+
+> Quote
+>> Inner quote
+
+`Inline code`
+
+'''js
+// code
+console.log('Hello, world!');
+'''
+
+Line Divider:
+
+---
 
 [Link to markdown logo](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
 
