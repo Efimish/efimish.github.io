@@ -1,6 +1,12 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
+import Date from "@components/Date.astro";
+import getReadingTime from "@scripts/reading-time";
+
+import Calendar from "@assets/calendar.svg";
+import Clock from "@assets/clock.svg";
+import Tags from "@assets/tags.svg";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -26,9 +32,12 @@ const { posts } = Astro.props;
   <h1>List of posts with tag #{tag}</h1>
   {
     posts.map((post) => (
-      <p>
-        <a href={encodeURI(`/posts/${post.id}`)}>{post.data.title}</a>
-      </p>
+      <a href={encodeURI(`/posts/${post.id}`)}>
+        <h2>{post.data.title}</h2>
+        <Calendar /> <Date date={post.data.date} />
+        <Clock /> {getReadingTime(post.body!)}
+        <Tags /> {post.data.tags?.map((tag) => "#" + tag).join(" ")}
+      </a>
     ))
   }
 </BaseLayout>

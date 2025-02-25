@@ -6,8 +6,6 @@ tags:
   - markdown
 ---
 
-Markdown - язык разметки (markup language - игра слов).
-
 # Header 1
 
 ## Header 2

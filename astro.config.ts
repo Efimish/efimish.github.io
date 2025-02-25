@@ -6,14 +6,14 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://efimish.github.io',
   markdown: {
-      shikiConfig: {
-          themes: {
-              light: 'github-light',
-              dark: 'github-dark'
-          },
-          defaultColor: false,
-          wrap: true,
-      }
+    shikiConfig: {
+      themes: {
+        light: 'github-light',
+        dark: 'github-dark'
+      },
+      defaultColor: false,
+      wrap: true,
+    }
   },
   integrations: [sitemap()],
   experimental: {

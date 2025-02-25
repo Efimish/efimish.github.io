@@ -3,7 +3,13 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
 const posts = await getCollection("posts");
-const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
+const tags = [...new Set(posts.map((post) => post.data.tags ?? []).flat())];
+let postsWithTag: Record<string, number> = {};
+for (const tag of tags) {
+  postsWithTag[tag] = posts.filter((post) =>
+    post.data.tags?.includes(tag)
+  ).length;
+}
 ---
 
 <BaseLayout
@@ -14,7 +20,9 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
   {
     tags.map((tag) => (
       <p>
-        <a href={encodeURI(`/tags/${tag}`)}>{tag}</a>
+        <a href={encodeURI(`/tags/${tag}`)}>
+          #{tag} ({postsWithTag[tag]})
+        </a>
       </p>
     ))
   }

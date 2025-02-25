@@ -107,6 +107,13 @@ ul, ol {
     padding-left: 1em;
 }
 
+/* icons */
+
+svg {
+    vertical-align: text-bottom;
+    font-size: 1.2em;
+}
+
 /* other */
 
 select {

@@ -1,15 +1,20 @@
 ---
 import ThemeSwitcher from "@components/ThemeSwitcher.astro";
+
+import RSS from "@assets/rss.svg";
+import Resume from "@assets/resume.svg";
+import Github from "@assets/github.svg";
+import Linkedin from "@assets/linkedin.svg";
 ---
 
 <header>
   <nav>
     <a href="/">Home</a>
     <a href="/posts">Posts</a>
-    <a href="/feed.xml">RSS Feed</a>
-    <a href="/resume.pdf">My Resume</a>
-    <a href="https://github.com/Efimish" target="_blank">My GitHub</a>
-    <a href="https://www.linkedin.com/in/efima" target="_blank">My Linkedin</a>
+    <a href="/feed.xml"><RSS /></a>
+    <a href="/resume.pdf"><Resume /></a>
+    <a href="https://github.com/Efimish" target="_blank"><Github /></a>
+    <a href="https://www.linkedin.com/in/efima" target="_blank"><Linkedin /></a>
   </nav>
   <ThemeSwitcher />
   <hr />
