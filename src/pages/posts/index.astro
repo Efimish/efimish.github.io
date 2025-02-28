@@ -19,7 +19,7 @@ const { author } = config;
   title="Posts"
   description=`Browse articles by ${author} on development, technology, and more.`
 >
-  <h1>List of all posts</h1>
+  <h1>Posts</h1>
   {
     posts.map((post) => (
       <a href={encodeURI(`/posts/${post.id}`)}>
