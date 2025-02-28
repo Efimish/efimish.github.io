@@ -14,7 +14,9 @@ const { title, description } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead {title} {description} />
+    <BaseHead {title} {description}>
+      <slot name="open-graph" slot="open-graph" />
+    </BaseHead>
   </head>
 
   <body>

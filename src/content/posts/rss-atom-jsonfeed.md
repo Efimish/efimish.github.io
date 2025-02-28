@@ -1,5 +1,6 @@
 ---
 title: RSS, Atom and JSON feed - what's the difference?
+description: "Comparison of 3 similar technologies: RSS, Atom and JSON feed"
 date: 2025-02-05
 tags:
 - development

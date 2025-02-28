@@ -1,51 +1,46 @@
 ---
 import "@styles/shiki.css";
 import "@styles/global.css";
+import config from "@scripts/config.ts";
 
 interface Props {
   title: string;
   description: string;
-  image?: string;
-  author?: string;
 }
 
-const {
-  title,
-  description,
-  image = "favicon-512.png",
-  author = "Efim Ishenin",
-} = Astro.props;
+const { title, description } = Astro.props;
 ---
 
-<!-- Always include -->
+{/* Always include */}
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <title>{title}</title>
 <meta name="description" content={description} />
-<meta name="author" content={author} />
+<meta name="author" content={config.author} />
 
-<!-- Open Graph -->
+{/* Open Graph */}
 <meta property="og:site_name" content="Efim.ish" />
-<meta property="og:type" content="website" />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={Astro.url} />
-<meta property="og:image" content={new URL(image, Astro.url.origin)} />
+<meta property="og:image" content={new URL("favicon-512.png", Astro.site)} />
 <meta property="og:image:alt" content="Green leaf on a white background" />
 
-<!-- Icons -->
+<slot name="open-graph" />
+
+{/* Icons */}
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
+{/* Manifest */}
 <link rel="manifest" href="/manifest.webmanifest" />
-<meta name="theme-color" content="#283618" />
 
-<!-- Sitemap -->
+{/* Sitemap */}
 <link rel="sitemap" href="/sitemap-index.xml" />
 
-<!-- RSS Feed -->
+{/* RSS Feed */}
 <link
   rel="alternate"
   type="application/rss+xml"
@@ -53,5 +48,5 @@ const {
   href={new URL("feed.xml", Astro.site)}
 />
 
-<!-- Astro -->
+{/* Astro */}
 <meta name="generator" content={Astro.generator} />

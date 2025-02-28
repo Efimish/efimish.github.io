@@ -1,5 +1,6 @@
 ---
 title: Markdown test
+description: Sample article with every Markdown feature. You can see how Markdown is rendered to HTML
 date: 1337-01-01
 tags:
   - test

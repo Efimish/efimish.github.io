@@ -1,5 +1,6 @@
 ---
 title: Lorem Ipsum
+description: Sample article with paragraphs of different sizes
 date: 2025-01-25
 tags:
   - test

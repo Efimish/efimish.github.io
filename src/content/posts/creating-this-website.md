@@ -1,5 +1,6 @@
 ---
 title: Creating this website in Astro
+description: The story of creating my personal website using Astro.js
 date: 2025-01-25
 tags:
   - development

@@ -1,5 +1,6 @@
 ---
 title: Choosing my browsers
+description: Choosing my best browser combination
 date: 2025-02-13
 tags:
   - comparison

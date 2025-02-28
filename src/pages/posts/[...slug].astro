@@ -3,6 +3,7 @@ import { getCollection, render } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Date from "@components/Date.astro";
 import getReadingTime from "@scripts/reading-time";
+import config from "@scripts/config";
 
 import Calendar from "@assets/calendar.svg";
 import Clock from "@assets/clock.svg";
@@ -19,22 +20,32 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const readingTime = getReadingTime(post.body!);
 const { Content } = await render(post);
+const { title, description, date, tags } = post.data;
 ---
 
-<BaseLayout title={post.data.title} description="">
+<BaseLayout {title} {description}>
+  <Fragment slot="open-graph">
+    <meta property="og:type" content="article" />
+    <meta property="article:author" content={config.author} />
+    <meta property="article:published_time" content={date.toISOString().slice(0, 10)} />
+    {tags.map((tag) => <meta property="article:tag" content={tag} />)}
+  </Fragment>
   <article>
     <header>
-      <h1>{post.data.title}</h1>
-      <Calendar /> <Date date={post.data.date} />
-      <div aria-label="Reading time">
-        <Clock /> {readingTime}
-      </div>
-      <div class="tags" aria-label="Post tags">
-        <Tags /> {
-          post.data.tags?.map((tag) => (
-            <a href={encodeURI(`/tags/${tag}`)}>#{tag}</a>
-          ))
-        }
+      <h1>{title}</h1>
+      <div aria-label="Post information">
+        <div aria-label="Post date">
+          <Calendar />
+          <Date date={date} />
+        </div>
+        <div aria-label="Reading time">
+          <Clock />
+          {readingTime}
+        </div>
+        <div class="tags" aria-label="Post tags">
+          <Tags />
+          {tags.map((tag) => <a href={encodeURI(`/tags/${tag}`)}>#{tag}</a>)}
+        </div>
       </div>
     </header>
     <Content />
