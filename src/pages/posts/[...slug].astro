@@ -5,6 +5,7 @@ import Date from "@components/Date.astro";
 import getReadingTime from "@scripts/reading-time";
 import config from "@scripts/config";
 
+import Comment from "@assets/comment.svg";
 import Calendar from "@assets/calendar.svg";
 import Clock from "@assets/clock.svg";
 import Tags from "@assets/tags.svg";
@@ -34,6 +35,10 @@ const { title, description, date, tags } = post.data;
     <header>
       <h1>{title}</h1>
       <div aria-label="Post information">
+        <div aria-label="Post description">
+          <Comment />
+          {description}
+        </div>
         <div aria-label="Post date">
           <Calendar />
           <Date date={date} />

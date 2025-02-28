@@ -3,6 +3,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import Date from "@components/Date.astro";
 import getReadingTime from "@scripts/reading-time";
 
+import Comment from "@assets/comment.svg";
 import Calendar from "@assets/calendar.svg";
 import Clock from "@assets/clock.svg";
 import Tags from "@assets/tags.svg";
@@ -11,15 +12,20 @@ import { getCollection } from "astro:content";
 const posts = await getCollection("posts");
 ---
 
-<BaseLayout title="Posts | Efim.ish" description="There are my blog posts">
+<BaseLayout title="Posts — Efim.ish" description="There are my blog posts">
   <h1>List of all posts</h1>
   {
     posts.map((post) => (
       <a href={encodeURI(`/posts/${post.id}`)}>
         <h2>{post.data.title}</h2>
-        <Calendar /> <Date date={post.data.date} />
-        <Clock /> {getReadingTime(post.body!)}
-        <Tags /> {post.data.tags?.map((tag) => "#" + tag).join(" ")}
+        <p>
+          <Comment /> {post.data.description}
+        </p>
+        <p>
+          <Calendar /> <Date date={post.data.date} />
+          <Clock /> {getReadingTime(post.body!)}
+          <Tags /> {post.data.tags?.map((tag) => "#" + tag).join(" ")}
+        </p>
       </a>
     ))
   }

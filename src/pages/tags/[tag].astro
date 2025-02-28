@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import Date from "@components/Date.astro";
 import getReadingTime from "@scripts/reading-time";
 
+import Comment from "@assets/comment.svg";
 import Calendar from "@assets/calendar.svg";
 import Clock from "@assets/clock.svg";
 import Tags from "@assets/tags.svg";
@@ -26,7 +27,7 @@ const { posts } = Astro.props;
 ---
 
 <BaseLayout
-  title={`Tag: #${tag} | Efim.ish`}
+  title={`Tag: #${tag} — Efim.ish`}
   description={`These are all posts with tag #${tag}`}
 >
   <h1>List of posts with tag #{tag}</h1>
@@ -34,9 +35,14 @@ const { posts } = Astro.props;
     posts.map((post) => (
       <a href={encodeURI(`/posts/${post.id}`)}>
         <h2>{post.data.title}</h2>
-        <Calendar /> <Date date={post.data.date} />
-        <Clock /> {getReadingTime(post.body!)}
-        <Tags /> {post.data.tags?.map((tag) => "#" + tag).join(" ")}
+        <p>
+          <Comment /> {post.data.description}
+        </p>
+        <p>
+          <Calendar /> <Date date={post.data.date} />
+          <Clock /> {getReadingTime(post.body!)}
+          <Tags /> {post.data.tags?.map((tag) => "#" + tag).join(" ")}
+        </p>
       </a>
     ))
   }
