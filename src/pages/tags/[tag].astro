@@ -3,6 +3,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import Date from "@components/Date.astro";
 import getReadingTime from "@scripts/reading-time";
+import config from "@scripts/config";
 
 import Comment from "@assets/comment.svg";
 import Calendar from "@assets/calendar.svg";
@@ -24,11 +25,12 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params;
 const { posts } = Astro.props;
+const { author } = config;
 ---
 
 <BaseLayout
-  title={`Tag: #${tag} — Efim.ish`}
-  description={`These are all posts with tag #${tag}`}
+  title=`Tag:${tag}`
+  description=`Articles tagged with ${tag} on ${author}'s blog.`
 >
   <h1>List of posts with tag #{tag}</h1>
   {

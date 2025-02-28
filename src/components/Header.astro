@@ -1,11 +1,14 @@
 ---
 import ThemeSwitcher from "@components/ThemeSwitcher.astro";
+import config from "@scripts/config";
 import Resume from "@assets/resume.svg";
+
+const { author } = config;
 ---
 
 <header>
   <nav class="header">
-    <a href="/">Efim Ishenin</a>
+    <a href="/">{author}</a>
     <span class="wide" />
     <a href="/posts">Posts</a>
     <a href="/tags">Tags</a>

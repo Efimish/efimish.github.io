@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
+import config from "@scripts/config";
 
 const posts = await getCollection("posts");
 const tags = [...new Set(posts.map((post) => post.data.tags ?? []).flat())];
@@ -10,11 +11,13 @@ for (const tag of tags) {
     post.data.tags?.includes(tag)
   ).length;
 }
+
+const { author } = config;
 ---
 
 <BaseLayout
-  title="Tags — Efim.ish"
-  description="These are all the tags found in blog posts"
+  title="Tags"
+  description=`Explore topics covered on ${author}'s blog.`
 >
   <h1>List of all tags</h1>
   {

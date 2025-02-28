@@ -1,7 +1,7 @@
 ---
+import config from "@scripts/config.ts";
 import "@styles/shiki.css";
 import "@styles/global.css";
-import config from "@scripts/config.ts";
 
 interface Props {
   title: string;
@@ -9,6 +9,7 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+const { author } = config;
 ---
 
 {/* Always include */}
@@ -17,10 +18,10 @@ const { title, description } = Astro.props;
 
 <title>{title}</title>
 <meta name="description" content={description} />
-<meta name="author" content={config.author} />
+<meta name="author" content={author} />
 
 {/* Open Graph */}
-<meta property="og:site_name" content="Efim.ish" />
+<meta property="og:site_name" content={author} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={Astro.url} />

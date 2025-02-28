@@ -1,15 +1,21 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import config from "@scripts/config";
 
 import LocationPin from "@assets/location-pin.svg";
 import Tool from "@assets/tool.svg";
 import Project from "@assets/project.svg";
 import Books from "@assets/books.svg";
+
+const { author } = config;
 ---
 
-<BaseLayout title="Efim.ish" description="This is a personal website of Efim">
+<BaseLayout
+  title={author}
+  description=`${author}'s personal website: programming, projects, and thoughts.`
+>
   <header>
-    <h1>Efim Ishenin</h1>
+    <h1>{author}</h1>
     <p>Hello! I'm Efim, a passionate backend developer</p>
   </header>
   <section>
