@@ -12,7 +12,8 @@
 
   const getTheme = () => localStorage.getItem(key) as Theme | null;
   const setTheme = (theme: Theme) => localStorage.setItem(key, theme);
-  const setHTMLTheme = (theme: Theme) => document.documentElement.dataset.theme = theme;;
+  const setHTMLTheme = (theme: Theme) =>
+    (document.documentElement.dataset.theme = theme);
 
   document.addEventListener("DOMContentLoaded", () => main());
   const main = () => {

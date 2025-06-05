@@ -1,19 +1,19 @@
 {
-    "name": "Efim Ishenin",
-    "short_name": "Efim.ish",
-    "description": "Efim Ishenin's personal website",
-    "icons": [
-        {
-            "src": "/favicon-192.png",
-            "type": "image/png",
-            "sizes": "192x192",
-            "purpose": "maskable"
-        },
-        {
-            "src": "/favicon-512.png",
-            "type": "image/png",
-            "sizes": "512x512",
-            "purpose": "maskable"
-        }
-    ]
+  "name": "Efim Ishenin",
+  "short_name": "Efim.ish",
+  "description": "Efim Ishenin's personal website",
+  "icons": [
+    {
+      "src": "/favicon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ]
 }

@@ -135,7 +135,7 @@ Which looks identical to its plaintext form:
 
 ```md
 - Item
-- Item 
+- Item
   - Subitem
 - Item
 ```
@@ -173,7 +173,7 @@ Code Snippet:
 ```md
 - [x] Task 1
 - [ ] Task 2
-  - [ ] Subtask 
+  - [ ] Subtask
 ```
 
 ## Sub/Superscript

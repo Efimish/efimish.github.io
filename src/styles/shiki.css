@@ -1,42 +1,42 @@
-/* 
+/*
     Shiki Syntax highlighter themes.
     Needed for blog posts.
 */
 
 .astro-code,
 .astro-code span {
-    color: var(--shiki-light);
-    background-color: var(--secondary-color);
+  color: var(--shiki-light);
+  background-color: var(--secondary-color);
 }
 
 @media (prefers-color-scheme: dark) {
 
-    .astro-code,
-    .astro-code span {
-        color: var(--shiki-dark);
-    }
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark);
+  }
 }
 
 [data-theme="light"] {
 
-    .astro-code,
-    .astro-code span {
-        color: var(--shiki-light);
-    }
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-light);
+  }
 }
 
 [data-theme="dark"] {
 
-    .astro-code,
-    .astro-code span {
-        color: var(--shiki-dark);
-    }
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark);
+  }
 }
 
 [data-theme="sepia"] {
 
-    .astro-code,
-    .astro-code span {
-        color: var(--shiki-light);
-    }
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-light);
+  }
 }
