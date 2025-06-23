@@ -11,6 +11,7 @@ import Tags from "@assets/tags.svg";
 
 import { getCollection } from "astro:content";
 const posts = await getCollection("posts");
+const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 const { author } = config;
 ---
@@ -21,18 +22,34 @@ const { author } = config;
 >
   <h1>Posts</h1>
   {
-    posts.map((post) => (
-      <a href={encodeURI(`/posts/${post.id}`)}>
-        <h2>{post.data.title}</h2>
+    sortedPosts.map((post) => (
+      <div>
+        <a href={encodeURI(`/posts/${post.id}`)}>
+          <h2>{post.data.title}</h2>
+        </a>
         <p>
           <Comment /> {post.data.description}
         </p>
         <p>
           <Calendar /> <Date date={post.data.date} />
           <Clock /> {getReadingTime(post.body!)}
-          <Tags /> {post.data.tags?.map((tag) => "#" + tag).join(" ")}
+          {post.data.tags.length > 0 && (
+            <>
+              <Tags /> {post.data.tags.map((tag) => "#" + tag).join(" ")}
+            </>
+          )}
         </p>
-      </a>
+      </div>
     ))
   }
 </BaseLayout>
+
+<style>
+  h2,
+  p {
+    margin: 0;
+  }
+  div {
+    margin: 1em 0;
+  }
+</style>
