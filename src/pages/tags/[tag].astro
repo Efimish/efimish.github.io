@@ -35,17 +35,38 @@ const { author } = config;
   <h1>Tag:{tag}</h1>
   {
     posts.map((post) => (
-      <a href={encodeURI(`/posts/${post.id}`)}>
-        <h2>{post.data.title}</h2>
+      <div>
+        <a href={encodeURI(`/posts/${post.id}`)}>
+          <h2>{post.data.title}</h2>
+        </a>
         <p>
           <Comment /> {post.data.description}
         </p>
         <p>
           <Calendar /> <Date date={post.data.date} />
           <Clock /> {getReadingTime(post.body!)}
-          <Tags /> {post.data.tags?.map((tag) => "#" + tag).join(" ")}
+          {post.data.tags.length > 0 && (
+            <>
+              <Tags />
+              {post.data.tags.map((tag) => (
+                <a href={encodeURI(`/tags/${tag}`)} class="chip">
+                  {tag}
+                </a>
+              ))}
+            </>
+          )}
         </p>
-      </a>
+      </div>
     ))
   }
 </BaseLayout>
+
+<style>
+  h2,
+  p {
+    margin: 0;
+  }
+  div {
+    margin: 1em 0;
+  }
+</style>

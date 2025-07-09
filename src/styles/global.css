@@ -146,16 +146,19 @@ a.tag {
 
 ul.flat {
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 ul.flat>li {
-  display: inline;
+  display: block;
 }
 
-div.tags {
-  margin-bottom: 1em;
-}
-
-div.tags>a {
-  margin-right: 1em;
+.chip {
+  border: 1px solid var(--secondary-color);
+  font-size: 0.9em;
+  padding: 0.1em 0.6em;
+  border-radius: 10em;
+  margin-right: 0.3em;
+  text-decoration: none;
 }

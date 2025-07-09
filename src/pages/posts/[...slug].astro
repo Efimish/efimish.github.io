@@ -53,10 +53,10 @@ const ISODate = date.toISOString().slice(0, 10);
         </div>
         {
           tags.length > 0 && (
-            <div class="tags" aria-label="Post tags">
+            <div aria-label="Post tags">
               <Tags />
               {tags.map((tag) => (
-                <a href={encodeURI(`/tags/${tag}`)}>#{tag}</a>
+                <a href={encodeURI(`/tags/${tag}`)} class="chip">{tag}</a>
               ))}
             </div>
           )

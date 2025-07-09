@@ -22,11 +22,9 @@ const { author } = config;
   <h1>Tags</h1>
   {
     tags.map((tag) => (
-      <p>
-        <a href={encodeURI(`/tags/${tag}`)}>
-          #{tag} ({postsWithTag[tag]})
-        </a>
-      </p>
+      <a href={encodeURI(`/tags/${tag}`)} class="chip">
+        {tag} ({postsWithTag[tag]})
+      </a>
     ))
   }
 </BaseLayout>
