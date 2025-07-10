@@ -1,15 +1,10 @@
 ---
+import { getCollection } from "astro:content";
+
 import BaseLayout from "@layouts/BaseLayout.astro";
-import Date from "@components/Date.astro";
-import getReadingTime from "@scripts/reading-time";
+import Post from "@components/Post.astro";
 import config from "@scripts/config";
 
-import Comment from "@assets/comment.svg";
-import Calendar from "@assets/calendar.svg";
-import Clock from "@assets/clock.svg";
-import Tags from "@assets/tags.svg";
-
-import { getCollection } from "astro:content";
 const posts = await getCollection("posts");
 const sortedPosts = posts.sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
@@ -23,40 +18,5 @@ const { author } = config;
   description=`Browse articles by ${author} on development, technology, and more.`
 >
   <h1>Posts</h1>
-  {
-    sortedPosts.map((post) => (
-      <div>
-        <a href={encodeURI(`/posts/${post.id}`)}>
-          <h2>{post.data.title}</h2>
-        </a>
-        <p>
-          <Comment /> {post.data.description}
-        </p>
-        <p>
-          <Calendar /> <Date date={post.data.date} />
-          <Clock /> {getReadingTime(post.body!)}
-          {post.data.tags.length > 0 && (
-            <>
-              <Tags />
-              {post.data.tags.map((tag) => (
-                <a href={encodeURI(`/tags/${tag}`)} class="chip">
-                  {tag}
-                </a>
-              ))}
-            </>
-          )}
-        </p>
-      </div>
-    ))
-  }
+  {sortedPosts.map((post) => <Post post={post} />)}
 </BaseLayout>
-
-<style>
-  h2,
-  p {
-    margin: 0;
-  }
-  div {
-    margin: 1em 0;
-  }
-</style>

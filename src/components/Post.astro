@@ -1,0 +1,57 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import Date from "@components/Date.astro";
+import getReadingTime from "@scripts/reading-time";
+
+import Comment from "@assets/comment.svg";
+import Calendar from "@assets/calendar.svg";
+import Clock from "@assets/clock.svg";
+import Tags from "@assets/tags.svg";
+
+interface Props {
+  post: CollectionEntry<"posts">;
+}
+
+const { post } = Astro.props;
+
+const readingTime = getReadingTime(post.body ?? "");
+---
+
+<div>
+  <a href={encodeURI(`/posts/${post.id}`)}>
+    <h2>{post.data.title}</h2>
+  </a>
+  <p>
+    <Comment />
+    {post.data.description}
+  </p>
+  <p>
+    <Calendar />
+    <Date date={post.data.date} />
+    <Clock />
+    {readingTime}
+    {
+      post.data.tags.length > 0 && (
+        <>
+          <Tags />
+          {post.data.tags.map((tag) => (
+            <a href={encodeURI(`/tags/${tag}`)} class="chip">
+              {tag}
+            </a>
+          ))}
+        </>
+      )
+    }
+  </p>
+</div>
+
+<style>
+  h2,
+  p {
+    margin: 0;
+  }
+  div {
+    margin: 1em 0;
+  }
+</style>
