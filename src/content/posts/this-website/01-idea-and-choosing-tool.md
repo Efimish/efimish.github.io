@@ -11,8 +11,8 @@ I’m starting a series of articles about building
 my personal website - the very one you’re reading now.
 Since this is a broad topic, I’ll break it down into multiple parts:
 
-1. The idea and choosing the right tool
-2. SEO essentials: meta tags and base head element
+1. __The idea and choosing the right tool__
+2. [SEO essentials: meta tags and base head element](./02-seo-meta-tags)
 3. Writing articles: markdown and frontmatter
 4. Semantic HTML for accessibility and external readers
 5. Minimalist CSS: styling and native-like design
@@ -20,6 +20,8 @@ Since this is a broad topic, I’ll break it down into multiple parts:
 7. Astro plugins: RSS, Sitemap, Word count
 8. SVG icons and Favicon
 9. Building resume with XeLaTeX
+
+---
 
 ## The Idea
 
