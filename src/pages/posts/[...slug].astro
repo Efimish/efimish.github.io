@@ -3,7 +3,7 @@ import { getCollection, render } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Date from "@components/Date.astro";
 import getReadingTime from "@scripts/reading-time";
-import config from "@scripts/config";
+import consts from "@scripts/consts";
 
 import Comment from "@assets/comment.svg";
 import Calendar from "@assets/calendar.svg";
@@ -23,7 +23,7 @@ const readingTime = getReadingTime(post.body!);
 const { Content } = await render(post);
 
 const { title, description, date, tags } = post.data;
-const { author } = config;
+const { author } = consts;
 
 const ISODate = date.toISOString().slice(0, 10);
 ---

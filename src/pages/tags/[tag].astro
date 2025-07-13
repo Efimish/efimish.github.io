@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Post from "@components/Post.astro";
-import config from "@scripts/config";
+import consts from "@scripts/consts";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params;
 const { posts } = Astro.props;
-const { author } = config;
+const { author } = consts;
 ---
 
 <BaseLayout

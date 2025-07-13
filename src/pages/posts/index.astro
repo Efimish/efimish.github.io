@@ -3,14 +3,14 @@ import { getCollection } from "astro:content";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Post from "@components/Post.astro";
-import config from "@scripts/config";
+import consts from "@scripts/consts";
 
 const posts = await getCollection("posts");
 const sortedPosts = posts.sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
 
-const { author } = config;
+const { author } = consts;
 ---
 
 <BaseLayout
