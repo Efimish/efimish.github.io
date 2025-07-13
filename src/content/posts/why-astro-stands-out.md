@@ -49,7 +49,7 @@ Components render as static HTML unless explicitly hydrated
 Seamlessly integrate React or Vue islands in Astro components
 
 - **Content-first design**: \
-[Markdown](./markdown-and-its-feautres) support with type-safe frontmatter validation out-of-the-box
+[Markdown](/posts/markdown-and-its-feautres) support with type-safe frontmatter validation out-of-the-box
 
 - **Modern DX**: \
 Hot reloading, image optimization, and CLI tooling in a single package

@@ -52,7 +52,7 @@ But each had hurdles: unfamiliar languages (Ruby, Go),
 cumbersome setups, or excessive configuration.
 Frustrated, I finally discovered Astro - and it was a game-changer.
 
-[Astro](/posts/why-astro-stands-out-as-a-modern-ssg)
+[Astro](/posts/why-astro-stands-out)
 is a static site generator with optional
 server-side or client-side reactivity (using modern frameworks).
 It offers:
