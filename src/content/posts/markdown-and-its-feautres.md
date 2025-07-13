@@ -11,8 +11,8 @@ It is used for creating formatted text.
 Its key feature is you only need a plain-text editor to write it.
 This is because Markdown remains readable without any rendering.
 Markdown is widely used for blogging, messaging, online forums, and readme files.
-I personally use Markdown to write [this blog](./welcome-to-my-blog)
-and take notes with [Obsidian](./how-to-start-with-obsidian).
+I personally use Markdown to write [this blog](/posts/welcome-to-my-blog)
+and take notes with [Obsidian](/posts/how-to-start-with-obsidian).
 
 Below I will show all the features of Markdown.
 

@@ -12,7 +12,7 @@ my personal website - the very one you’re reading now.
 Since this is a broad topic, I’ll break it down into multiple parts:
 
 1. __The idea and choosing the right tool__
-2. [SEO essentials: meta tags and base head element](./02-seo-meta-tags)
+2. [SEO essentials: meta tags and base head element](/posts/this-website/02-seo-meta-tags)
 3. Writing articles: markdown and frontmatter
 4. Semantic HTML for accessibility and external readers
 5. Minimalist CSS: styling and native-like design
@@ -32,8 +32,8 @@ Here’s what I aimed to achieve:
 
 - Self-introduction: A place to share basic information about myself for visitors.
 - Blogging: A platform to publish my thoughts, with full control over content.
-  I prefer writing in [Markdown](../markdown-and-its-feautres)
-  (using [Obsidian](../how-to-start-with-obsidian))
+  I prefer writing in [Markdown](/posts/markdown-and-its-feautres)
+  (using [Obsidian](/posts/how-to-start-with-obsidian))
   and simply copying files to GitHub when ready.
 - Flexibility: Room for non-blog pages if needed.
 - Best practices: Fast loading, simplicity, and adherence to modern web standards.
@@ -52,7 +52,7 @@ But each had hurdles: unfamiliar languages (Ruby, Go),
 cumbersome setups, or excessive configuration.
 Frustrated, I finally discovered Astro - and it was a game-changer.
 
-[Astro](../why-astro-stands-out-as-a-modern-ssg)
+[Astro](/posts/why-astro-stands-out-as-a-modern-ssg)
 is a static site generator with optional
 server-side or client-side reactivity (using modern frameworks).
 It offers:
