@@ -60,7 +60,6 @@ Some of these features will be explored in detail in future articles.
 ```astro
 ---
 import { author } from "@scripts/consts";
-import "@styles/shiki.css";
 import "@styles/global.css";
 
 interface Props {

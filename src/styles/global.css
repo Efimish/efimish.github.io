@@ -1,9 +1,17 @@
+/* themes */
+
 :root {
   --primary-color: #454545;
   --secondary-color: #EAEAEA;
   --background-color: #FFF;
   --link-color: #007AFF;
   color-scheme: light;
+}
+
+.astro-code,
+.astro-code span {
+  color: var(--shiki-light);
+  background-color: var(--secondary-color);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +21,11 @@
     --background-color: #1E1E1E;
     color-scheme: dark;
   }
+
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark);
+  }
 }
 
 [data-theme="light"] {
@@ -20,6 +33,11 @@
   --secondary-color: #EAEAEA;
   --background-color: #FFF;
   color-scheme: light;
+
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-light);
+  }
 }
 
 [data-theme="dark"] {
@@ -27,12 +45,22 @@
   --secondary-color: #414141;
   --background-color: #1E1E1E;
   color-scheme: dark;
+
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark);
+  }
 }
 
 [data-theme="sepia"] {
   --primary-color: #5B4636;
   --secondary-color: #E0D7C3;
   --background-color: #F5ECD8;
+
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-light);
+  }
 }
 
 /* base styles */
