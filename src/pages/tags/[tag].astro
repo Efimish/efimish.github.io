@@ -1,16 +1,16 @@
 ---
 import { getCollection } from "astro:content";
 
+import { author } from "@scripts/consts";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Post from "@components/Post.astro";
-import consts from "@scripts/consts";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
-  const tags = [...new Set(posts.map((post) => post.data.tags ?? []).flat())];
+  const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 
   return tags.map((tag) => {
-    const filteredPosts = posts.filter((post) => post.data.tags?.includes(tag));
+    const filteredPosts = posts.filter((post) => post.data.tags.includes(tag));
     return {
       params: { tag },
       props: { posts: filteredPosts },
@@ -20,7 +20,6 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params;
 const { posts } = Astro.props;
-const { author } = consts;
 ---
 
 <BaseLayout

@@ -1,5 +1,3 @@
-export default {
-  author: "Efim Ishenin",
-  github: "https://github.com/Efimish",
-  linkedin: "https://www.linkedin.com/in/efima",
-};
+export const author = "Efim Ishenin";
+export const github = "https://github.com/Efimish";
+export const linkedin = "https://www.linkedin.com/in/efima";

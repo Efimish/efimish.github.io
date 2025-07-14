@@ -59,7 +59,7 @@ Some of these features will be explored in detail in future articles.
 
 ```astro
 ---
-import consts from "@scripts/consts";
+import { author } from "@scripts/consts";
 import "@styles/shiki.css";
 import "@styles/global.css";
 
@@ -69,7 +69,6 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
-const { author } = consts;
 ---
 
 {/* Always include */}
