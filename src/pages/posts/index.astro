@@ -5,8 +5,7 @@ import { author } from "@scripts/consts";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Post from "@components/Post.astro";
 
-const posts = await getCollection("posts");
-const sortedPosts = posts.sort(
+const posts = (await getCollection("posts")).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
 ---
@@ -16,5 +15,5 @@ const sortedPosts = posts.sort(
   description=`Browse articles by ${author} on development, technology, and more.`
 >
   <h1>Posts</h1>
-  {sortedPosts.map((post) => <Post post={post} />)}
+  {posts.map((post) => <Post post={post} />)}
 </BaseLayout>

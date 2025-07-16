@@ -5,7 +5,10 @@ import rss from "@astrojs/rss";
 import { author } from "@scripts/consts";
 
 export const GET: APIRoute = async (context) => {
-  const posts = await getCollection("posts");
+  const posts = (await getCollection("posts")).sort(
+    (a, b) => b.data.date.getTime() - a.data.date.getTime()
+  );
+
   return rss({
     title: author,
     description: `${author}'s blog`,

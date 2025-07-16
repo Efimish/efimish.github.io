@@ -5,13 +5,13 @@ import { author } from "@scripts/consts";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
 const posts = await getCollection("posts");
-const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
-let postsWithTag: Record<string, number> = {};
-for (const tag of tags) {
-  postsWithTag[tag] = posts.filter((post) =>
-    post.data.tags.includes(tag)
-  ).length;
-}
+const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags)));
+const tagPostCounts = new Map(
+  tags.map((tag) => [
+    tag,
+    posts.filter((post) => post.data.tags.includes(tag)).length,
+  ])
+);
 ---
 
 <BaseLayout
@@ -22,7 +22,7 @@ for (const tag of tags) {
   {
     tags.map((tag) => (
       <a href={encodeURI(`/tags/${tag}`)} class="chip">
-        {tag} ({postsWithTag[tag]})
+        {tag} ({tagPostCounts.get(tag)})
       </a>
     ))
   }
