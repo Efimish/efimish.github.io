@@ -1,1 +1,1 @@
-console.log('%c🌿', 'font-size: 8em');
+console.log("%c🌿", "font-size: 8em");
