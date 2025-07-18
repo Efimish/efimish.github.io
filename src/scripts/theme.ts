@@ -5,8 +5,12 @@ const selector = document.querySelector(
   "select#theme-selector"
 ) as HTMLSelectElement | null;
 
-selector?.addEventListener("change", () => {
-  const value = selector.value;
-  localStorage.setItem("theme", value);
-  document.documentElement.dataset.theme = value;
-});
+if (selector !== null) {
+  selector.value = theme;
+
+  selector.addEventListener("change", () => {
+    const value = selector.value;
+    localStorage.setItem("theme", value);
+    document.documentElement.dataset.theme = value;
+  });
+}
