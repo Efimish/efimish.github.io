@@ -5,13 +5,12 @@ import { author } from "@scripts/consts";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
 const posts = await getCollection("posts");
-const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags)));
-const tagPostCounts = new Map(
-  tags.map((tag) => [
+const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags)))
+  .map((tag) => ({
     tag,
-    posts.filter((post) => post.data.tags.includes(tag)).length,
-  ])
-);
+    count: posts.filter((post) => post.data.tags.includes(tag)).length,
+  }))
+  .sort((a, b) => b.count - a.count || a.tag.localeCompare(b.tag));
 ---
 
 <BaseLayout
@@ -20,9 +19,9 @@ const tagPostCounts = new Map(
 >
   <h1>Tags</h1>
   {
-    tags.map((tag) => (
+    tags.map(({ tag, count }) => (
       <a href={encodeURI(`/tags/${tag}`)} class="chip">
-        {tag} ({tagPostCounts.get(tag)})
+        {tag} ({count})
       </a>
     ))
   }
