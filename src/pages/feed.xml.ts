@@ -21,8 +21,8 @@ export const GET: APIRoute = async (context) => {
       title: post.data.title,
       description: post.data.description,
       pubDate: post.data.date,
-      link: `/posts/${post.id}`,
       categories: post.data.tags,
+      link: `/posts/${post.id}`,
       content: sanitize(parser.render(post.body ?? "")),
     })),
   });
