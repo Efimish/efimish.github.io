@@ -11,7 +11,7 @@ This article is part of a series about building my personal website:
 
 1. [The idea and choosing the right tool](/posts/this-website/01-idea-and-choosing-tool)
 2. __SEO essentials: meta tags and base head element__
-3. Writing articles: markdown and frontmatter
+3. [Content management with Markdown and Frontmatter](/posts/this-website/03-markdown-and-frontmatter)
 4. Semantic HTML for accessibility and external readers
 5. Minimalist CSS: styling and native-like design
 6. Adding color themes with JavaScript
