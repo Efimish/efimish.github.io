@@ -18,10 +18,12 @@ const { post } = Astro.props;
 const readingTime = getReadingTime(post.body ?? "");
 ---
 
-<div>
-  <a href={encodeURI(`/posts/${post.id}`)}>
-    <h2>{post.data.title}</h2>
-  </a>
+<article class="post-preview">
+  <h2>
+    <a href={encodeURI(`/posts/${post.id}`)}>
+      {post.data.title}
+    </a>
+  </h2>
   <p>
     <Comment />
     {post.data.description}
@@ -44,14 +46,4 @@ const readingTime = getReadingTime(post.body ?? "");
       )
     }
   </p>
-</div>
-
-<style>
-  h2,
-  p {
-    margin: 0;
-  }
-  div {
-    margin: 1em 0;
-  }
-</style>
+</article>

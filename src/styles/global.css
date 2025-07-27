@@ -190,3 +190,11 @@ ul.flat>li {
   margin-right: 0.3em;
   text-decoration: none;
 }
+
+.post-preview {
+  margin: 1em 0;
+}
+
+.post-preview > * {
+  margin: 0;
+}
