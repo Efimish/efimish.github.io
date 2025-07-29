@@ -1,22 +1,26 @@
-# My personal website build with Astro
+# Personal website with blog
 
-## 🚀 To create an astro project
+A minimalist personal website, featuring:
 
-```sh
-bun create astro@latest
-bunx astro add sitemap
-bun install @astrojs/rss
-```
+- Self-introduction — basic information about myself.
+- Blog — posts about my projects and thoughts.
+- Resume in PDF format.
+- Social links.
 
-## 🧞 Commands
+## 🛠️ Tech Stack
 
-All commands are run from the root of the project, from a terminal:
+- Astro — Static site generator and content framework.
+- TypeScript, HTML, CSS — Core web technologies.
+- GitHub Pages — Deployment and hosting.
+- Markdown — Blog posts.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun run dev`             | Starts local dev server at `localhost:4321`      |
-| `bun run build`           | Build your production site to `./dist/`          |
-| `bun run preview`         | Preview your build locally, before deploying     |
-| `bun run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun run astro -- --help` | Get help using the Astro CLI                     |
+## 🎯 Goal
+
+Create my personal space on the internet to:
+
+- Introduce myself and share my work.
+- Blog freely with full control.
+- Embrace speed, simplicity, and modern web practices.
+- Learn by doing — HTML/CSS fundamentals, theming, and responsiveness.
+
+This project is my long-term hub for growth, experimentation, and sharing ideas.
