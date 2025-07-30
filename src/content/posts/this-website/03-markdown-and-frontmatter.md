@@ -5,7 +5,7 @@ date: 2025-07-13
 tags:
   - development
   - web
-  - content-management
+  - content_management
 ---
 
 This article is part of a series about building my personal website:
