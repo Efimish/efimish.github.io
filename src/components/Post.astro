@@ -15,35 +15,47 @@ interface Props {
 
 const { post } = Astro.props;
 
+const { title, description, date, tags } = post.data;
 const readingTime = getReadingTime(post.body ?? "");
 ---
 
 <article class="post-preview">
   <h2>
     <a href={encodeURI(`/posts/${post.id}`)}>
-      {post.data.title}
+      {title}
     </a>
   </h2>
-  <p>
-    <Comment />
-    {post.data.description}
-  </p>
-  <p>
-    <Calendar />
-    <Date date={post.data.date} />
-    <Clock />
-    {readingTime}
+  <dl>
+    <div>
+      <dt><Comment aria-label="Description" /></dt>
+      <dd>{description}</dd>
+    </div>
+
+    <div>
+      <dt><Calendar aria-label="Published on" /></dt>
+      <dd><Date date={date} /></dd>
+    </div>
+
+    <div>
+      <dt><Clock aria-label="Reading time" /></dt>
+      <dd>{readingTime}</dd>
+    </div>
+
     {
-      post.data.tags.length > 0 && (
-        <>
-          <Tags />
-          {post.data.tags.map((tag) => (
-            <a href={encodeURI(`/tags/${tag}`)} class="chip">
-              {tag}
-            </a>
-          ))}
-        </>
+      tags.length > 0 && (
+        <div>
+          <dt>
+            <Tags aria-label="Tags" />
+          </dt>
+          <dd>
+            {tags.map((tag) => (
+              <a href={encodeURI(`/tags/${tag}`)} class="chip">
+                {tag}
+              </a>
+            ))}
+          </dd>
+        </div>
       )
     }
-  </p>
+  </dl>
 </article>

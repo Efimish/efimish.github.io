@@ -96,7 +96,6 @@ h1 {
   margin-block: 0.67em;
 }
 
-
 /* block quotes */
 
 blockquote {
@@ -206,5 +205,14 @@ ul.flat>li {
 }
 
 .post-preview > * {
+  margin: 0;
+}
+
+dl > div {
+  display: flex;
+  gap: 0.4em;
+}
+
+dl > div > * {
   margin: 0;
 }
