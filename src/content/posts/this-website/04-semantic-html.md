@@ -13,7 +13,7 @@ This article is part of a series about building my personal website:
 2. [SEO essentials: meta tags and base head element](/posts/this-website/02-seo-meta-tags)
 3. [Content management with Markdown and Frontmatter](/posts/this-website/03-markdown-and-frontmatter)
 4. __Semantic HTML for accessibility and external readers__
-5. Minimalist CSS: styling and native-like design
+5. [Minimalist CSS: styling and native-like design](/posts/this-website/05-minimal-css)
 6. Adding color themes with JavaScript
 7. Astro plugins: RSS, Sitemap, Word count
 8. SVG icons and Favicon
@@ -102,13 +102,13 @@ HTML self-explanatory for future you (or other developers).
 Accessibility is not a “one-and-done” step — it’s an ongoing process.
 Here’s what I added:
 
-- Theme selector label – An `aria-label` for the theme switcher,
+- Theme selector label - An `aria-label` for the theme switcher,
 since it has no visible text.
-- Descriptive SVGs – Each SVG includes a `<title>` as the first child,
+- Descriptive SVGs - Each SVG includes a `<title>` as the first child,
 describing its appearance.
-- Context-specific labels – If an icon could mean different things in different places,
+- Context-specific labels - If an icon could mean different things in different places,
 I set an additional `aria-label` on it for carity.
-- Color contrast checks – Tested all theme combinations to ensure sufficient contrast
+- Color contrast checks - Tested all theme combinations to ensure sufficient contrast
 for text and interactive elements.
 
 You can run tools like [Unlighthouse](https://unlighthouse.dev/)

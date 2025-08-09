@@ -15,7 +15,7 @@ Since this is a broad topic, I’ll break it down into multiple parts:
 2. [SEO essentials: meta tags and base head element](/posts/this-website/02-seo-meta-tags)
 3. [Content management with Markdown and Frontmatter](/posts/this-website/03-markdown-and-frontmatter)
 4. [Semantic HTML for accessibility and external readers](/posts/this-website/04-semantic-html)
-5. Minimalist CSS: styling and native-like design
+5. [Minimalist CSS: styling and native-like design](/posts/this-website/05-minimal-css)
 6. Adding color themes with JavaScript
 7. Astro plugins: RSS, Sitemap, Word count
 8. SVG icons and Favicon
