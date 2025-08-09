@@ -1,0 +1,83 @@
+% Main parameters
+\documentclass[a4paper, 12pt]{article}
+\usepackage[left=1.5cm, right=1.5cm, top=1.5cm]{geometry}
+% Links
+\usepackage[
+  colorlinks=true,
+  urlcolor=blue,
+  pdftitle={Resume},
+  pdfauthor={Efim Ishenin}
+]{hyperref}
+% Customizable lists
+\usepackage{enumitem}
+% Roboto font
+\usepackage{fontspec}
+\setmainfont{Roboto}
+% Remove page numbering
+\pagenumbering{gobble}
+% Remove paragraph indentation
+\setlength{\parindent}{0pt}
+% Customize titles
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\large\bfseries}
+  {}
+  {0pt}
+  {}
+  [\vspace{1pt}\titlerule\vspace{-6.5pt}]
+
+\begin{document}
+
+% Name and contact information
+\centerline{\Huge Efim Ishenin}
+\vspace{10pt}
+\centerline{
+  Russia, Krasnoyarsk |
+  \href{https://github.com/Efimish}{github.com/Efimish} |
+  \href{https://www.linkedin.com/in/efima}{linkedin.com/in/efima}
+}
+
+% Skills
+\section{Skills}
+
+\textbf{Programming Languages}: JavaScript/TypeScript, Rust, Python, SQL, Bash \\
+\textbf{Frameworks}: Astro, Express, NestJS \\
+\textbf{Tools}: Git, Docker, PostgreSQL, Redis, NGINX, Caddy \\
+\textbf{Other}: GitHub Actions
+
+% Projects
+\section{Projects}
+
+% Personal website
+\textbf{Personal website} \hfill \textit{Astro, TypeScript} \\
+A static personal website where I can blog. \\
+Website URL: \href{https://efimish.github.io/}{efimish.github.io} \\
+GitHub: \href{https://github.com/Efimish/efimish.github.io}{github.com/Efimish/efimish.github.io} \\
+
+% University project website & api
+\textbf{Pet shelter website} \hfill \textit{TypeScript, NestJS, Docker, PostgreSQL, Yandex.cloud} \\
+A website for a fictional pet shelter. \\
+University project built by a team of 5. \\
+- I was responsible for the database and the back-end API. \\
+- I helped connecting API to the front-end. \\
+Website URL: \href{https://ikit-group.github.io/Student-Project/}{ikit-group.github.io/Student-Project} \\
+Front-end GitHub: \href{https://github.com/IKIT-Group/Student-Project}{github.com/IKIT-Group/Student-Project} \\
+Back-end GitHub: \href{https://github.com/IKIT-Group/backend}{github.com/IKIT-Group/backend} \\
+
+% Discord bot
+\textbf{Discord bot} \hfill \textit{TypeScript, PostgreSQL, Prisma ORM} \\
+A Discord bot that can play music in voice channels. \\
+GitHub: \href{https://github.com/Efimish/Bottie}{github.com/Efimish/Bottie} \\
+
+% Telegram bot
+\textbf{Telegram bot} \hfill \textit{Python, PostgreSQL, SQLAlchemy} \\
+A Telegram bot that uses ChatGPT to answer.
+
+% Education
+\section{Education}
+
+\textbf{Siberian Federal University}
+\hfill \textit{2023 - 2027} \\
+B.Sc. in Computer Science
+
+\end{document}

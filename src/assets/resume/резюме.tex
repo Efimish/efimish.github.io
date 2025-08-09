@@ -1,0 +1,85 @@
+% Основные параметры
+\documentclass[a4paper, 12pt]{article}
+\usepackage[left=1.5cm, right=1.5cm, top=1.5cm]{geometry}
+% Ссылки
+\usepackage[
+  colorlinks=true,
+  urlcolor=blue,
+  pdftitle={Резюме},
+  pdfauthor={Ефим Ишенин}
+]{hyperref}
+% Настраиваемые списки
+\usepackage{enumitem}
+% Шрифт Roboto
+\usepackage{fontspec}
+\setmainfont{Roboto}
+% Убрать нумерацию страниц
+\pagenumbering{gobble}
+% Убрать отступы параграфов
+\setlength{\parindent}{0pt}
+% Настройка заголовков
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\large\bfseries}
+  {}
+  {0pt}
+  {}
+  [\vspace{1pt}\titlerule\vspace{-6.5pt}]
+% Поддержка русского языка
+\usepackage[russian]{babel}
+
+\begin{document}
+
+% Имя и контактная информация
+\centerline{\Huge Ефим Ишенин}
+\vspace{10pt}
+\centerline{
+  Россия, Красноярск |
+  \href{https://github.com/Efimish}{github.com/Efimish} |
+  \href{https://www.linkedin.com/in/efima}{linkedin.com/in/efima}
+}
+
+% Навыки
+\section{Навыки}
+
+\textbf{Языки программирования}: JavaScript/TypeScript, Rust, Python, SQL, Bash \\
+\textbf{Фреймворки}: Astro, Express, NestJS \\
+\textbf{Инструменты}: Git, Docker, PostgreSQL, Redis, NGINX, Caddy \\
+\textbf{Остальное}: GitHub Actions
+
+% Проекты
+\section{Проекты}
+
+% Личный веб-сайт
+\textbf{Личный веб-сайт} \hfill \textit{Astro, TypeScript} \\
+Личный статический веб-сайт, где можно вести блог. \\
+Ссылка на веб-сайт: \href{https://efimish.github.io/}{efimish.github.io} \\
+GitHub: \href{https://github.com/Efimish/efimish.github.io}{github.com/Efimish/efimish.github.io} \\
+
+% Университетский проект вебсайт & api
+\textbf{Веб-сайт для приюта} \hfill \textit{TypeScript, NestJS, Docker, PostgreSQL, Yandex.cloud} \\
+Веб-сайт вымышленного приюта для домашних животных. \\
+Университетский проект, созданный командой из 5 человек. \\
+- Я отвечал за базу данных и API бэкенда. \\
+- Я помогал подключать API к фронтенду. \\
+Ссылка на веб-сайт: \href{https://ikit-group.github.io/Student-Project/}{ikit-group.github.io/Student-Project} \\
+GitHub (фронт-енд): \href{https://github.com/IKIT-Group/Student-Project}{github.com/IKIT-Group/Student-Project} \\
+GitHub (бэк-енд): \href{https://github.com/IKIT-Group/backend}{github.com/IKIT-Group/backend} \\
+
+% Дискорд бот
+\textbf{Дискорд бот} \hfill \textit{TypeScript, PostgreSQL, Prisma ORM} \\
+Бот для Discord, который умеет играть музыку в голосовых каналах. \\
+GitHub: \href{https://github.com/Efimish/Bottie}{github.com/Efimish/Bottie} \\
+
+% Телеграм бот
+\textbf{Телеграм бот} \hfill \textit{Python, PostgreSQL, SQLAlchemy} \\
+Бот для Telegram, который использует ChatGPT для ответов.
+
+% Образование
+\section{Образование}
+
+\textbf{Сибирский федеральный университет}
+\hfill \textit{2023 - 2027} \\
+Прикладная информатика - Бакалавриат
+
+\end{document}
