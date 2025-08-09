@@ -13,7 +13,7 @@ This article is part of a series about building my personal website:
 1. [The idea and choosing the right tool](/posts/this-website/01-idea-and-choosing-tool)
 2. [SEO essentials: meta tags and base head element](/posts/this-website/02-seo-meta-tags)
 3. __Content management with Markdown and Frontmatter__
-4. Semantic HTML for accessibility and external readers
+4. [Semantic HTML for accessibility and external readers](/posts/this-website/04-semantic-html)
 5. Minimalist CSS: styling and native-like design
 6. Adding color themes with JavaScript
 7. Astro plugins: RSS, Sitemap, Word count
