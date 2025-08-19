@@ -14,7 +14,7 @@ This article is part of a series about building my personal website:
 3. [Content management with Markdown and Frontmatter](/posts/this-website/03-markdown-and-frontmatter)
 4. __Semantic HTML for accessibility and external readers__
 5. [Minimalist CSS: styling and native-like design](/posts/this-website/05-minimal-css)
-6. Adding color themes with JavaScript
+6. [Adding color themes with JavaScript](/posts/this-website/06-javascript)
 7. Astro plugins: RSS, Sitemap, Word count
 8. SVG icons and Favicon
 9. Building resume with XeLaTeX
