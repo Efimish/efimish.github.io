@@ -1,6 +1,7 @@
 ---
-import { github, linkedin } from "@scripts/consts";
+import { email, github, linkedin } from "@scripts/consts";
 
+import Mail from "@assets/mail.svg";
 import Github from "@assets/github.svg";
 import Linkedin from "@assets/linkedin.svg";
 import RSS from "@assets/rss.svg";
@@ -13,6 +14,7 @@ const year = new Date().getFullYear();
   <div class="footer">
     <span>Copyright &copy; {year}</span>
     <span class="wide"></span>
+    <a href=`mailto:${email}`><Mail /></a>
     <a href={github} target="_blank"><Github /></a>
     <a href={linkedin} target="_blank"><Linkedin /></a>
     <a href="/feed.xml"><RSS /></a>
