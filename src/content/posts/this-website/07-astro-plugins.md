@@ -21,7 +21,8 @@ This article is part of a series about building my personal website:
 
 ---
 
-Astro is already a “batteries-included” framework,
+[Astro](/posts/why-astro-stands-out)
+is already a “batteries-included” framework,
 but sometimes you need extra features.
 That’s where its official plugins and integrations come in.
 
@@ -39,6 +40,38 @@ Here are the dependencies I use on my site:
   "sanitize-html": "^2.17.0"
 }
 ```
+
+## Shiki syntax highlighter
+
+[Shiki](https://shiki.matsu.io/)
+is a markdown syntax highlighter that comes built into Astro.
+To configure it, we edit the `astro.config.ts` file:
+
+```ts
+// @ts-check
+import { defineConfig } from "astro/config";
+
+// https://astro.build/config
+export default defineConfig({
+  markdown: {
+    shikiConfig: {
+      themes: {
+        light: "github-light",
+        dark: "github-dark",
+      },
+      defaultColor: false,
+      wrap: true,
+    },
+  },
+});
+```
+
+I set two color themes with no default,
+so I won’t have to use extra `!important`
+CSS declarations to override the default one.
+I also enabled text wrapping,
+which makes code snippets more readable on mobile
+(though I might tweak this later).
 
 ## RSS feed
 

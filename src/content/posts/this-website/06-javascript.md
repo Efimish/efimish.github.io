@@ -21,7 +21,8 @@ This article is part of a series about building my personal website:
 
 ---
 
-Astro framework ships 0 JavaScript by default, which I love.
+[Astro](/posts/why-astro-stands-out)
+ships 0 JavaScript by default, which I love.
 For a simple website like mine, most things don’t require JavaScript at all.
 
 But some interactions are only possible with it - like switching color themes dynamically.
