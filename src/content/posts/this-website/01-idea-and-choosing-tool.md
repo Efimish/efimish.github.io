@@ -17,7 +17,7 @@ Since this is a broad topic, I’ll break it down into multiple parts:
 4. [Semantic HTML for accessibility and external readers](/posts/this-website/04-semantic-html)
 5. [Minimalist CSS: styling and native-like design](/posts/this-website/05-minimal-css)
 6. [Adding color themes with JavaScript](/posts/this-website/06-javascript)
-7. Astro plugins: RSS, Sitemap, Word count
+7. [Astro plugins: RSS, Sitemap, Word count](/posts/this-website/07-astro-plugins)
 8. SVG icons and Favicon
 9. Building resume with XeLaTeX
 

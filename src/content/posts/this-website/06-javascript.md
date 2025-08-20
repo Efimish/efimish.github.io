@@ -15,7 +15,7 @@ This article is part of a series about building my personal website:
 4. [Semantic HTML for accessibility and external readers](/posts/this-website/04-semantic-html)
 5. [Minimalist CSS: styling and native-like design](/posts/this-website/05-minimal-css)
 6. __Adding color themes with JavaScript__
-7. Astro plugins: RSS, Sitemap, Word count
+7. [Astro plugins: RSS, Sitemap, Word count](/posts/this-website/07-astro-plugins)
 8. SVG icons and Favicon
 9. Building resume with XeLaTeX
 
