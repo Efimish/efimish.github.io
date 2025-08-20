@@ -17,7 +17,7 @@ This article is part of a series about building my personal website:
 6. [Adding color themes with JavaScript](/posts/this-website/06-javascript)
 7. [Astro plugins: RSS, Sitemap, Word count](/posts/this-website/07-astro-plugins)
 8. __SVG icons and Favicon__
-9. Building resume with XeLaTeX
+9. [Building resume with XeLaTeX](/posts/this-website/09-resume)
 
 ---
 
