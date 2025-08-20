@@ -126,5 +126,17 @@ jobs:
 This workflow installs dependencies, builds the site,
 and publishes it to GitHub Pages automatically.
 
+## Inspiration and References
+
+While building my website, I drew inspiration from several blogs:
+
+- [Adam McKerlie](https://mckerlie.com/)
+- [Mark Horn](https://markhorn.dev/)
+- [CSS Tricks](https://css-tricks.com/)
+- [Hynek Svacha](https://hyneks.cz/)
+- [Charles Wang](https://charleszw.com/)
+
+## Missed something?
+
 If you have any questions left, feel free to check out the
 [source code of my website on GitHub](https://github.com/Efimish/efimish.github.io)
