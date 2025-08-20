@@ -18,6 +18,7 @@ This article is part of a series about building my personal website:
 7. [Astro plugins: RSS, Sitemap, Word count](/posts/this-website/07-astro-plugins)
 8. [SVG icons and Favicon](/posts/this-website/08-icons-favicon)
 9. __Building resume with XeLaTeX__
+10. [Extras](/posts/this-website/10-extras)
 
 ---
 
