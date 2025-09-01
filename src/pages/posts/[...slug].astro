@@ -6,10 +6,10 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import Date from "@components/Date.astro";
 import getReadingTime from "@scripts/reading-time";
 
-import Comment from "@assets/comment.svg";
-import Calendar from "@assets/calendar.svg";
-import Clock from "@assets/clock.svg";
-import Tags from "@assets/tags.svg";
+import Comment from "@assets/icons/comment.svg";
+import Calendar from "@assets/icons/calendar.svg";
+import Clock from "@assets/icons/clock.svg";
+import Tags from "@assets/icons/tags.svg";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
