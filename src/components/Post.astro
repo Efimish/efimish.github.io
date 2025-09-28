@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 
+import Tag from "@components/Tag.astro";
 import Date from "@components/Date.astro";
 import getReadingTime from "@scripts/reading-time";
 
@@ -49,9 +50,9 @@ const readingTime = getReadingTime(post.body ?? "");
           </dt>
           <dd>
             {tags.map((tag) => (
-              <a href={encodeURI(`/tags/${tag}`)} class="chip">
-                {tag}
-              </a>
+              <>
+                <Tag tag={tag} />
+              </>
             ))}
           </dd>
         </div>

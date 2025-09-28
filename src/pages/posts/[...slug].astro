@@ -3,6 +3,7 @@ import { getCollection, render } from "astro:content";
 
 import { author } from "@scripts/consts";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Tag from "@components/Tag.astro";
 import Date from "@components/Date.astro";
 import getReadingTime from "@scripts/reading-time";
 
@@ -62,9 +63,9 @@ const ISODate = date.toISOString().slice(0, 10);
               </dt>
               <dd>
                 {tags.map((tag) => (
-                  <a href={encodeURI(`/tags/${tag}`)} class="chip">
-                    {tag}
-                  </a>
+                  <>
+                    <Tag tag={tag} />
+                  </>
                 ))}
               </dd>
             </div>

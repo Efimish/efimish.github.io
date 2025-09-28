@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 
 import { author } from "@scripts/consts";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Tag from "@components/Tag.astro";
 
 const posts = await getCollection("posts");
 const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags)))
@@ -18,11 +19,13 @@ const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags)))
   description=`Explore topics covered on ${author}'s blog.`
 >
   <h1>Tags</h1>
-  {
-    tags.map(({ tag, count }) => (
-      <a href={encodeURI(`/tags/${tag}`)} class="chip">
-        {tag} ({count})
-      </a>
-    ))
-  }
+  <ul>
+    {
+      tags.map(({ tag, count }) => (
+        <li>
+          <Tag tag={tag} /> ({count})
+        </li>
+      ))
+    }
+  </ul>
 </BaseLayout>
