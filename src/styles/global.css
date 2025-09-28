@@ -158,66 +158,45 @@ svg {
 
 /* header, footer */
 
-.header,
-.footer {
+.split-bar {
   display: flex;
-  gap: 1em
+  flex-wrap: wrap;
+  gap: 0 1em;
+  justify-content: space-between;
 }
 
-span.wide {
-  flex-grow: 1;
+.split-bar > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1em;
 }
 
-/* other */
+.split-bar a {
+  text-decoration: none;
+}
 
-select {
+.split-bar select {
   color: var(--color-primary);
   background-color: var(--color-secondary);
   border: none;
   border-radius: 4px;
 }
 
-nav {
-  display: inline;
-}
-
-nav>a,
-a.tag {
-  text-decoration: none;
-}
-
-ul.flat {
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-ul.flat>li {
-  display: block;
-}
-
-.chip {
-  border: 1px solid var(--color-secondary);
-  font-size: 0.9em;
-  padding: 0.1em 0.6em;
-  border-radius: 10em;
-  margin-right: 0.3em;
-  text-decoration: none;
-}
+/* other */
 
 .post-preview {
   margin: 1em 0;
 }
 
-.post-preview>* {
+.post-preview > * {
   margin: 0;
 }
 
-dl>div {
+dl > div {
   display: flex;
   gap: 0.4em;
 }
 
-dl>div>* {
+dl > div > * {
   margin: 0;
 }
