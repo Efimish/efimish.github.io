@@ -1,11 +1,6 @@
 ---
 import { author } from "@scripts/consts";
 import BaseLayout from "@layouts/BaseLayout.astro";
-
-import LocationPin from "@assets/icons/location-pin.svg";
-import Tool from "@assets/icons/tool.svg";
-import Project from "@assets/icons/project.svg";
-import Books from "@assets/icons/books.svg";
 ---
 
 <BaseLayout
@@ -14,53 +9,42 @@ import Books from "@assets/icons/books.svg";
 >
   <header>
     <h1>{author}</h1>
-    <p>Hello! I'm Efim, a passionate backend developer</p>
+    <p>
+      Hello! I'm Efim, a passionate backend developer from
+      <strong>Krasnoyarsk, Russia</strong>
+    </p>
   </header>
   <section>
-    <h2><LocationPin /> Location</h2>
-    <p>Krasnoyarsk, Russia</p>
-  </section>
-  <section>
-    <h2><Tool /> Skills</h2>
-    <h3>Programming Languages</h3>
-    <ul class="flat">
-      <li class="chip">JavaScript/TypeScript</li>
-      <li class="chip">Rust</li>
-      <li class="chip">Python</li>
-      <li class="chip">SQL</li>
-      <li class="chip">Bash</li>
-    </ul>
-    <h3>Frameworks</h3>
-    <ul class="flat">
-      <li class="chip">Astro</li>
-      <li class="chip">Express</li>
-      <li class="chip">NestJS</li>
-    </ul>
-    <h3>Tools</h3>
-    <ul class="flat">
-      <li class="chip">Git</li>
-      <li class="chip">Docker</li>
-      <li class="chip">PostgreSQL</li>
-      <li class="chip">Redis</li>
-      <li class="chip">NGINX</li>
-      <li class="chip">Caddy</li>
-    </ul>
-    <h3>Other</h3>
-    <ul class="flat">
-      <li class="chip">GitHub Actions</li>
+    <h2>🛠️ Skills</h2>
+    <ul>
+      <li>TypeScript, Rust, Python, SQL</li>
+      <li>Astro</li>
+      <li>Git, Docker, PostgreSQL, Caddy</li>
+      <li>GitHub Actions</li>
     </ul>
   </section>
   <section>
-    <h2><Project /> Projects</h2>
-    <ul class="flat">
-      <li class="chip">Website</li>
-      <li class="chip">University project</li>
-      <li class="chip">Discord bot</li>
-      <li class="chip">Telegram bot</li>
+    <h2>🏠 Projects</h2>
+    <ul>
+      <li>
+        <a href="https://github.com/Efimish/efimish.github.io">
+          Personal website with blog
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/IKIT-Group/backend">
+          Backend for a pet shelter website
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/Efimish/Bottie">
+          Discord bot that replies using Mistral LLM API
+        </a>
+      </li>
     </ul>
   </section>
   <section>
-    <h2><Books /> Education</h2>
+    <h2>📚 Education</h2>
     <p>Siberian Federal University - B.Sc. in Computer Science, 2023-2027</p>
   </section>
 </BaseLayout>
