@@ -2,7 +2,8 @@
 title: Welcome to my blog!
 description: Introduction post
 date: 2025-06-23
-tags: []
+tags:
+  - welcome
 ---
 
 Welcome everyone! This is my blog.

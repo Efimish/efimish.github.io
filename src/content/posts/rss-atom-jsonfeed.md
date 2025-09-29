@@ -3,8 +3,8 @@ title: RSS, Atom and JSON feed - what's the difference?
 description: "Comparison of 3 similar technologies: RSS, Atom and JSON feed"
 date: 2025-02-05
 tags:
-- development
-- comparison
+  - development
+  - comparison
 ---
 
 As I was creating my website for blogging, I stumbled upon this technology called RSS. It allows to view your blogs, using a separate app called an RSS reader. And so I decided to implement it on my website. I started digging.
