@@ -7,11 +7,6 @@ import Tag from "@components/Tag.astro";
 import Date from "@components/Date.astro";
 import getReadingTime from "@scripts/reading-time";
 
-import Comment from "@assets/icons/comment.svg";
-import Calendar from "@assets/icons/calendar.svg";
-import Clock from "@assets/icons/clock.svg";
-import Tags from "@assets/icons/tags.svg";
-
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
   return posts.map((post) => ({
@@ -37,41 +32,36 @@ const ISODate = date.toISOString().slice(0, 10);
     {tags.map((tag) => <meta property="article:tag" content={tag} />)}
   </Fragment>
   <article>
-    <header>
+    <header class="post-info">
       <h1>{title}</h1>
-      <dl>
-        <div>
-          <dt><Comment aria-label="Description" /></dt>
-          <dd>{description}</dd>
-        </div>
-
-        <div>
-          <dt><Calendar aria-label="Published on" /></dt>
-          <dd><Date date={date} /></dd>
-        </div>
-
-        <div>
-          <dt><Clock aria-label="Reading time" /></dt>
-          <dd>{readingTime}</dd>
-        </div>
-
-        {
-          tags.length > 0 && (
-            <div>
-              <dt>
-                <Tags aria-label="Tags" />
-              </dt>
-              <dd>
-                {tags.map((tag) => (
+      <table>
+        <tbody>
+          <tr>
+            <th scope="row">💬</th>
+            <td>{description}</td>
+          </tr>
+          <tr>
+            <th scope="row">📅</th>
+            <td><Date date={date} /></td>
+          </tr>
+          <tr>
+            <th scope="row">⏱️</th>
+            <td>{readingTime}</td>
+          </tr>
+          <tr>
+            <th scope="row">🏷️</th>
+            <td>
+              {
+                tags.map((tag) => (
                   <>
                     <Tag tag={tag} />
                   </>
-                ))}
-              </dd>
-            </div>
-          )
-        }
-      </dl>
+                ))
+              }
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </header>
     <Content />
   </article>

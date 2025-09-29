@@ -182,21 +182,23 @@ svg {
   border-radius: 4px;
 }
 
-/* other */
+/* post info */
 
-.post-preview {
+.post-info {
   margin: 1em 0;
 }
 
-.post-preview > * {
+.post-info * {
   margin: 0;
+  padding: 0;
+  border: 0;
 }
 
-dl > div {
+.post-info h1 {
+  margin-block: 0.67em;
+}
+
+.post-info tr {
   display: flex;
-  gap: 0.4em;
-}
-
-dl > div > * {
-  margin: 0;
+  gap: 0.2em;
 }

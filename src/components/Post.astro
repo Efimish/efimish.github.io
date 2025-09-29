@@ -5,11 +5,6 @@ import Tag from "@components/Tag.astro";
 import Date from "@components/Date.astro";
 import getReadingTime from "@scripts/reading-time";
 
-import Comment from "@assets/icons/comment.svg";
-import Calendar from "@assets/icons/calendar.svg";
-import Clock from "@assets/icons/clock.svg";
-import Tags from "@assets/icons/tags.svg";
-
 interface Props {
   post: CollectionEntry<"posts">;
 }
@@ -20,43 +15,38 @@ const { title, description, date, tags } = post.data;
 const readingTime = getReadingTime(post.body ?? "");
 ---
 
-<article class="post-preview">
+<article class="post-info">
   <h2>
     <a href={encodeURI(`/posts/${post.id}`)}>
       {title}
     </a>
   </h2>
-  <dl>
-    <div>
-      <dt><Comment aria-label="Description" /></dt>
-      <dd>{description}</dd>
-    </div>
-
-    <div>
-      <dt><Calendar aria-label="Published on" /></dt>
-      <dd><Date date={date} /></dd>
-    </div>
-
-    <div>
-      <dt><Clock aria-label="Reading time" /></dt>
-      <dd>{readingTime}</dd>
-    </div>
-
-    {
-      tags.length > 0 && (
-        <div>
-          <dt>
-            <Tags aria-label="Tags" />
-          </dt>
-          <dd>
-            {tags.map((tag) => (
+  <table>
+    <tbody>
+      <tr>
+        <th scope="row">💬</th>
+        <td>{description}</td>
+      </tr>
+      <tr>
+        <th scope="row">📅</th>
+        <td><Date date={date} /></td>
+      </tr>
+      <tr>
+        <th scope="row">⏱️</th>
+        <td>{readingTime}</td>
+      </tr>
+      <tr>
+        <th scope="row">🏷️</th>
+        <td>
+          {
+            tags.map((tag) => (
               <>
                 <Tag tag={tag} />
               </>
-            ))}
-          </dd>
-        </div>
-      )
-    }
-  </dl>
+            ))
+          }
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </article>
