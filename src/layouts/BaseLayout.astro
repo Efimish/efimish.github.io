@@ -1,4 +1,6 @@
 ---
+import "@styles/global.css";
+
 import BaseHead from "@components/BaseHead.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
@@ -15,7 +17,7 @@ const { title, description } = Astro.props;
 <html lang="en">
   <head>
     <BaseHead {title} {description}>
-      <slot name="open-graph" slot="open-graph" />
+      <slot name="og" slot="og" />
     </BaseHead>
   </head>
 

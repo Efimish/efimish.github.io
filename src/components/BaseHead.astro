@@ -1,6 +1,5 @@
 ---
 import { author } from "@scripts/consts";
-import "@styles/global.css";
 
 interface Props {
   title: string;
@@ -10,7 +9,6 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-{/* Always include */}
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -18,34 +16,27 @@ const { title, description } = Astro.props;
 <meta name="description" content={description} />
 <meta name="author" content={author} />
 
-{/* Open Graph */}
 <meta property="og:site_name" content={author} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:image" content={new URL("favicon-512.png", Astro.site)} />
 <meta property="og:image:alt" content="Green leaf on a white background" />
+<slot name="og" />
 
-<slot name="open-graph" />
-
-{/* Icons */}
-<link rel="icon" href="/favicon.ico" sizes="any" />
-<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-{/* Manifest */}
 <link rel="manifest" href="/manifest.webmanifest" />
 
-{/* Sitemap */}
 <link rel="sitemap" href="/sitemap-index.xml" />
 
-{/* RSS Feed */}
 <link
   rel="alternate"
-  type="application/rss+xml"
-  title="RSS Feed"
   href={new URL("feed.xml", Astro.site)}
+  type="application/rss+xml"
+  title="RSS"
 />
 
-{/* Astro */}
 <meta name="generator" content={Astro.generator} />
