@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 
-import { author } from "@scripts/consts";
+import { github } from "@scripts/consts";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Tag from "@components/Tag.astro";
 import Date from "@components/Date.astro";
@@ -27,7 +27,7 @@ const ISODate = date.toISOString().slice(0, 10);
 <BaseLayout {title} {description}>
   <Fragment slot="og">
     <meta property="og:type" content="article" />
-    <meta property="article:author" content={author} />
+    <meta property="article:author" content={github} />
     <meta property="article:published_time" content={ISODate} />
     {tags.map((tag) => <meta property="article:tag" content={tag} />)}
   </Fragment>
