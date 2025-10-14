@@ -165,7 +165,7 @@ svg {
   justify-content: space-between;
 }
 
-.split-bar > div {
+.split-bar > span {
   display: flex;
   flex-wrap: wrap;
   gap: 0 1em;
