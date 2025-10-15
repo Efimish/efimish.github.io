@@ -1,7 +1,8 @@
 {
   "name": "Efim Ishenin",
-  "short_name": "Efim.ish",
-  "description": "Efim Ishenin's personal website",
+  "short_name": "Efim",
+  "start_url": "/",
+  "display": "standalone",
   "icons": [
     {
       "src": "/favicon-192.png",
