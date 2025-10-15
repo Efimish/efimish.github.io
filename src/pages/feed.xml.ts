@@ -22,7 +22,7 @@ export const GET: APIRoute = async (context) => {
       description: post.data.description,
       pubDate: post.data.date,
       categories: post.data.tags,
-      link: `/posts/${post.id}`,
+      link: `/posts/${post.id}/`,
       content: sanitize(parser.render(post.body ?? "")),
     })),
   });

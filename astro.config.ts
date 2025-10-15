@@ -5,6 +5,7 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://efimish.github.io",
+  trailingSlash: "always",
   markdown: {
     shikiConfig: {
       themes: {
