@@ -2,7 +2,6 @@
   "name": "Efim Ishenin",
   "short_name": "Efim",
   "start_url": "/",
-  "display": "standalone",
   "icons": [
     {
       "src": "/favicon-192.png",
