@@ -74,6 +74,30 @@
   }
 }
 
+[data-theme="dracula"] {
+  --color-primary: #f8f8f2;
+  --color-secondary: #44475a;
+  --color-background: #282a36;
+  --color-link: #bd93f9;
+
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark);
+  }
+}
+
+[data-theme="catppuccin"] {
+  --color-primary: #cdd6f4;
+  --color-secondary: #313244;
+  --color-background: #1e1e2e;
+  --color-link: #cba6f7;
+
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark);
+  }
+}
+
 /* base styles */
 
 body {
@@ -180,6 +204,11 @@ svg {
   background-color: var(--color-secondary);
   border: none;
   border-radius: 4px;
+  width: 4rem;
+}
+
+optgroup {
+  font-style: normal;
 }
 
 /* post info */
