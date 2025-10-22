@@ -1,15 +1,15 @@
 /* themes */
 
 :root {
-  --color-primary: #454545;
-  --color-secondary: #EAEAEA;
-  --color-background: #FFF;
-  --color-link: #007AFF;
-
   --font-sans: -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,
     Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji";
+
+  --color-primary: #101010;
+  --color-secondary: #e0e0e0;
+  --color-background: #f0f0f0;
+  --color-link: #007aff;
 
   color-scheme: light dark;
 }
@@ -22,10 +22,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-primary: #DCDCDC;
-    --color-secondary: #414141;
-    --color-background: #1E1E1E;
-    --color-link: #2DA1FD;
+    --color-primary: #f0f0f0;
+    --color-secondary: #282828;
+    --color-background: #101010;
+    --color-link: #0a84ff;
   }
 
   .astro-code,
@@ -35,10 +35,10 @@
 }
 
 [data-theme="light"] {
-  --color-primary: #454545;
-  --color-secondary: #EAEAEA;
-  --color-background: #FFF;
-  --color-link: #007AFF;
+  --color-primary: #101010;
+  --color-secondary: #e0e0e0;
+  --color-background: #f0f0f0;
+  --color-link: #007aff;
 
   color-scheme: light;
 
@@ -49,48 +49,12 @@
 }
 
 [data-theme="dark"] {
-  --color-primary: #DCDCDC;
-  --color-secondary: #414141;
-  --color-background: #1E1E1E;
-  --color-link: #2DA1FD;
+  --color-primary: #f0f0f0;
+  --color-secondary: #282828;
+  --color-background: #101010;
+  --color-link: #0a84ff;
 
   color-scheme: dark;
-
-  .astro-code,
-  .astro-code span {
-    color: var(--shiki-dark);
-  }
-}
-
-[data-theme="sepia"] {
-  --color-primary: #5B4636;
-  --color-secondary: #E0D7C3;
-  --color-background: #F5ECD8;
-  --color-link: #D19600;
-
-  .astro-code,
-  .astro-code span {
-    color: var(--shiki-light);
-  }
-}
-
-[data-theme="dracula"] {
-  --color-primary: #f8f8f2;
-  --color-secondary: #44475a;
-  --color-background: #282a36;
-  --color-link: #bd93f9;
-
-  .astro-code,
-  .astro-code span {
-    color: var(--shiki-dark);
-  }
-}
-
-[data-theme="catppuccin"] {
-  --color-primary: #cdd6f4;
-  --color-secondary: #313244;
-  --color-background: #1e1e2e;
-  --color-link: #cba6f7;
 
   .astro-code,
   .astro-code span {
@@ -117,12 +81,7 @@ body {
 h1,
 h2,
 h3 {
-  line-height: 1.2
-}
-
-h1 {
-  font-size: 2em;
-  margin-block: 0.67em;
+  line-height: 1.2;
 }
 
 /* block quotes */
@@ -204,11 +163,7 @@ svg {
   background-color: var(--color-secondary);
   border: none;
   border-radius: 4px;
-  width: 4rem;
-}
-
-optgroup {
-  font-style: normal;
+  font-size: 0.75em;
 }
 
 /* post info */
