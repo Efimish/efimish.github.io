@@ -1,9 +1,9 @@
 ---
 import type { CollectionEntry } from "astro:content";
 
+import words from "@scripts/words";
 import Tag from "@components/Tag.astro";
 import Date from "@components/Date.astro";
-import getReadingTime from "@scripts/reading-time";
 
 interface Props {
   post: CollectionEntry<"posts">;
@@ -12,7 +12,6 @@ interface Props {
 const { post } = Astro.props;
 
 const { title, description, date, tags } = post.data;
-const readingTime = getReadingTime(post.body ?? "");
 ---
 
 <article class="post-info">
@@ -21,32 +20,18 @@ const readingTime = getReadingTime(post.body ?? "");
       {title}
     </a>
   </h2>
-  <table>
-    <tbody>
-      <tr>
-        <th scope="row">💬</th>
-        <td>{description}</td>
-      </tr>
-      <tr>
-        <th scope="row">📅</th>
-        <td><Date date={date} /></td>
-      </tr>
-      <tr>
-        <th scope="row">⏱️</th>
-        <td>{readingTime}</td>
-      </tr>
-      <tr>
-        <th scope="row">🏷️</th>
-        <td>
-          {
-            tags.map((tag) => (
-              <>
-                <Tag tag={tag} />
-              </>
-            ))
-          }
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <p>
+    • <Date {date} />
+    • <span>
+      {
+        tags.map((tag) => (
+          <>
+            <Tag tag={tag} />
+          </>
+        ))
+      }
+    </span>
+    • <span>{words(post.body ?? "")} words</span>
+  </p>
+  <p>{description}</p>
 </article>

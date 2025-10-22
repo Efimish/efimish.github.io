@@ -2,10 +2,11 @@
 import { getCollection, render } from "astro:content";
 
 import { github } from "@scripts/consts";
+import words from "@scripts/words";
+
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Tag from "@components/Tag.astro";
 import Date from "@components/Date.astro";
-import getReadingTime from "@scripts/reading-time";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -18,7 +19,6 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 
 const { title, description, date, tags } = post.data;
-const readingTime = getReadingTime(post.body ?? "");
 const { Content } = await render(post);
 
 const ISODate = date.toISOString().slice(0, 10);
@@ -34,34 +34,19 @@ const ISODate = date.toISOString().slice(0, 10);
   <article>
     <header class="post-info">
       <h1>{title}</h1>
-      <table>
-        <tbody>
-          <tr>
-            <th scope="row">💬</th>
-            <td>{description}</td>
-          </tr>
-          <tr>
-            <th scope="row">📅</th>
-            <td><Date date={date} /></td>
-          </tr>
-          <tr>
-            <th scope="row">⏱️</th>
-            <td>{readingTime}</td>
-          </tr>
-          <tr>
-            <th scope="row">🏷️</th>
-            <td>
-              {
-                tags.map((tag) => (
-                  <>
-                    <Tag tag={tag} />
-                  </>
-                ))
-              }
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <p>
+        • <Date {date} />
+        • <span>
+          {
+            tags.map((tag) => (
+              <>
+                <Tag tag={tag} />
+              </>
+            ))
+          }
+        </span>
+        • <span>{words(post.body ?? "")} words</span>
+      </p>
     </header>
     <Content />
   </article>

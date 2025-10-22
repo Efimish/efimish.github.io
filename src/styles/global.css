@@ -179,10 +179,5 @@ svg {
 }
 
 .post-info h1 {
-  margin-block: 0.67em;
-}
-
-.post-info tr {
-  display: flex;
-  gap: 0.2em;
+  margin: 0.67em 0;
 }
