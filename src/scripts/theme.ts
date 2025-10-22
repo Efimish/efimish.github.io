@@ -1,11 +1,9 @@
-const theme = localStorage.getItem("theme") ?? "system";
+const theme = localStorage.getItem("theme") ?? "auto";
 document.documentElement.dataset.theme = theme;
 
-const selector = document.querySelector(
-  "select#theme-selector"
-) as HTMLSelectElement | null;
+const selector = document.querySelector<HTMLSelectElement>("#theme-selector");
 
-if (selector !== null) {
+if (selector) {
   selector.value = theme;
 
   selector.addEventListener("change", () => {
