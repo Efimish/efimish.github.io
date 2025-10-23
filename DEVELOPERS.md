@@ -37,3 +37,16 @@ typst compile --font-path src/assets/fonts src/assets/resume/resume.typ public/r
 
 typst compile --font-path src/assets/fonts src/assets/resume/резюме.typ public/резюме.pdf
 ```
+
+## Create QR codes
+
+```bash
+bunx qrcode -q 1 -s 1 -o qr.png "https://efimish.github.io"
+bunx qrcode -q 1 -s 1 -o qr.svg "https://efimish.github.io"
+```
+
+## Test website using Unlighthouse
+
+```bash
+bunx unlighthouse --site "https://efimish.github.io"
+```
