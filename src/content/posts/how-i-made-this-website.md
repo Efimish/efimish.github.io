@@ -17,7 +17,7 @@ This time I set some goals beforehand:
 
 - Self-introduction: A place to share some information about myself.
 - Blogging: A platform to publish my thoughts.
-  I prefer writing in [Markdown](/posts/markdown-and-its-feautres/).
+  I prefer writing in [Markdown](/posts/markdown-and-its-feautres).
 - Flexibility: Room for custom pages if needed.
 - Best practices: Fast loading, simplicity, following web standards.
 
@@ -30,7 +30,7 @@ since they might change in the future.
 ## Tools
 
 As my frontend framework I chose
-[Astro](/posts/why-astro-stands-out/).
+[Astro](/posts/why-astro-stands-out).
 It allows me to easily build static pages
 with 0 JavaScript by default.
 
