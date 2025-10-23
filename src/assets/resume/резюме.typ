@@ -1,4 +1,3 @@
-// typst compile --font-path src/assets/fonts src/assets/resume/резюме.typ public/резюме.pdf
 #set document(title: "Резюме", author: "Ефим Ишенин")
 #set page(paper: "a4", margin: 1.5cm)
 #set text(font: "Open Sans", size: 12pt)
