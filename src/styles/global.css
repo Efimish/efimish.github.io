@@ -139,6 +139,12 @@ svg {
   font-size: 1.2em;
 }
 
+/* line dividers */
+
+hr {
+  border: 1px solid var(--color-secondary);
+}
+
 /* header, footer */
 
 .split-bar {
