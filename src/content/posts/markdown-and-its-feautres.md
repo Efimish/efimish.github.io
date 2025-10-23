@@ -46,9 +46,9 @@ Line Divider:
 
 ---
 
-[Link to markdown logo](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
+[Link to my website](https://efimish.github.io)
 
-![Markdown logo](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
+![Green leaf on a white background](https://efimish.github.io/favicon-192.png)
 
 ## Lists
 
@@ -134,9 +134,9 @@ Line Divider:
 
 ---
 
-[Link to markdown logo](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
+[Link to my website](https://efimish.github.io)
 
-![Markdown logo](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
+![Green leaf on a white background](https://efimish.github.io/favicon-192.png)
 
 ## Lists
 
