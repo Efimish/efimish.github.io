@@ -16,8 +16,7 @@ but I didn't like the outcome.
 This time I set some goals beforehand:
 
 - Self-introduction: A place to share some information about myself.
-- Blogging: A platform to publish my thoughts.
-  I prefer writing in [Markdown](/posts/markdown-and-its-feautres).
+- Blogging: A platform to publish my thoughts freely.
 - Flexibility: Room for custom pages if needed.
 - Best practices: Fast loading, simplicity, following web standards.
 
@@ -38,6 +37,9 @@ Along with Astro itself, I have also installed
 their Sitemap and RSS plugins.
 
 ## Content
+
+I like writing in [Markdown](/posts/markdown-and-its-feautres)
+and I think it's perfect for articles.
 
 Astro's content collections provide a nice way to
 manage markdown files and validate their frontmatter.
@@ -79,7 +81,7 @@ but feel native for it.
 
 I made 2 color themes: light and dark.
 They switch automatically depending on your system defaults.
-But there is also a theme switcher to override it.
+But there is also a theme selector to override it.
 
 ## JavaScript
 
