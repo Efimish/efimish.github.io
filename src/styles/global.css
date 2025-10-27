@@ -6,10 +6,11 @@
     Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji";
 
-  --color-primary: #101010;
-  --color-secondary: #e0e0e0;
-  --color-background: #f0f0f0;
-  --color-link: #007aff;
+  --color-bg-primary: #f0f0f0;
+  --color-bg-secondary: #e0e0e0;
+  --color-text-primary: #101010;
+  --color-text-secondary: #282828;
+  --color-text-accent: #007aff;
 
   color-scheme: light dark;
 }
@@ -22,10 +23,11 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-primary: #f0f0f0;
-    --color-secondary: #282828;
-    --color-background: #101010;
-    --color-link: #0a84ff;
+    --color-bg-primary: #101010;
+    --color-bg-secondary: #282828;
+    --color-text-primary: #f0f0f0;
+    --color-text-secondary: #e0e0e0;
+    --color-text-accent: #0a84ff;
   }
 
   .astro-code,
@@ -35,10 +37,11 @@
 }
 
 [data-theme="light"] {
-  --color-primary: #101010;
-  --color-secondary: #e0e0e0;
-  --color-background: #f0f0f0;
-  --color-link: #007aff;
+  --color-bg-primary: #f0f0f0;
+  --color-bg-secondary: #e0e0e0;
+  --color-text-primary: #101010;
+  --color-text-secondary: #282828;
+  --color-text-accent: #007aff;
 
   color-scheme: light;
 
@@ -49,10 +52,11 @@
 }
 
 [data-theme="dark"] {
-  --color-primary: #f0f0f0;
-  --color-secondary: #282828;
-  --color-background: #101010;
-  --color-link: #0a84ff;
+  --color-bg-primary: #101010;
+  --color-bg-secondary: #282828;
+  --color-text-primary: #f0f0f0;
+  --color-text-secondary: #e0e0e0;
+  --color-text-accent: #0a84ff;
 
   color-scheme: dark;
 
@@ -71,9 +75,9 @@ body {
   line-height: 1.6;
   font-size: 18px;
   font-family: var(--font-sans);
-  color: var(--color-primary);
-  background-color: var(--color-background);
-  accent-color: var(--color-link);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  accent-color: var(--color-text-accent);
 }
 
 /* headers */
@@ -89,13 +93,13 @@ h3 {
 blockquote {
   margin: 1em 0;
   padding-left: 0.6em;
-  border-left: 3px solid var(--color-secondary);
+  border-left: 3px solid var(--color-bg-secondary);
 }
 
 /* inline code blocks */
 
 :not(.astro-code)>code {
-  background-color: var(--color-secondary);
+  background-color: var(--color-bg-secondary);
   padding: 0 3px;
   border-radius: 4px;
 }
@@ -103,7 +107,7 @@ blockquote {
 /* links */
 
 a {
-  color: var(--color-link);
+  color: var(--color-text-accent);
 }
 
 /* code blocks */
@@ -121,7 +125,7 @@ table {
 
 th,
 td {
-  border: 1px solid var(--color-secondary);
+  border: 1px solid var(--color-bg-secondary);
   padding: 0 0.4em;
 }
 
@@ -142,7 +146,7 @@ svg {
 /* line dividers */
 
 hr {
-  border: 1px solid var(--color-secondary);
+  border: 1px solid var(--color-bg-secondary);
 }
 
 /* header, footer */
@@ -154,7 +158,7 @@ hr {
   justify-content: space-between;
 }
 
-.split-bar > span {
+.split-bar>span {
   display: flex;
   flex-wrap: wrap;
   gap: 0 1em;
@@ -165,8 +169,8 @@ hr {
 }
 
 .split-bar select {
-  color: var(--color-primary);
-  background-color: var(--color-secondary);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-secondary);
   border: none;
   border-radius: 4px;
   font-size: 0.75em;
