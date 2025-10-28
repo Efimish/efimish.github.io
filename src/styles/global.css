@@ -9,7 +9,6 @@
   --color-bg-primary: #f0f0f0;
   --color-bg-secondary: #e0e0e0;
   --color-text-primary: #101010;
-  --color-text-secondary: #282828;
   --color-text-accent: #007aff;
 
   color-scheme: light dark;
@@ -18,7 +17,7 @@
 .astro-code,
 .astro-code span {
   color: var(--shiki-light);
-  background-color: var(--color-secondary);
+  background-color: var(--color-bg-secondary);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,7 +25,6 @@
     --color-bg-primary: #101010;
     --color-bg-secondary: #282828;
     --color-text-primary: #f0f0f0;
-    --color-text-secondary: #e0e0e0;
     --color-text-accent: #0a84ff;
   }
 
@@ -40,7 +38,6 @@
   --color-bg-primary: #f0f0f0;
   --color-bg-secondary: #e0e0e0;
   --color-text-primary: #101010;
-  --color-text-secondary: #282828;
   --color-text-accent: #007aff;
 
   color-scheme: light;
@@ -55,7 +52,6 @@
   --color-bg-primary: #101010;
   --color-bg-secondary: #282828;
   --color-text-primary: #f0f0f0;
-  --color-text-secondary: #e0e0e0;
   --color-text-accent: #0a84ff;
 
   color-scheme: dark;
@@ -179,15 +175,11 @@ hr {
 /* post info */
 
 .post-info {
-  margin: 1em 0;
+  margin: 1.34em 0;
 }
 
 .post-info * {
   margin: 0;
   padding: 0;
   border: 0;
-}
-
-.post-info h1 {
-  margin: 0.67em 0;
 }

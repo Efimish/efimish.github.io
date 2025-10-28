@@ -35,8 +35,11 @@ const ISODate = date.toISOString().slice(0, 10);
     <header class="post-info">
       <h1>{title}</h1>
       <p>
-        • <Date {date} />
-        • <span>
+        <span><Date {date} /></span>
+        <span>•</span>
+        <span>{words(post.body ?? "")} words</span>
+        <span>•</span>
+        <span>
           {
             tags.map((tag) => (
               <>
@@ -45,7 +48,6 @@ const ISODate = date.toISOString().slice(0, 10);
             ))
           }
         </span>
-        • <span>{words(post.body ?? "")} words</span>
       </p>
     </header>
     <Content />

@@ -20,9 +20,13 @@ const { title, description, date, tags } = post.data;
       {title}
     </a>
   </h2>
+  <p>{description}</p>
   <p>
-    • <Date {date} />
-    • <span>
+    <span><Date {date} /></span>
+    <span>•</span>
+    <span>{words(post.body ?? "")} words</span>
+    <span>•</span>
+    <span>
       {
         tags.map((tag) => (
           <>
@@ -31,7 +35,5 @@ const { title, description, date, tags } = post.data;
         ))
       }
     </span>
-    • <span>{words(post.body ?? "")} words</span>
   </p>
-  <p>{description}</p>
 </article>
