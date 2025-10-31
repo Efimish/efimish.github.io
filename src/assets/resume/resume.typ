@@ -1,6 +1,6 @@
 #set document(title: "Resume", author: "Efim Ishenin")
 #set page(paper: "a4", margin: 1.5cm)
-#set text(font: "Open Sans", size: 12pt)
+#set text(font: "Inter", size: 12pt)
 #show link: set text(fill: rgb("#0000ff"))
 
 #align(center)[
