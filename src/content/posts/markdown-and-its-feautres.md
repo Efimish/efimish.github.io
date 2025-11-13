@@ -48,7 +48,7 @@ Line Divider:
 
 [Link to my website](https://efimish.github.io)
 
-![Green leaf on a white background](https://efimish.github.io/favicon-192.png)
+![Green circle with a frog-shaped cutout](https://efimish.github.io/favicon-192.png)
 
 ## Lists
 
@@ -136,7 +136,7 @@ Line Divider:
 
 [Link to my website](https://efimish.github.io)
 
-![Green leaf on a white background](https://efimish.github.io/favicon-192.png)
+![Green circle with a frog-shaped cutout](https://efimish.github.io/favicon-192.png)
 
 ## Lists
 
