@@ -27,15 +27,16 @@ to structure your notes in any way, you just need
 to connect them - like in your brain.
 
 The most important are the connections between notes - **links**.
-Type `[[`
-and insert the name of another note - the connection is now established and visible on the graph.
+Type `[[` and insert the name of another note - the connection
+is now established and visible on the graph.
 You can even connect to missing notes and create them later.
 
-Then there are **folders** - the OG way of structuring data.
+Then there are **folders** - the old way of structuring data.
 They strictly separate data and allow for bulk operations.
 
 Finally, **tags** - they add keywords to notes.
 This is useful for finding notes.
 Unlike folders, one note can have multiple tags.
 
-That's enough - now you can start creating your PKMS.
+That's enough - now you can start creating your PKMS
+(Personal Knowledge Management System).
