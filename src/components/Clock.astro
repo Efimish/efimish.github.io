@@ -1,18 +1,24 @@
-<time id="clock">ddd, YYYY-MM-DD, HH:mm:ss</time>
+<time id="clock">dd, YYYY-MM-DD, HH:mm:ss</time>
 
 <script>
-  const clock = document.querySelector<HTMLTimeElement>("#clock");
   const updateClock = (clock: HTMLTimeElement) => {
     const now = new Date();
-    const iso = now.toISOString();
+    const weekday = now.toLocaleDateString("en-US", { weekday: "long" }).slice(0, 2);
 
-    const weekday = now.toLocaleDateString("en-US", { weekday: "short" });
-    const date = iso.slice(0, 10);
-    const time = now.toLocaleTimeString();
+    const year = now.getFullYear().toString();
+    const month = (now.getMonth() + 1).toString().padStart(2, "0");
+    const day = now.getDate().toString().padStart(2, "0");
+    const date = [year, month, day].join("-");
 
-    clock.dateTime = iso;
+    const hours = now.getHours().toString().padStart(2, "0");
+    const minutes = now.getMinutes().toString().padStart(2, "0");
+    const seconds = now.getSeconds().toString().padStart(2, "0");
+    const time = [hours, minutes, seconds].join(":");
+
+    clock.dateTime = now.toISOString();
     clock.textContent = [weekday, date, time].join(", ");
   };
+  const clock = document.querySelector<HTMLTimeElement>("#clock");
   if (clock) {
     updateClock(clock);
     setInterval(() => updateClock(clock), 1000);

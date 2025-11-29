@@ -1,0 +1,34 @@
+<p id="moon">🧀</p>
+
+<script>
+  const getMoonPhase = (date = new Date()) => {
+    const phases = [
+      { emoji: "🌑", name: "New Moon" },
+      { emoji: "🌒", name: "Waxing Crescent" },
+      { emoji: "🌓", name: "First Quarter" },
+      { emoji: "🌔", name: "Waxing Gibbous" },
+      { emoji: "🌕", name: "Full Moon" },
+      { emoji: "🌖", name: "Waning Gibbous" },
+      { emoji: "🌗", name: "Last Quarter" },
+      { emoji: "🌘", name: "Waning Crescent" },
+    ];
+    // 29 days, 12 hours, 44 minutes, and 3 seconds
+    const cycleLength = ((3 / 60 + 44) / 60 + 12) / 24 + 29;
+    const knownNewMoon = new Date("2022-03-02T18:34:00Z");
+
+    const secondsSinceKnownNewMoon =
+      (date.getTime() - knownNewMoon.getTime()) / 1000;
+    const daysSinceKnownNewMoon = secondsSinceKnownNewMoon / (60 * 60 * 24);
+
+    const currentMoonPhasePercentage =
+      (daysSinceKnownNewMoon % cycleLength) / cycleLength;
+    const index = Math.round(currentMoonPhasePercentage * 8) % 8;
+
+    return phases[index];
+  };
+  const moon = document.querySelector<HTMLParagraphElement>("#moon");
+  if (moon) {
+    const phase = getMoonPhase();
+    moon.textContent = [phase.emoji, phase.name].join(" ");
+  }
+</script>
