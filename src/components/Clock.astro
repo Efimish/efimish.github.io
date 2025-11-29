@@ -1,0 +1,20 @@
+<time id="clock">ddd, YYYY-MM-DD, HH:mm:ss</time>
+
+<script>
+  const clock = document.querySelector<HTMLTimeElement>("#clock");
+  const updateClock = (clock: HTMLTimeElement) => {
+    const now = new Date();
+    const iso = now.toISOString();
+
+    const weekday = now.toLocaleDateString("en-US", { weekday: "short" });
+    const date = iso.slice(0, 10);
+    const time = now.toLocaleTimeString();
+
+    clock.dateTime = iso;
+    clock.textContent = [weekday, date, time].join(", ");
+  };
+  if (clock) {
+    updateClock(clock);
+    setInterval(() => updateClock(clock), 1000);
+  }
+</script>

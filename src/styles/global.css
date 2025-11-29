@@ -183,3 +183,17 @@ hr {
   padding: 0;
   border: 0;
 }
+
+/* aside */
+
+aside {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+}
+
+@media (max-width: 1300px) {
+  aside {
+    position: static;
+  }
+}
