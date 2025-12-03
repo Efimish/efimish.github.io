@@ -11,12 +11,10 @@ export async function getStaticPaths() {
   );
   const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags)));
 
-  return tags.map((tag) => {
-    return {
-      params: { tag },
-      props: { posts: posts.filter((post) => post.data.tags.includes(tag)) },
-    };
-  });
+  return tags.map((tag) => ({
+    params: { tag },
+    props: { posts: posts.filter((post) => post.data.tags.includes(tag)) },
+  }));
 }
 
 const { tag } = Astro.params;
