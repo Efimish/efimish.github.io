@@ -1,21 +1,25 @@
 import fs from "fs";
 import sharp from "sharp";
+import ico from "sharp-ico";
 
 const name = "unused/moon.png";
 
 // favicon.ico
-sharp(name)
-  .resize({
-    width: 32,
-    height: 32,
-    kernel: sharp.kernel.nearest,
-  })
-  .toFile("public/favicon.ico");
+ico.sharpsToIco(
+  [sharp(name)],
+  "public/favicon.ico",
+  {
+    sizes: [48, 32, 16],
+    resizeOptions: {
+      kernel: sharp.kernel.nearest,
+    },
+  },
+);
 
 // apple-touch-icon.png
 // 144 / 180 = 0.8
 sharp(name)
-  .flatten({ background: "#FFF" })
+  .flatten({ background: "#fff" })
   .resize({
     width: 144,
     height: 144,
@@ -26,14 +30,14 @@ sharp(name)
     bottom: 18,
     left: 18,
     right: 18,
-    background: "#FFF"
+    background: "#fff",
   })
   .toFile("public/apple-touch-icon.png");
 
 // favicon-192.png
 // 144 / 192 = 0.75
 sharp(name)
-  .flatten({ background: "#FFF" })
+  .flatten({ background: "#fff" })
   .resize({
     width: 144,
     height: 144,
@@ -44,14 +48,14 @@ sharp(name)
     bottom: 24,
     left: 24,
     right: 24,
-    background: "#FFF"
+    background: "#fff",
   })
   .toFile("public/favicon-192.png");
 
 // favicon-512.png
-// 384 / 512 = 0,75
+// 384 / 512 = 0.75
 sharp(name)
-  .flatten({ background: "#FFF" })
+  .flatten({ background: "#fff" })
   .resize({
     width: 384,
     height: 384,
@@ -62,7 +66,7 @@ sharp(name)
     bottom: 64,
     left: 64,
     right: 64,
-    background: "#FFF"
+    background: "#fff",
   })
   .toFile("public/favicon-512.png");
 
@@ -76,7 +80,7 @@ const { width, height } = info;
 
 const svg = [
   `<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 ${width} ${height}" shape-rendering="crispEdges">`,
-  `  <title>Crescent moon with a star</title>`
+  "  <title>Crescent moon with a star</title>"
 ];
 
 for (let y = 0; y < height; y++) {
@@ -93,6 +97,6 @@ for (let y = 0; y < height; y++) {
   }
 }
 
-svg.push(`</svg>`);
+svg.push("</svg>", "");
 
 fs.writeFileSync("public/favicon.svg", svg.join("\n"));
