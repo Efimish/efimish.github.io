@@ -5,7 +5,7 @@ import "@styles/global.css";
 import BaseHead from "@components/BaseHead.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import Aside from "@components/Aside.astro";
+// import Aside from "@components/Aside.astro";
 
 interface Props {
   title: string;
@@ -28,7 +28,7 @@ const { title, description } = Astro.props;
     <main>
       <slot />
     </main>
-    <Aside />
+    <!-- <Aside /> -->
     <Footer />
     <script src="@scripts/theme.ts" />
     <script src="@scripts/message.ts" />

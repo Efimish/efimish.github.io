@@ -1,0 +1,31 @@
+---
+import { author } from "@scripts/consts";
+import BaseLayout from "@layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="About"
+  description=`Learn about ${author}, an open-source developer and thinker passionate about technology and privacy.`
+>
+  <header>
+    <h1>About {author}</h1>
+    <p>Hello, traveler!</p>
+    <p>
+      I am {author} (he/him). I am passionate about technology, privacy and open
+      source development. I am from Krasnoyarsk, Russia.
+    </p>
+  </header>
+  <section>
+    <h2>🛠️ Skills</h2>
+    <ul>
+      <li>TypeScript, Rust, Python, SQL</li>
+      <li>Astro</li>
+      <li>Git, Docker, PostgreSQL, Caddy</li>
+      <li>GitHub Actions</li>
+    </ul>
+  </section>
+  <section>
+    <h2>📚 Education</h2>
+    <p>Siberian Federal University - B.Sc. in Computer Science, 2023-2027</p>
+  </section>
+</BaseLayout>

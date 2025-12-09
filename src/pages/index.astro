@@ -9,42 +9,24 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 >
   <header>
     <h1>{author}</h1>
+    <p>Hello, World! And welcome to my corner of the internet!</p>
     <p>
-      Hello! I'm Efim, a passionate backend developer from
-      <strong>Krasnoyarsk, Russia</strong>
+      I am {author} (he/him). I am passionate about technology, privacy and open
+      source development. I am from Krasnoyarsk, Russia.
     </p>
   </header>
   <section>
-    <h2>🛠️ Skills</h2>
-    <ul>
-      <li>TypeScript, Rust, Python, SQL</li>
-      <li>Astro</li>
-      <li>Git, Docker, PostgreSQL, Caddy</li>
-      <li>GitHub Actions</li>
-    </ul>
-  </section>
-  <section>
-    <h2>🏠 Projects</h2>
+    <h2>Pages</h2>
     <ul>
       <li>
-        <a href="https://github.com/Efimish/efimish.github.io">
-          Personal website with blog
-        </a>
+        <a href="/about/">About me</a>
       </li>
       <li>
-        <a href="https://github.com/IKIT-Group/backend">
-          Backend for a pet shelter website
-        </a>
+        <a href="/posts/">My posts (blog)</a>
       </li>
       <li>
-        <a href="https://github.com/Efimish/Bottie">
-          Discord bot that replies using Mistral LLM API
-        </a>
+        <a href="/projects/">My projects</a>
       </li>
     </ul>
-  </section>
-  <section>
-    <h2>📚 Education</h2>
-    <p>Siberian Federal University - B.Sc. in Computer Science, 2023-2027</p>
   </section>
 </BaseLayout>

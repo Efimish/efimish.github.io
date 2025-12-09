@@ -1,0 +1,28 @@
+---
+import { author } from "@scripts/consts";
+import BaseLayout from "@layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Projects"
+  description=`Expole ${author}'s open source projects.`
+>
+  <h1>Projects</h1>
+  <ul>
+    <li>
+      <a href="https://github.com/Efimish/efimish.github.io" target="_blank">
+        Personal website with blog
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/IKIT-Group/backend" target="_blank">
+        Backend for a pet shelter website
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/Efimish/Bottie" target="_blank">
+        Discord bot that replies using Mistral LLM API
+      </a>
+    </li>
+  </ul>
+</BaseLayout>
