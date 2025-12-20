@@ -1,7 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
 
-import words from "@scripts/words";
 import Tag from "@components/Tag.astro";
 import Date from "@components/Date.astro";
 
@@ -22,18 +21,8 @@ const { title, description, date, tags } = post.data;
   </h2>
   <p>{description}</p>
   <p>
-    <span><Date {date} /></span>
+    <span><Date date={date} /></span>
     <span>•</span>
-    <span>{words(post.body ?? "")} words</span>
-    <span>•</span>
-    <span>
-      {
-        tags.map((tag) => (
-          <>
-            <Tag tag={tag} />
-          </>
-        ))
-      }
-    </span>
+    <span>{tags.map((tag) => <Tag tag={tag} />)}</span>
   </p>
 </article>

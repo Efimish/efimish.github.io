@@ -2,7 +2,6 @@
 import { getCollection, render } from "astro:content";
 
 import { github } from "@scripts/consts";
-import words from "@scripts/words";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Tag from "@components/Tag.astro";
@@ -35,19 +34,9 @@ const ISODate = date.toISOString().slice(0, 10);
     <header class="post-info">
       <h1>{title}</h1>
       <p>
-        <span><Date {date} /></span>
+        <span><Date date={date} /></span>
         <span>•</span>
-        <span>{words(post.body ?? "")} words</span>
-        <span>•</span>
-        <span>
-          {
-            tags.map((tag) => (
-              <>
-                <Tag tag={tag} />
-              </>
-            ))
-          }
-        </span>
+        <span>{tags.map((tag) => <Tag tag={tag} />)}</span>
       </p>
     </header>
     <Content />
