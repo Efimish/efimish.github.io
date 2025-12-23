@@ -22,7 +22,6 @@ const { title, description, date, tags } = post.data;
   <p>{description}</p>
   <p>
     <span><Date date={date} /></span>
-    <span>•</span>
     <span>{tags.map((tag) => <Tag tag={tag} />)}</span>
   </p>
 </article>
