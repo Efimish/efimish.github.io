@@ -13,15 +13,23 @@ const { post } = Astro.props;
 const { title, description, date, tags } = post.data;
 ---
 
-<article class="post-info">
-  <h2>
-    <a href={encodeURI(`/posts/${post.id}/`)}>
-      {title}
-    </a>
-  </h2>
-  <p>{description}</p>
-  <p>
-    <span><Date date={date} /></span>
-    <span>{tags.map((tag) => <Tag tag={tag} />)}</span>
-  </p>
+<article>
+  <header>
+    <h2>
+      <a href={encodeURI(`/posts/${post.id}/`)}>
+        {title}
+      </a>
+    </h2>
+    <p>{description}</p>
+    <Date date={date} />
+    <ul>
+      {
+        tags.map((tag) => (
+          <li>
+            <Tag tag={tag} />
+          </li>
+        ))
+      }
+    </ul>
+  </header>
 </article>

@@ -31,12 +31,18 @@ const ISODate = date.toISOString().slice(0, 10);
     {tags.map((tag) => <meta property="article:tag" content={tag} />)}
   </Fragment>
   <article>
-    <header class="post-info">
+    <header>
       <h1>{title}</h1>
-      <p>
-        <span><Date date={date} /></span>
-        <span>{tags.map((tag) => <Tag tag={tag} />)}</span>
-      </p>
+      <Date date={date} />
+      <ul>
+        {
+          tags.map((tag) => (
+            <li>
+              <Tag tag={tag} />
+            </li>
+          ))
+        }
+      </ul>
     </header>
     <Content />
   </article>

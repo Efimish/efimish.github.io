@@ -6,21 +6,20 @@ import Mail from "@assets/icons/mail.svg";
 import Github from "@assets/icons/github.svg";
 import RSS from "@assets/icons/rss.svg";
 
-import Moon from "./Moon.astro";
-
-// const year = new Date().getFullYear();
+import Moon from "@components/Moon.astro";
 ---
 
 <footer>
   <hr />
-  <div class="split-bar">
-    <!-- <span>Copyright &copy; {year}</span> -->
-    <Moon />
-    <span>
-      <a href="/resume.pdf"><Resume /></a>
-      <a href=`mailto:${email}`><Mail /></a>
-      <a href={github} target="_blank"><Github /></a>
-      <a href="/feed.xml"><RSS /></a>
-    </span>
-  </div>
+  <nav aria-label="Secondary navigation">
+    <ul aria-hidden="true">
+      <li><Moon /></li>
+    </ul>
+    <ul>
+      <li><a href="/resume.pdf"><Resume /></a></li>
+      <li><a href=`mailto:${email}`><Mail /></a></li>
+      <li><a href={github} target="_blank"><Github /></a></li>
+      <li><a href="/feed.xml"><RSS /></a></li>
+    </ul>
+  </nav>
 </footer>
