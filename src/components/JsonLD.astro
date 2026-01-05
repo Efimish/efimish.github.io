@@ -1,0 +1,29 @@
+---
+import { author, github } from "@scripts/consts";
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+}
+
+const { title, description, date } = Astro.props;
+const ISODate = date.toISOString().slice(0, 10);
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description: description,
+  dateCreated: ISODate,
+  datePublished: ISODate,
+  url: new URL("/posts/${post.id}/", Astro.site),
+  author: {
+    "@type": "Person",
+    name: author,
+    url: github,
+  },
+});
+---
+
+<script type="application/ld+json" set:html={schema} />

@@ -21,9 +21,8 @@ const { title, description } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead {title} {description}>
-      <slot name="og" slot="og" />
-    </BaseHead>
+    <BaseHead {title} {description} />
+    <slot name="head" />
   </head>
 
   <body>
