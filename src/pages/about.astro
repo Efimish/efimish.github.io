@@ -1,18 +1,62 @@
 ---
-import { author } from "@scripts/consts";
+import type { WithContext, Person, ProfilePage } from "schema-dts";
+import {
+  firstname,
+  lastname,
+  author,
+  username,
+  gender,
+  pronouns,
+  email,
+  github,
+} from "@scripts/consts";
 import BaseLayout from "@layouts/BaseLayout.astro";
+
+const description = `About ${author}, an open-source developer and thinker passionate about technology and privacy.`;
+
+const person = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": new URL("/#person", Astro.url.origin).href,
+  url: Astro.url.href,
+  givenName: firstname,
+  familyName: lastname,
+  name: author,
+  alternateName: username,
+  gender: gender,
+  email: `mailto:${email}`,
+  sameAs: [github],
+} satisfies WithContext<Person>;
+
+const profile = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  url: Astro.url.href,
+  name: "About",
+  mainEntity: {
+    "@id": new URL("/#person", Astro.url.origin).href,
+  },
+} satisfies WithContext<ProfilePage>;
 ---
 
-<BaseLayout
-  title="About"
-  description=`Learn about ${author}, an open-source developer and thinker passionate about technology and privacy.`
->
+<BaseLayout title="About" description={description}>
+  <Fragment slot="og">
+    <meta property="og:type" content="profile" />
+    <meta property="profile:first_name" content={firstname} />
+    <meta property="profile:last_name" content={lastname} />
+    <meta property="profile:username" content={username} />
+    <meta property="profile:gender" content={gender.toLowerCase()} />
+  </Fragment>
+  <Fragment slot="jsonld">
+    <script type="application/ld+json" set:html={JSON.stringify(person)} />
+    <script type="application/ld+json" set:html={JSON.stringify(profile)} />
+  </Fragment>
   <header>
-    <h1>About {author}</h1>
+    <h1>About</h1>
     <p>Hello, traveler!</p>
     <p>
-      I am {author} (he/him). I am passionate about technology, privacy and open
-      source development. I am from Krasnoyarsk, Russia.
+      I am {author} ({pronouns}). I am passionate about technology, privacy and
+      open source development. I am from Krasnoyarsk, Russia.
     </p>
   </header>
   <section>

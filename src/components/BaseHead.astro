@@ -1,18 +1,19 @@
 ---
-import { author } from "@scripts/consts";
+import { sitename, author } from "@scripts/consts";
 
 interface Props {
   title: string;
   description: string;
+  image?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, image = "/favicon-512.png" } = Astro.props;
 ---
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>{title}</title>
+<title>{title} - {sitename}</title>
 <meta name="description" content={description} />
 <meta name="author" content={author} />
 <link rel="canonical" href={Astro.url} />
@@ -27,16 +28,18 @@ const { title, description } = Astro.props;
 
 <link
   rel="alternate"
-  href={new URL("feed.xml", Astro.site)}
+  href={new URL("feed.xml", Astro.url.origin)}
   type="application/rss+xml"
   title="RSS"
 />
 
 <meta name="generator" content={Astro.generator} />
 
-<meta property="og:site_name" content={author} />
+<meta property="og:site_name" content={sitename} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={Astro.url} />
-<meta property="og:image" content={new URL("favicon-512.png", Astro.site)} />
-<meta property="og:image:alt" content="Crescent moon with a star" />
+<meta property="og:image" content={new URL(image, Astro.url.origin)} />
+<slot name="og" />
+
+<slot name="jsonld" />

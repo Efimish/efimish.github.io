@@ -1,6 +1,6 @@
 ---
+import type { WithContext, Blog } from "schema-dts";
 import { getCollection } from "astro:content";
-
 import { author } from "@scripts/consts";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Post from "@components/Post.astro";
@@ -8,12 +8,29 @@ import Post from "@components/Post.astro";
 const posts = (await getCollection("posts")).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
+
+const description = `Articles by ${author} on development, technology, and more.`;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": new URL("/#blog", Astro.url.origin).href,
+  url: Astro.url.href,
+  name: `${author}'s Blog`,
+  description: description,
+  author: {
+    "@id": new URL("/#person", Astro.url.origin).href,
+  },
+  isPartOf: {
+    "@id": new URL("/#website", Astro.url.origin).href,
+  },
+} satisfies WithContext<Blog>;
 ---
 
-<BaseLayout
-  title="Posts"
-  description=`Browse articles by ${author} on development, technology, and more.`
->
+<BaseLayout title="Posts" description={description}>
+  <Fragment slot="jsonld">
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </Fragment>
   <h1>Posts</h1>
   {posts.map((post) => <Post post={post} />)}
 </BaseLayout>
