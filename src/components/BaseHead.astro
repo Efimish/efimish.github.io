@@ -1,5 +1,5 @@
 ---
-import { sitename, author, themes } from "@scripts/consts";
+import { sitename, fullname, themes } from "@scripts/consts";
 
 interface Props {
   title: string;
@@ -15,7 +15,7 @@ const { title, description, image = "/favicon-512.png" } = Astro.props;
 
 <title>{title} - {sitename}</title>
 <meta name="description" content={description} />
-<meta name="author" content={author} />
+<meta name="author" content={fullname} />
 <link rel="canonical" href={Astro.url} />
 
 <link rel="icon" href="/favicon.ico" />
@@ -38,7 +38,7 @@ const { title, description, image = "/favicon-512.png" } = Astro.props;
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link
   rel="alternate"
-  href={new URL("feed.xml", Astro.url.origin)}
+  href={new URL("/feed.xml", Astro.url.origin)}
   type="application/rss+xml"
   title="RSS"
 />

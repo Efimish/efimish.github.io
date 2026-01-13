@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import { author } from "@scripts/consts";
+import { blogname } from "@scripts/consts";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Post from "@components/Post.astro";
 
@@ -22,7 +22,7 @@ const { posts } = Astro.props;
 
 <BaseLayout
   title=`Tag:${tag}`
-  description=`Articles tagged with ${tag} on ${author}'s blog.`
+  description=`Posts tagged with #${tag} on ${blogname}.`
 >
   <h1>Tag:{tag}</h1>
   {posts.map((post) => <Post post={post} />)}

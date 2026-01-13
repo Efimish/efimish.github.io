@@ -3,7 +3,7 @@ import type { WithContext, Person, ProfilePage } from "schema-dts";
 import {
   firstname,
   lastname,
-  author,
+  fullname,
   username,
   gender,
   pronouns,
@@ -12,7 +12,7 @@ import {
 } from "@scripts/consts";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
-const description = `About ${author}, an open-source developer and thinker passionate about technology and privacy.`;
+const description = `About ${fullname}, an open-source developer and thinker passionate about technology and privacy.`;
 
 const person = {
   "@context": "https://schema.org",
@@ -21,7 +21,7 @@ const person = {
   url: Astro.url.href,
   givenName: firstname,
   familyName: lastname,
-  name: author,
+  name: fullname,
   alternateName: username,
   gender: gender,
   email: `mailto:${email}`,
@@ -55,8 +55,8 @@ const profile = {
     <h1>About</h1>
     <p>Hello, traveler!</p>
     <p>
-      I am {author} ({pronouns}). I am passionate about technology, privacy and
-      open source development. I am from Krasnoyarsk, Russia.
+      I am {fullname} ({pronouns}). I am passionate about technology, privacy
+      and open source development. I am from Krasnoyarsk, Russia.
     </p>
   </header>
   <section>

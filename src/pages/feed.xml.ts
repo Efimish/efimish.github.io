@@ -3,8 +3,7 @@ import { getCollection } from "astro:content";
 import rss from "@astrojs/rss";
 import sanitize from "sanitize-html";
 import MarkdownIt from "markdown-it";
-
-import { author } from "@scripts/consts";
+import { blogname, blogdesc } from "@scripts/consts";
 
 const parser = new MarkdownIt();
 
@@ -14,9 +13,9 @@ export const GET: APIRoute = async (context) => {
   );
 
   return rss({
-    title: author,
-    description: `${author}'s blog`,
-    site: context.site!,
+    title: blogname,
+    description: blogdesc,
+    site: context.url.origin,
     items: posts.map((post) => ({
       title: post.data.title,
       description: post.data.description,

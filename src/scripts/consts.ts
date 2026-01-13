@@ -3,10 +3,13 @@ export const lastname = "Ishenin";
 export const username = "Efimish";
 export const gender = "Male";
 export const pronouns = "he/him";
+export const fullname = `${firstname} ${lastname}`;
 
-export const author = `${firstname} ${lastname}`;
 export const sitename = `${firstname}'s corner`;
-export const blogname = `${author}'s Blog`;
+export const sitedesc = `${fullname}'s personal website: programming, projects, and thoughts.`;
+
+export const blogname = `${fullname}'s Blog`;
+export const blogdesc = `Posts by ${fullname} on development, technology, and more.`;
 
 export const email = "me@efima.ru";
 export const github = "https://github.com/Efimish";

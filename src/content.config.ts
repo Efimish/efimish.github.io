@@ -8,7 +8,9 @@ const posts = defineCollection({
     title: z.string(),
     description: z.string(),
     date: z.date(),
-    tags: z.string().array(),
+    tags: z.string()
+      .regex(/^[a-z-]+$/, "Tags must contain lowercase letters and hyphens only")
+      .array(),
   }),
 });
 

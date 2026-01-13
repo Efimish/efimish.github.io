@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import { author } from "@scripts/consts";
+import { blogname } from "@scripts/consts";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Tag from "@components/Tag.astro";
 
@@ -13,10 +13,7 @@ const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags)))
   .sort((a, b) => b.count - a.count || a.tag.localeCompare(b.tag));
 ---
 
-<BaseLayout
-  title="Tags"
-  description=`Explore topics covered on ${author}'s blog.`
->
+<BaseLayout title="Tags" description=`Topics covered on ${blogname}.`>
   <h1>Tags</h1>
   <ul>
     {

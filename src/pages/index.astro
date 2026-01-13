@@ -1,9 +1,7 @@
 ---
 import type { WithContext, WebSite } from "schema-dts";
-import { sitename, author, pronouns } from "@scripts/consts";
+import { sitename, sitedesc, fullname, pronouns } from "@scripts/consts";
 import BaseLayout from "@layouts/BaseLayout.astro";
-
-const description = `${author}'s personal website: programming, projects, and thoughts.`;
 
 const website = {
   "@context": "https://schema.org",
@@ -11,14 +9,14 @@ const website = {
   "@id": new URL("/#website", Astro.url.origin).href,
   url: Astro.url.href,
   name: sitename,
-  description: description,
+  description: sitedesc,
   author: {
     "@id": new URL("/#person", Astro.url.origin).href,
   },
 } satisfies WithContext<WebSite>;
 ---
 
-<BaseLayout title="Home" description={description}>
+<BaseLayout title="Home" description={sitedesc}>
   <Fragment slot="jsonld">
     <script type="application/ld+json" set:html={JSON.stringify(website)} />
   </Fragment>
@@ -26,8 +24,8 @@ const website = {
     <h1>{sitename}</h1>
     <p>Hello, World! And welcome to my corner of the internet!</p>
     <p>
-      I am {author} ({pronouns}). I am passionate about technology, privacy and
-      open source development. I am from Krasnoyarsk, Russia.
+      I am {fullname} ({pronouns}). I am passionate about technology, privacy
+      and open source development. I am from Krasnoyarsk, Russia.
     </p>
   </header>
   <section>

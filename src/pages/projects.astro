@@ -1,12 +1,9 @@
 ---
-import { author } from "@scripts/consts";
+import { fullname } from "@scripts/consts";
 import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
-<BaseLayout
-  title="Projects"
-  description=`Expole ${author}'s open source projects.`
->
+<BaseLayout title="Projects" description=`${fullname}'s open source projects.`>
   <h1>Projects</h1>
   <ul>
     <li>
