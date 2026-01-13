@@ -1,5 +1,5 @@
 ---
-import { sitename, author } from "@scripts/consts";
+import { sitename, author, themes } from "@scripts/consts";
 
 interface Props {
   title: string;
@@ -22,10 +22,20 @@ const { title, description, image = "/favicon-512.png" } = Astro.props;
 <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-<link rel="manifest" href="/app.webmanifest" />
+<meta name="color-scheme" content="light dark" />
+<meta
+  name="theme-color"
+  content={themes.light.bgPrimary}
+  media="(prefers-color-scheme: light)"
+/>
+<meta
+  name="theme-color"
+  content={themes.dark.bgPrimary}
+  media="(prefers-color-scheme: dark)"
+/>
 
+<link rel="manifest" href="/manifest.json" />
 <link rel="sitemap" href="/sitemap-index.xml" />
-
 <link
   rel="alternate"
   href={new URL("feed.xml", Astro.url.origin)}

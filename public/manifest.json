@@ -1,7 +1,10 @@
 {
   "name": "Efim's corner",
-  "short_name": "Efim",
+  "short_name": "Efimish",
   "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#101010",
+  "background_color": "#101010",
   "icons": [
     {
       "src": "/favicon-192.png",

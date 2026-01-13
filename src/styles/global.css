@@ -11,8 +11,14 @@
   --color-text-primary: #101010;
   --color-text-accent: #007aff;
 
-  font-size: 18px;
   color-scheme: light dark;
+
+  font-size: 18px;
+  line-height: 1.6;
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  accent-color: var(--color-text-accent);
 }
 
 .astro-code,
@@ -66,14 +72,9 @@
 /* base styles */
 
 body {
-  margin: 1em auto;
-  padding: 0 1em;
   max-width: 768px;
-  line-height: 1.6;
-  font-family: var(--font-sans);
-  color: var(--color-text-primary);
-  background-color: var(--color-bg-primary);
-  accent-color: var(--color-text-accent);
+  margin: 0 auto;
+  padding: 1em;
 }
 
 /* headers */
