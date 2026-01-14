@@ -26,7 +26,7 @@ const schema = {
 ---
 
 <BaseLayout title="Posts" description={blogdesc}>
-  <Fragment slot="jsonld">
+  <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </Fragment>
   <h1>Posts</h1>

@@ -50,6 +50,3 @@ const { title, description, image = "/favicon-512.png" } = Astro.props;
 <meta property="og:description" content={description} />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:image" content={new URL(image, Astro.url.origin)} />
-<slot name="og" />
-
-<slot name="jsonld" />

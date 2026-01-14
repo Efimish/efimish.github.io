@@ -17,7 +17,7 @@ const website = {
 ---
 
 <BaseLayout title="Home" description={sitedesc}>
-  <Fragment slot="jsonld">
+  <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(website)} />
   </Fragment>
   <header>

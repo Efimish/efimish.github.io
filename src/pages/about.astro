@@ -47,7 +47,7 @@ const profile = {
     <meta property="profile:username" content={username} />
     <meta property="profile:gender" content={gender.toLowerCase()} />
   </Fragment>
-  <Fragment slot="jsonld">
+  <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(person)} />
     <script type="application/ld+json" set:html={JSON.stringify(profile)} />
   </Fragment>
