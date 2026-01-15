@@ -1,4 +1,4 @@
-FROM docker.io/oven/bun as builder
+FROM docker.io/oven/bun AS builder
 WORKDIR /usr/src/app
 COPY package.json bun.lock .
 RUN bun install
