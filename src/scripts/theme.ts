@@ -1,43 +1,48 @@
 import { themes } from "@scripts/consts";
 
-type Theme = keyof typeof themes | "auto";
-
 class ThemeColorManager {
-  private metaTags: HTMLMetaElement[];
-  private initialMetaTagsValues: string[];
+  private metaThemeColorTags: HTMLMetaElement[];
+  private initialMetaThemeColorTagsValues: string[];
 
   constructor() {
-    this.metaTags = Array.from(
+    this.metaThemeColorTags = Array.from(
       document.querySelectorAll<HTMLMetaElement>('meta[name="theme-color"]')
     );
-    this.initialMetaTagsValues = this.metaTags.map((meta) => meta.content);
+    this.initialMetaThemeColorTagsValues = this.metaThemeColorTags.map(
+      (meta) => meta.content
+    );
   }
 
   setThemeColor(color: string) {
-    this.metaTags.forEach((meta) => {
+    this.metaThemeColorTags.forEach((meta) => {
       meta.content = color;
     });
   }
 
   resetThemeColor() {
-    this.metaTags.forEach((meta, i) => {
-      meta.content = this.initialMetaTagsValues[i];
+    this.metaThemeColorTags.forEach((meta, i) => {
+      meta.content = this.initialMetaThemeColorTagsValues[i];
     });
   }
 
+  fixTheme(theme: string) {
+    return theme in themes ? theme : "auto";
+  }
+
   loadTheme() {
-    const theme = (localStorage.getItem("theme") ?? "auto") as Theme;
+    const theme = this.fixTheme(localStorage.getItem("theme") ?? "auto");
     this.applyTheme(theme);
     return theme;
   }
 
-  applyTheme(theme: Theme) {
+  applyTheme(theme: string) {
+    theme = this.fixTheme(theme);
     localStorage.setItem("theme", theme);
     document.documentElement.dataset.theme = theme;
-    if (theme === "auto") {
-      this.resetThemeColor();
+    if (theme in themes) {
+      this.setThemeColor(themes[theme as keyof typeof themes].bgPrimary);
     } else {
-      this.setThemeColor(themes[theme].bgPrimary);
+      this.resetThemeColor();
     }
   }
 }
@@ -51,6 +56,6 @@ if (selector) {
   selector.value = theme;
 
   selector.addEventListener("change", () => {
-    themeColorManager.applyTheme(selector.value as Theme);
+    themeColorManager.applyTheme(selector.value);
   });
 }
