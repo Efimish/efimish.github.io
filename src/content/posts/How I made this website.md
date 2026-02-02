@@ -29,7 +29,7 @@ since they might change in the future.
 ## Tools
 
 As my frontend framework I chose
-[Astro](/posts/why-astro-stands-out).
+[[Why Astro stands out|Astro]].
 It allows me to easily build static pages
 with 0 JavaScript by default.
 
@@ -38,7 +38,7 @@ their Sitemap and RSS plugins.
 
 ## Content
 
-I like writing in [Markdown](/posts/markdown-and-its-feautres)
+I like writing in [[Markdown and its features|Markdown]]
 and I think it's perfect for articles.
 
 Astro's content collections provide a nice way to
@@ -112,8 +112,8 @@ This way I can track the PDF sources in the same git repository
 and edit them with a plaintext editor.
 
 I ended up with both
-[English](/resume.pdf) and
-[Russian](/резюме.pdf) versions!
+[[resume.pdf|English]] and
+[[резюме.pdf|Russian]] versions!
 
 ## Inspiration and References
 
