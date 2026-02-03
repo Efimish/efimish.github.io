@@ -35,11 +35,12 @@ Paragraphs are separated by a blank line.
 Text attributes: _italic_, **bold**, `monospace`, ~~strikethrough~~.
 
 > Quote
->> Inner quote
+>
+> > Inner quote
 
 ```js
 // code block
-console.log('Hello, world!');
+console.log("Hello, world!");
 ```
 
 Line Divider:
@@ -66,7 +67,7 @@ Here's an ordered list:
 
 1. Item
 2. Item
-    1. Subitem
+   1. Subitem
 3. Item
 
 Here's a task list:
@@ -88,7 +89,7 @@ This is a table in Markdown.
 You can align cell contents
 
 | Left Aligned | Center Aligned | Right Aligned |
-|:------------ |:--------------:| -------------:|
+| :----------- | :------------: | ------------: |
 | 2025-06-01   |      some      |         $4.99 |
 | 2025-06-02   |     wordy      |           $99 |
 | 2025-06-03   |      text      |          $799 |
@@ -105,7 +106,7 @@ Here's a simple footnote[^1], and here's the second one[^2].
 
 Here you can see what this document will look like without rendering.
 
-`````markdown
+````markdown
 # Heading 1
 
 ## Heading 2
@@ -123,11 +124,12 @@ Paragraphs are separated by a blank line.
 Text attributes: _italic_, **bold**, `monospace`, ~~strikethrough~~.
 
 > Quote
->> Inner quote
+>
+> > Inner quote
 
 ```js
 // code block
-console.log('Hello, world!');
+console.log("Hello, world!");
 ```
 
 Line Divider:
@@ -154,7 +156,7 @@ Here's an ordered list:
 
 1. Item
 2. Item
-    1. Subitem
+  1. Subitem
 3. Item
 
 Here's a task list:
@@ -176,7 +178,7 @@ This is a table in Markdown.
 You can align cell contents
 
 | Left Aligned | Center Aligned | Right Aligned |
-|:------------ |:--------------:| -------------:|
+| :----------- | :------------: | ------------: |
 | 2025-06-01   |      some      |         $4.99 |
 | 2025-06-02   |     wordy      |           $99 |
 | 2025-06-03   |      text      |          $799 |
@@ -188,4 +190,4 @@ Here's a simple footnote[^1], and here's the second one[^2].
 [^1]: This is the first footnote.
 
 [^2]: And this is the second footnote.
-`````
+````

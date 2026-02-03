@@ -40,18 +40,18 @@ or UI libraries (React, Vue),
 Astro delivers a complete solution:
 
 - **All-in-one architecture**: \
-Built-in routing, SSG, SSR options, and optimizations eliminate dependency sprawl
+  Built-in routing, SSG, SSR options, and optimizations eliminate dependency sprawl
 
 - **Zero-JS by default**: \
-Components render as static HTML unless explicitly hydrated
+  Components render as static HTML unless explicitly hydrated
 
 - **Framework-agnostic components**: \
-Seamlessly integrate React or Vue islands in Astro components
+  Seamlessly integrate React or Vue islands in Astro components
 
 - **Content-first design**: \
-[[Markdown and its features|Markdown]] support with type-safe frontmatter validation out-of-the-box
+  [[Markdown and its features|Markdown]] support with type-safe frontmatter validation out-of-the-box
 
 - **Modern DX**: \
-Hot reloading, image optimization, and CLI tooling in a single package
+  Hot reloading, image optimization, and CLI tooling in a single package
 
 I personally use Astro to build this site and I like it!
