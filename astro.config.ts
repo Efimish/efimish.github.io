@@ -4,15 +4,11 @@ import remarkWikiLink from "@flowershow/remark-wiki-link";
 import { glob } from "tinyglobby";
 import { slug } from "github-slugger";
 
-const posts = await glob("**/*.md", {
-  cwd: "src/content/posts",
-});
-const files = await glob("**/*", {
-  cwd: "public",
-});
 const permalinks = Object.fromEntries([
-  ...posts.map((post) => [post, `/posts/${post.slice(0, -3).split("/").map(i => slug(i)).join("/")}/`]),
-  ...files.map((file) => [file, `/${file}`]),
+  ...(await glob("**/*.md", { cwd: "src/content/posts" }))
+    .map((post) => [post, `/posts/${post.slice(0, -3).split("/").map(i => slug(i)).join("/")}/`] as const),
+  ...(await glob("**/*", { cwd: "public" }))
+    .map((file) => [file, `/${file}`] as const),
 ]);
 
 // https://astro.build/config
@@ -30,7 +26,7 @@ export default defineConfig({
     },
     remarkPlugins: [
       [remarkWikiLink, {
-        files: [...posts, ...files],
+        files: Object.keys(permalinks),
         permalinks,
       }],
     ],
