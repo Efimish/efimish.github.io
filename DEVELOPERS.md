@@ -45,3 +45,9 @@ bunx unlighthouse --site "https://efimish.github.io"
 ```bash
 bunx license-checker --summary
 ```
+
+## Convert image to lossless webp
+
+```bash
+bunx sharp-cli -i image.png -f webp --lossless -o .
+```
