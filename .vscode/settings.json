@@ -1,0 +1,3 @@
+{
+  "foam.files.include": ["public/**", "src/content/posts/**/*.md"]
+}
