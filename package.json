@@ -19,6 +19,7 @@
     "sanitize-html": "^2.17.0",
     "sharp": "^0.34.5",
     "sharp-ico": "^0.1.5",
+    "simplex-noise": "^4.0.3",
     "tinyglobby": "^0.2.15"
   },
   "devDependencies": {

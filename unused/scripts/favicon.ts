@@ -2,7 +2,7 @@ import fs from "fs";
 import sharp from "sharp";
 import ico from "sharp-ico";
 
-const name = "unused/moon.png";
+const name = "unused/png/moon.png";
 
 // favicon.ico
 ico.sharpsToIco(
