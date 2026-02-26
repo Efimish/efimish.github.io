@@ -1,4 +1,4 @@
-import { themes } from "@scripts/consts";
+import { themes } from "@/scripts/consts";
 
 class ThemeColorManager {
   private metaThemeColorTags: HTMLMetaElement[];

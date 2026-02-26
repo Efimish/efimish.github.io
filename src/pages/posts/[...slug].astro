@@ -1,9 +1,9 @@
 ---
 import type { WithContext, BlogPosting } from "schema-dts";
 import { getCollection, render } from "astro:content";
-import BaseLayout from "@layouts/BaseLayout.astro";
-import Tag from "@components/Tag.astro";
-import Date from "@components/Date.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Tag from "@/components/Tag.astro";
+import Date from "@/components/Date.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");

@@ -1,9 +1,9 @@
 ---
 import type { WithContext, Blog } from "schema-dts";
 import { getCollection } from "astro:content";
-import { blogname, blogdesc } from "@scripts/consts";
-import BaseLayout from "@layouts/BaseLayout.astro";
-import Post from "@components/Post.astro";
+import { blogname, blogdesc } from "@/scripts/consts";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Post from "@/components/Post.astro";
 
 const posts = (await getCollection("posts")).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
