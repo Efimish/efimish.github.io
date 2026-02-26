@@ -5,15 +5,19 @@ export const gender = "Male";
 export const pronouns = "he/him";
 export const fullname = `${firstname} ${lastname}`;
 
-export const sitename = `${firstname}'s corner`;
-export const sitedesc = `${fullname}'s personal website: programming, projects, and thoughts.`;
-
-export const blogname = `${fullname}'s Blog`;
-export const blogdesc = `Posts by ${fullname} on development, technology, and more.`;
-
 export const email = "me@efima.ru";
 export const github = "https://github.com/Efimish";
 export const linkedin = "https://www.linkedin.com/in/efima";
+
+export const site = {
+  name: `${firstname}'s corner`,
+  description: `${fullname}'s personal website: programming, projects, and thoughts.`,
+} as const;
+
+export const blog = {
+  name: `${fullname}'s Blog`,
+  description: `Posts by ${fullname} on development, technology, and more.`,
+} as const;
 
 export const themes = {
   light: {

@@ -2,7 +2,7 @@ import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
 import rss from "@astrojs/rss";
 import sanitize from "sanitize-html";
-import { blogname, blogdesc } from "@/consts";
+import { blog } from "@/consts";
 
 export const GET: APIRoute = async (context) => {
   const posts = (await getCollection("posts")).sort(
@@ -10,8 +10,8 @@ export const GET: APIRoute = async (context) => {
   );
 
   return rss({
-    title: blogname,
-    description: blogdesc,
+    title: blog.name,
+    description: blog.description,
     site: context.url.origin,
     items: posts.map((post) => ({
       title: post.data.title,

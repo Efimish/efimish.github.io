@@ -1,5 +1,5 @@
 ---
-import { sitename, fullname, themes } from "@/consts";
+import { site, fullname, themes } from "@/consts";
 
 interface Props {
   title: string;
@@ -13,7 +13,7 @@ const { title, description, image = "/favicon-512.png" } = Astro.props;
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>{title} - {sitename}</title>
+<title>{title} - {site.name}</title>
 <meta name="description" content={description} />
 <meta name="author" content={fullname} />
 <link rel="canonical" href={Astro.url} />
@@ -45,7 +45,7 @@ const { title, description, image = "/favicon-512.png" } = Astro.props;
 
 <meta name="generator" content={Astro.generator} />
 
-<meta property="og:site_name" content={sitename} />
+<meta property="og:site_name" content={site.name} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={Astro.url} />
