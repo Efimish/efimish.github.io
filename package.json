@@ -13,7 +13,6 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.15",
     "@astrojs/sitemap": "^3.7.0",
-    "@flowershow/remark-wiki-link": "^3.4.0",
     "@fontsource/inter": "^5.2.8",
     "astro": "^5.18.0",
     "github-slugger": "^2.0.0",
@@ -22,9 +21,11 @@
     "satori": "^0.19.2",
     "sharp": "^0.34.5",
     "sharp-ico": "^0.1.5",
-    "tinyglobby": "^0.2.15"
+    "tinyglobby": "^0.2.15",
+    "unist-util-visit": "^5.1.0"
   },
   "devDependencies": {
+    "@types/mdast": "^4.0.4",
     "@types/react": "^19.2.14",
     "@types/sanitize-html": "^2.16.0",
     "schema-dts": "^1.1.5"

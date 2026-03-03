@@ -7,7 +7,6 @@
       "dependencies": {
         "@astrojs/rss": "^4.0.15",
         "@astrojs/sitemap": "^3.7.0",
-        "@flowershow/remark-wiki-link": "^3.4.0",
         "@fontsource/inter": "^5.2.8",
         "astro": "^5.18.0",
         "github-slugger": "^2.0.0",
@@ -17,8 +16,10 @@
         "sharp": "^0.34.5",
         "sharp-ico": "^0.1.5",
         "tinyglobby": "^0.2.15",
+        "unist-util-visit": "^5.1.0",
       },
       "devDependencies": {
+        "@types/mdast": "^4.0.4",
         "@types/react": "^19.2.14",
         "@types/sanitize-html": "^2.16.0",
         "schema-dts": "^1.1.5",
@@ -105,8 +106,6 @@
     "@esbuild/win32-ia32": ["@esbuild/win32-ia32@0.27.3", "", { "os": "win32", "cpu": "ia32" }, "sha512-QLKSFeXNS8+tHW7tZpMtjlNb7HKau0QDpwm49u0vUp9y1WOF+PEzkU84y9GqYaAVW8aH8f3GcBck26jh54cX4Q=="],
 
     "@esbuild/win32-x64": ["@esbuild/win32-x64@0.27.3", "", { "os": "win32", "cpu": "x64" }, "sha512-4uJGhsxuptu3OcpVAzli+/gWusVGwZZHTlS63hh++ehExkVT8SgiEf7/uC/PclrPPkLhZqGgCTjd0VWLo6xMqA=="],
-
-    "@flowershow/remark-wiki-link": ["@flowershow/remark-wiki-link@3.4.0", "", { "dependencies": { "github-slugger": "^2.0.0", "mdast-util-to-markdown": "^2.1.2", "micromark-util-character": "^2.0.0", "micromark-util-symbol": "^2.0.1" } }, "sha512-YeeIwZ630CgBRiVWwM5C8ikAyuT0nLjdjhAZxhOOBgUCA34LCQxFwCkEnA0BySDJr6NQiJjJfRvO/TxBs+deAA=="],
 
     "@fontsource/inter": ["@fontsource/inter@5.2.8", "", {}, "sha512-P6r5WnJoKiNVV+zvW2xM13gNdFhAEpQ9dQJHt3naLvfg+LkF2ldgSLiF4T41lf1SQCM9QmkqPTn4TH568IRagg=="],
 
