@@ -4,48 +4,51 @@ import { visit } from "unist-util-visit";
 import { globSync } from "tinyglobby";
 import { slug as githubSlug } from "github-slugger";
 
-const WIKI_LINK_REGEX = /\[\[([^\]]+)\]\]/g;
+const WIKI_LINK_REGEX = /\[\[([^\]]+)\]\]/;
 
-export const remarkWikiLink = () => {
+const buildPermalinks = () => {
   const permalinks = new Map<string, string>();
 
   const posts = globSync("**/*.md", { cwd: "src/content/posts" })
-    .map((post) => post.replace(new RegExp(path.extname(post) + "$"), "").split(path.sep))
-    .sort((a, b) => a.length - b.length || a.join("").localeCompare(b.join("")))
+    .map((post) => post.replace(new RegExp(path.extname(post) + "$"), ""))
+    .sort((a, b) => a.split(path.sep).length - b.split(path.sep).length || a.localeCompare(b))
     .map((post) => [
       post,
-      `/posts/${post.map((segment) => githubSlug(segment)).join("/").replace(/\/index$/, "")}/`,
+      `/posts/${post.split(path.sep).map((s) => githubSlug(s)).join("/").replace(/\/index$/, "")}/`,
     ] as const);
 
-  posts.forEach(([path, slug]) => {
-    const pathSegments = [...path];
+  const files = globSync("**/*", { cwd: "public", onlyFiles: true })
+    .map((file) => [file, `/${file}`] as const);
+
+  [...posts, ...files].forEach(([link, permalink]) => {
+    const pathSegments = link.split(path.sep);
     const pathTry: string[] = [];
     while (pathSegments.length > 0) {
       pathTry.unshift(pathSegments.pop()!);
       const pathTryString = pathTry.join("/").toLowerCase();
-      if (permalinks.get(pathTryString)) continue;
-      permalinks.set(pathTryString, slug);
+      if (permalinks.has(pathTryString)) continue;
+      permalinks.set(pathTryString, permalink);
       return;
     }
   });
 
-  //   ...(await glob("**/*", { cwd: "public" }))
-  //     .map((file) => [file, `/${file}`] as const),
+  return permalinks;
+};
 
-  console.log("Final permalinks:", permalinks);
+export const remarkWikiLink = () => {
+  const permalinks = buildPermalinks();
 
   return (tree: Root) => visit(tree, "text", (node, index, parent) => {
     if (!parent || typeof index !== "number") return;
     const { value } = node;
 
-    const regex = WIKI_LINK_REGEX;
-    if (!regex.test(value)) return;
+    if (!WIKI_LINK_REGEX.test(value)) return;
 
-    const nodes: (Text | Link)[] = [];
+    const regex = new RegExp(WIKI_LINK_REGEX, "g");
     let lastIndex = 0;
-    regex.lastIndex = 0;
+    const nodes: (Text | Link)[] = [];
 
-    for (const match of value.matchAll(regex)) {
+    value.matchAll(regex).forEach((match) => {
       const [fullMatch, inner] = match;
       const start = match.index;
       const end = start + fullMatch.length;
@@ -57,27 +60,28 @@ export const remarkWikiLink = () => {
         type: "text",
         value: value.slice(lastIndex, start),
       });
+      lastIndex = end;
 
       // Parse [[link#heading|alias]]
       const [linkWithHeadingPath, aliasPart] = inner.split("|").map((s) => s.trim());
       const [linkPart, headingPart] = linkWithHeadingPath.split("#").map((s) => s.trim());
 
-      const baseUrl = permalinks.get(linkPart.toLowerCase());
-      const headingSlug = headingPart ? "#" + githubSlug(headingPart) : "";
+      const permalink = permalinks.get(linkPart.toLowerCase());
       const displayText = aliasPart ?? headingPart ?? linkPart;
 
-      console.log("Intermediate results:", {
-        linkPart, headingPart, aliasPart, baseUrl, headingSlug, displayText
-      });
+      if (!permalink) {
+        nodes.push({
+          type: "text",
+          value: displayText,
+        });
+        return;
+      }
 
-      if (!baseUrl) nodes.push({
-        type: "text",
-        value: displayText,
-      });
+      const headingSlug = headingPart ? "#" + githubSlug(headingPart) : "";
 
-      else nodes.push({
+      nodes.push({
         type: "link",
-        url: baseUrl + headingSlug,
+        url: permalink + headingSlug,
         children: [
           {
             type: "text",
@@ -85,9 +89,7 @@ export const remarkWikiLink = () => {
           },
         ],
       });
-
-      lastIndex = end;
-    }
+    });
 
     // Push text after match
     // "Hello [[note]] world"
