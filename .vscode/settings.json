@@ -1,3 +1,7 @@
 {
-  "foam.files.include": ["public/**", "src/content/posts/**/*.md"]
+  "foam.files.include": [
+    "src/content/posts/**/*.md",
+    "public/**",
+    "src/assets/**"
+  ]
 }

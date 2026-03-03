@@ -1,10 +1,10 @@
-import type { Root, Text, Link } from "mdast";
+import type { Root, Text, Link, Image } from "mdast";
 import path from "path";
 import { visit } from "unist-util-visit";
 import { globSync } from "tinyglobby";
 import { slug as githubSlug } from "github-slugger";
 
-const WIKI_LINK_REGEX = /\[\[([^\]]+)\]\]/;
+const WIKI_LINK_REGEX = /!?\[\[([^\]]+)\]\]/;
 
 const buildPermalinks = () => {
   const permalinks = new Map<string, string>();
@@ -20,7 +20,10 @@ const buildPermalinks = () => {
   const files = globSync("**/*", { cwd: "public", onlyFiles: true })
     .map((file) => [file, `/${file}`] as const);
 
-  [...posts, ...files].forEach(([link, permalink]) => {
+  const assets = globSync("**/*", { cwd: "src/assets", onlyFiles: true })
+    .map((asset) => [asset, `src/assets/${asset}`]);
+
+  [...posts, ...files, ...assets].forEach(([link, permalink]) => {
     const pathSegments = link.split(path.sep);
     const pathTry: string[] = [];
     while (pathSegments.length > 0) {
@@ -46,12 +49,13 @@ export const remarkWikiLink = () => {
 
     const regex = new RegExp(WIKI_LINK_REGEX, "g");
     let lastIndex = 0;
-    const nodes: (Text | Link)[] = [];
+    const nodes: (Text | Link | Image)[] = [];
 
     value.matchAll(regex).forEach((match) => {
       const [fullMatch, inner] = match;
       const start = match.index;
       const end = start + fullMatch.length;
+      const isEmbed = fullMatch.startsWith("!");
 
       // Push text before match
       // "Hello [[note]] world"
@@ -73,6 +77,15 @@ export const remarkWikiLink = () => {
         nodes.push({
           type: "text",
           value: displayText,
+        });
+        return;
+      }
+
+      if (isEmbed) {
+        nodes.push({
+          type: "image",
+          url: permalink,
+          alt: aliasPart ?? "",
         });
         return;
       }
