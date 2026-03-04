@@ -13,25 +13,39 @@
 == Skills
 #line(length: 100%)
 *Programming Languages*: TypeScript, Rust, Python, SQL \
-*Frameworks*: Astro \
-*Tools*: Git, Docker, PostgreSQL, Caddy \
-*Other*: GitHub Actions
-#v(2em)
+*Libraries (Node.js)*: Elysia, NestJS, Express, React, Astro, Drizzle ORM, Zod \
+*Other*: Bash, Git, Docker, PostgreSQL, SQLite, NGINX, Caddy, GitHub Actions
+#v(1em)
 
-== Projects
+== Achievements, Projects
 #line(length: 100%)
+
+*Startup hackathon «Fifth element»* #h(1fr) _11-12 october 2025_ \
+Won first place with my team. Presented a project: \
+«U∙Stipend | SFU Scholarship Calculator» #h(1fr) \
+URL: #link("https://u-stipend.ru/")[u-stipend.ru] #h(1em)
+GitHub: #link("https://github.com/IKIT-Group/u-stipend")[github.com/IKIT-Group/u-stipend]
+#v(1em)
+
+*Online store «Baraba Gardens»* #h(1fr) _TypeScript, Elysia, Zod, Drizzle ORM, PostgreSQL_ \
+Developed a REST API for order management (stored in PostgreSQL), \
+Integration with the SDEK API and U-Kassa acquiring. \
+Telemetry using OpenTelemetry. \
+Current status: development finalization, planned for release during March 2026.
+#v(1em)
+
 *Personal website with blog* #h(1fr) _Astro, TypeScript_ \
 A static personal website where I can blog. \
-Website URL: #link("https://efimish.github.io/")[efimish.github.io] \
+URL: #link("https://efimish.github.io/")[efimish.github.io] #h(1em)
 GitHub: #link("https://github.com/Efimish/efimish.github.io")[github.com/Efimish/efimish.github.io]
 #v(1em)
 
 *Pet shelter website* #h(1fr) _TypeScript, NestJS, Docker, PostgreSQL, Yandex.cloud_ \
-A website for a pet shelter. \
 University project built by a team of 5. \
-- I was responsible for the database and the back-end API. \
-- I helped connecting API to the front-end. \
-Website URL: #link("https://ikit-group.github.io/Student-Project/")[ikit-group.github.io/Student-Project] \
+My responsibilities:
+- Database design (PostgreSQL). \
+- API development and integration into the front-end. \
+URL: #link("https://ikit-group.github.io/Student-Project/")[ikit-group.github.io/Student-Project] \
 Front-end GitHub: #link("https://github.com/IKIT-Group/Student-Project")[github.com/IKIT-Group/Student-Project] \
 Back-end GitHub: #link("https://github.com/IKIT-Group/backend")[github.com/IKIT-Group/backend] \
 #v(1em)
@@ -39,7 +53,7 @@ Back-end GitHub: #link("https://github.com/IKIT-Group/backend")[github.com/IKIT-
 *Discord bot* #h(1fr) _TypeScript, discord.js_ \
 A Discord bot that can reply using Mistral LLM API. \
 GitHub: #link("https://github.com/Efimish/Bottie")[github.com/Efimish/Bottie] \
-#v(2em)
+#v(1em)
 
 == Education
 #line(length: 100%)
