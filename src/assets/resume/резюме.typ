@@ -20,16 +20,16 @@
 == Достижения, Проекты
 #line(length: 100%)
 
-*Стартап хакатон «Пятый элемент»* #h(1fr) _11-12 октября 2025_ \
+*Стартап хакатон «Пятый элемент»* #h(1fr) _11 - 12 октября 2025_ \
 Занял первое место вместе с командой, презентовав проект: \
-«U∙Stipend | Калькулятор стипендий СФУ» #h(1fr) \
+«U∙Stipend | Калькулятор стипендий СФУ» \
 Веб-сайт: #link("https://u-stipend.ru/")[u-stipend.ru] #h(1em)
 GitHub: #link("https://github.com/IKIT-Group/u-stipend")[github.com/IKIT-Group/u-stipend]
 #v(1em)
 
 *Интернет-магазин «Сады Барабы»* #h(1fr) _TypeScript, Elysia, Zod, Drizzle ORM, PostgreSQL_ \
 Разработал REST API для управления заказами (хранение в PostgreSQL). \
-Интеграция с API Сдек, эквайрингом Ю-касса. \
+Интеграция с API СДЭК, эквайрингом ЮКасса. \
 Телеметрия с помощью OpenTelemetry. \
 Текущий статус: финализация разработки, планируется релиз в течение марта 2026.
 #v(1em)
@@ -47,12 +47,12 @@ GitHub: #link("https://github.com/Efimish/efimish.github.io")[github.com/Efimish
 - Разработка API и его интеграция во фронт-энд. \
 Веб-сайт: #link("https://ikit-group.github.io/Student-Project/")[ikit-group.github.io/Student-Project] \
 GitHub (фронт-энд): #link("https://github.com/IKIT-Group/Student-Project")[github.com/IKIT-Group/Student-Project] \
-GitHub (бэк-энд): #link("https://github.com/IKIT-Group/backend")[github.com/IKIT-Group/backend] \
+GitHub (бэк-энд): #link("https://github.com/IKIT-Group/backend")[github.com/IKIT-Group/backend]
 #v(1em)
 
 *Дискорд бот* #h(1fr) _TypeScript, discord.js_ \
 Бот для Discord, который умеет отвечать при помощи Mistral LLM API. \
-GitHub: #link("https://github.com/Efimish/Bottie")[github.com/Efimish/Bottie] \
+GitHub: #link("https://github.com/Efimish/Bottie")[github.com/Efimish/Bottie]
 #v(1em)
 
 == Образование
