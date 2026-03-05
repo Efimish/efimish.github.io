@@ -1,22 +1,66 @@
 ---
-title: Markdown and its features
-description: About Markdown language and its capabilities
+title: Markdown and its standards
+description: Markdown language, CommonMark, GFM, and extensions
 date: 2025-06-28
 tags:
   - review
 ---
 
-[Markdown](https://en.wikipedia.org/wiki/Markdown) is a markup language.
-It is used for creating formatted text.
-Its key feature is you only need a plain-text editor to write it.
-This is because Markdown remains readable without any rendering.
-Markdown is widely used for blogging, messaging, online forums, and readme files.
-I personally use Markdown to write [[Welcome to my blog|this blog]]
-and take notes with [[How to start with obsidian|Obsidian]].
+[Markdown](https://daringfireball.net/projects/markdown/)
+is a plain text format for writing structured documents.
+The design goal of Markdown is readability — the source
+text should remain easy to read even without rendering.
 
-Below I will show all the features of Markdown.
+Markdown is widely used for:
+
+- Blogging
+- README files
+- Documentation
+- Messaging platforms
+- Static site generators
+
+I personally use Markdown to write [[Welcome to my blog|this blog]]
+and take notes in [[How to start with obsidian|Obsidian]].
+
+## History and Standards
+
+Markdown was created in 2004 by John Gruber in collaboration with Aaron Swartz.
+The original implementation did not have a strict specification,
+which led to inconsistencies between platforms.
+
+Over time, formal standards appeared:
+
+1. CommonMark
+
+CommonMark is a formal specification that defines how Markdown should behave.
+It standardizes the core syntax and resolves ambiguities of the original implementation.
+
+2. GitHub Flavored Markdown (GFM)
+
+GFM is based on CommonMark and adds extra features such as:
+
+- Task lists
+- Tables
+- Strikethrough
+- Autolinks
+
+3. Other Extensions
+
+Some tools extend Markdown further.
+For example, Obsidian supports wiki links:
+
+```md
+[[Note name]]
+```
+
+Wiki links originate from wiki systems and are **not part of CommonMark or GFM**.
+They are tool-specific extensions.
+
+## CommonMark Features
 
 ---
+
+### Headings
 
 # Heading 1
 
@@ -30,152 +74,178 @@ Below I will show all the features of Markdown.
 
 ###### Heading 6
 
-Paragraphs are separated by a blank line.
+```md
+# Heading 1
 
-Text attributes: _italic_, **bold**, `monospace`, ~~strikethrough~~.
+## Heading 2
 
-> Quote
->
-> > Inner quote
+### Heading 3
 
-```js
-// code block
-console.log("Hello, world!");
+#### Heading 4
+
+##### Heading 5
+
+###### Heading 6
 ```
-
-Line Divider:
 
 ---
 
-[Link to my website](https://efimish.github.io)
+### Paragraphs
 
-![Crescent moon with a star](https://efimish.github.io/favicon-192.png)
+Paragraphs are separated
+by a blank line.
 
-## Lists
+Second paragraph.
 
-There are three types of list you can format in Markdown: \
-unordered lists, ordered lists, and task lists.
+```md
+Paragraphs are separated
+by a blank line.
 
-Here's an unordered list:
+Second paragraph.
+```
+
+---
+
+### Text formatting
+
+_italic_, **bold**, `inline code`.
+
+```md
+_italic_, **bold**, `inline code`.
+```
+
+---
+
+### Lists
+
+Unordered list:
 
 - Item
 - Item
   - Subitem
 - Item
 
-Here's an ordered list:
+Ordered list:
 
 1. Item
 2. Item
    1. Subitem
 3. Item
 
-Here's a task list:
-
-- [x] Task 1
-- [ ] Task 2
-  - [ ] Subtask 1
-- [x] Task 4
-
-## Tables
-
-This is a table in Markdown.
-
-| First Header | Second Header |
-| ------------ | ------------- |
-| Content Cell | Content Cell  |
-| Content Cell | Content Cell  |
-
-You can align cell contents
-
-| Left Aligned | Center Aligned | Right Aligned |
-| :----------- | :------------: | ------------: |
-| 2025-06-01   |      some      |         $4.99 |
-| 2025-06-02   |     wordy      |           $99 |
-| 2025-06-03   |      text      |          $799 |
-
-## Footnotes
-
-Here's a simple footnote[^1], and here's the second one[^2].
-
-[^1]: This is the first footnote.
-
-[^2]: And this is the second footnote.
-
-## Source code
-
-Here you can see what this document will look like without rendering.
-
-````markdown
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-##### Heading 5
-
-###### Heading 6
-
-Paragraphs are separated by a blank line.
-
-Text attributes: _italic_, **bold**, `monospace`, ~~strikethrough~~.
-
-> Quote
->
-> > Inner quote
-
-```js
-// code block
-console.log("Hello, world!");
-```
-
-Line Divider:
-
----
-
-[Link to my website](https://efimish.github.io)
-
-![Crescent moon with a star](https://efimish.github.io/favicon-192.png)
-
-## Lists
-
-There are three types of list you can format in Markdown: \
-unordered lists, ordered lists, and task lists.
-
-Here's an unordered list:
+```md
+Unordered list:
 
 - Item
 - Item
   - Subitem
 - Item
 
-Here's an ordered list:
+Ordered list:
 
 1. Item
 2. Item
-  1. Subitem
+   1. Subitem
 3. Item
+```
 
-Here's a task list:
+---
+
+### Line dividers
+
+---
+
+```md
+---
+```
+
+---
+
+### Code blocks
+
+```js
+// code block
+console.log("Hello, world!");
+```
+
+````md
+```js
+// code block
+console.log("Hello, world!");
+```
+````
+
+---
+
+### Blockquotes
+
+> Quote
+>
+> > Nested quote
+
+```md
+> Quote
+>
+> > Nested quote
+```
+
+---
+
+### Links and Images
+
+[My website](https://efimish.github.io)
+
+![My website favicon](https://efimish.github.io/favicon-192.png)
+
+```md
+[My website](https://efimish.github.io)
+
+![My website favicon](https://efimish.github.io/favicon-192.png)
+```
+
+---
+
+## GFM Extensions
+
+---
+
+### Strikethrough
+
+~~strikethrough~~
+
+```md
+~~strikethrough~~
+```
+
+---
+
+### Task lists
 
 - [x] Task 1
 - [ ] Task 2
-  - [ ] Subtask 1
+  - [x] Subtask 1
+  - [ ] Subtask 2
 - [x] Task 4
 
-## Tables
+```md
+- [x] Task 1
+- [ ] Task 2
+  - [x] Subtask 1
+  - [ ] Subtask 2
+- [x] Task 4
+```
 
-This is a table in Markdown.
+---
+
+### Tables
+
+Table:
 
 | First Header | Second Header |
 | ------------ | ------------- |
 | Content Cell | Content Cell  |
 | Content Cell | Content Cell  |
 
-You can align cell contents
+Table with aligned columns:
 
 | Left Aligned | Center Aligned | Right Aligned |
 | :----------- | :------------: | ------------: |
@@ -183,11 +253,69 @@ You can align cell contents
 | 2025-06-02   |     wordy      |           $99 |
 | 2025-06-03   |      text      |          $799 |
 
-## Footnotes
+```md
+Table:
 
-Here's a simple footnote[^1], and here's the second one[^2].
+| First Header | Second Header |
+| ------------ | ------------- |
+| Content Cell | Content Cell  |
+| Content Cell | Content Cell  |
+
+Table with aligned columns:
+
+| Left Aligned | Center Aligned | Right Aligned |
+| :----------- | :------------: | ------------: |
+| 2025-06-01   |      some      |         $4.99 |
+| 2025-06-02   |     wordy      |           $99 |
+| 2025-06-03   |      text      |          $799 |
+```
+
+---
+
+### Footnotes
+
+First footnote[^1].
+Second footnote[^2].
+Named footnote[^named].
 
 [^1]: This is the first footnote.
 
-[^2]: And this is the second footnote.
-````
+[^2]: This is the second footnote.
+
+[^named]: This is the named footnote.
+
+```md
+First footnote[^1].
+Second footnote[^2].
+Named footnote[^named].
+
+[^1]: This is the first footnote.
+
+[^2]: This is the second footnote.
+
+[^named]: This is the named footnote.
+```
+
+---
+
+## Obsidian / Wiki-style Extensions
+
+---
+
+### Wiki Links and Embeds
+
+[[Markdown and its features]]
+
+[[#Wiki Links]]
+
+![[favicon-192.png]]
+
+```md
+[[Markdown and its features]]
+
+[[#Wiki Links]]
+
+![[favicon-192.png]]
+```
+
+---
