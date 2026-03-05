@@ -51,3 +51,22 @@ bunx license-checker --summary
 ```bash
 bunx sharp-cli -i image.png -f webp --lossless -o .
 ```
+
+## Sync content with Obsidian
+
+**! WARNING !** First commit both here and in Obsidian. \
+Assuming Obsidian vault is located at ~/notes.
+
+```bash
+# Diff
+find . ~/notes -name ".DS_Store" -type f -print -delete
+diff -q src/content/posts ~/notes/Posts
+
+# Copy from here to Obsidian
+rm -rf ~/notes/Posts
+cp -r src/content/posts ~/notes/Posts
+
+# Copy from Obsidian to here
+rm -rf src/content/posts
+cp -r ~/notes/Posts src/content/posts
+```
