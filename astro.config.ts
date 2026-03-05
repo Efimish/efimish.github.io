@@ -16,6 +16,7 @@ export default defineConfig({
       wrap: true,
     },
     remarkPlugins: [remarkWikiLink],
+    smartypants: false,
   },
   integrations: [sitemap()],
 });
