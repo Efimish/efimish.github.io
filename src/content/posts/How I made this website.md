@@ -38,8 +38,7 @@ their Sitemap and RSS plugins.
 
 ## Content
 
-I like writing in [[Markdown and its features|Markdown]]
-and I think it's perfect for articles.
+I like writing in [[Markdown]] and I think it's perfect for articles.
 
 Astro's content collections provide a nice way to
 manage markdown files and validate their frontmatter.

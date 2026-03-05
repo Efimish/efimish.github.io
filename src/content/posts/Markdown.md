@@ -304,16 +304,16 @@ Named footnote[^named].
 
 ### Wiki Links and Embeds
 
-[[Markdown and its features]]
+[[Markdown]]
 
-[[#Wiki Links]]
+[[#Wiki Links and Embeds]]
 
 ![[favicon-192.png]]
 
 ```md
-[[Markdown and its features]]
+[[Markdown]]
 
-[[#Wiki Links]]
+[[#Wiki Links and Embeds]]
 
 ![[favicon-192.png]]
 ```

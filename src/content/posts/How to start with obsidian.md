@@ -11,8 +11,7 @@ I use it to take notes, journal and connect my thoughts.
 
 Before Obsidian, I used other note-taking apps, mainly Apple Notes.
 The reason I switched to Obsidian is because it is cross-platform, flexible,
-and uses [[Markdown and its features|Markdown]].
-And there was a lot of hype around it :)
+and uses [[Markdown]]. And there was a lot of hype around it :)
 
 Watching YouTube videos of other people's setups,
 It felt like obsidian was really difficult and would take months to master.

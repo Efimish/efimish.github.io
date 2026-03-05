@@ -49,7 +49,7 @@ Astro delivers a complete solution:
   Seamlessly integrate React or Vue islands in Astro components
 
 - **Content-first design**: \
-  [[Markdown and its features|Markdown]] support with type-safe frontmatter validation out-of-the-box
+  [[Markdown]] support with type-safe frontmatter validation out-of-the-box
 
 - **Modern DX**: \
   Hot reloading, image optimization, and CLI tooling in a single package
