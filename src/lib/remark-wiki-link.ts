@@ -70,8 +70,22 @@ export const remarkWikiLink = () => {
       const [linkWithHeadingPath, aliasPart] = inner.split("|").map((s) => s.trim());
       const [linkPart, headingPart] = linkWithHeadingPath.split("#").map((s) => s.trim());
 
-      const permalink = permalinks.get(linkPart.toLowerCase());
       const displayText = aliasPart ?? headingPart ?? linkPart;
+      const headingSlug = headingPart ? "#" + githubSlug(headingPart) : "";
+
+      if (!linkPart && headingPart) {
+        nodes.push({
+          type: "link",
+          url: headingSlug,
+          children: [{
+            type: "text",
+            value: displayText,
+          }],
+        });
+        return;
+      }
+
+      const permalink = permalinks.get(linkPart.toLowerCase());
 
       if (!permalink) {
         nodes.push({
@@ -90,17 +104,13 @@ export const remarkWikiLink = () => {
         return;
       }
 
-      const headingSlug = headingPart ? "#" + githubSlug(headingPart) : "";
-
       nodes.push({
         type: "link",
         url: permalink + headingSlug,
-        children: [
-          {
-            type: "text",
-            value: displayText,
-          },
-        ],
+        children: [{
+          type: "text",
+          value: displayText,
+        }],
       });
     });
 
