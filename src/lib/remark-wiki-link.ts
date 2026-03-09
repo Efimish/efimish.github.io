@@ -1,47 +1,15 @@
 import type { Root, Text, Link, Image } from "mdast";
-import path from "path";
 import { visit } from "unist-util-visit";
-import { globSync } from "tinyglobby";
-import { slug as githubSlug } from "github-slugger";
+import { slug } from "github-slugger";
 
 const WIKI_LINK_REGEX = /!?\[\[([^\]]+)\]\]/;
 
-const buildPermalinks = () => {
-  const permalinks = new Map<string, string>();
+export interface Options {
+  permalinks: Map<string, string>;
+}
 
-  const posts = globSync("**/*.md", { cwd: "src/content/posts" })
-    .map((post) => post.replace(new RegExp(path.extname(post) + "$"), ""))
-    .sort((a, b) => a.split(path.sep).length - b.split(path.sep).length || a.localeCompare(b))
-    .map((post) => [
-      post,
-      `/posts/${post.split(path.sep).map((s) => githubSlug(s)).join("/").replace(/\/index$/, "")}/`,
-    ] as const);
-
-  const files = globSync("**/*", { cwd: "public", onlyFiles: true })
-    .map((file) => [file, `/${file}`] as const);
-
-  const assets = globSync("**/*", { cwd: "src/assets", onlyFiles: true })
-    .map((asset) => [asset, `src/assets/${asset}`]);
-
-  [...posts, ...files, ...assets].forEach(([link, permalink]) => {
-    const pathSegments = link.split(path.sep);
-    const pathTry: string[] = [];
-    while (pathSegments.length > 0) {
-      pathTry.unshift(pathSegments.pop()!);
-      const pathTryString = pathTry.join("/").toLowerCase();
-      if (permalinks.has(pathTryString)) continue;
-      permalinks.set(pathTryString, permalink);
-      return;
-    }
-  });
-
-  return permalinks;
-};
-
-export const remarkWikiLink = () => {
-  const permalinks = buildPermalinks();
-
-  return (tree: Root) => visit(tree, "text", (node, index, parent) => {
+export const remarkWikiLink = ({ permalinks }: Options) =>
+  (tree: Root) => visit(tree, "text", (node, index, parent) => {
     if (!parent || typeof index !== "number") return;
     const { value } = node;
 
@@ -71,8 +39,9 @@ export const remarkWikiLink = () => {
       const [linkPart, headingPart] = linkWithHeadingPath.split("#").map((s) => s.trim());
 
       const displayText = aliasPart ?? headingPart ?? linkPart;
-      const headingSlug = headingPart ? "#" + githubSlug(headingPart) : "";
+      const headingSlug = headingPart ? "#" + slug(headingPart) : "";
 
+      // [[#Heading]]
       if (!linkPart && headingPart) {
         nodes.push({
           type: "link",
@@ -87,6 +56,7 @@ export const remarkWikiLink = () => {
 
       const permalink = permalinks.get(linkPart.toLowerCase());
 
+      // [[Unknown link]]
       if (!permalink) {
         nodes.push({
           type: "text",
@@ -95,6 +65,7 @@ export const remarkWikiLink = () => {
         return;
       }
 
+      // ![[image.png]]
       if (isEmbed) {
         nodes.push({
           type: "image",
@@ -104,6 +75,7 @@ export const remarkWikiLink = () => {
         return;
       }
 
+      // [[Known link]]
       nodes.push({
         type: "link",
         url: permalink + headingSlug,
@@ -124,4 +96,3 @@ export const remarkWikiLink = () => {
 
     parent.children.splice(index, 1, ...nodes);
   });
-}

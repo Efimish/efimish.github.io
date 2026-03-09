@@ -1,6 +1,6 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
-import { remarkWikiLink } from "./src/lib/remark-wiki-link";
+import wikiLink from "./src/lib/astro-wiki-link";
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,8 +15,7 @@ export default defineConfig({
       defaultColor: false,
       wrap: true,
     },
-    remarkPlugins: [remarkWikiLink],
     smartypants: false,
   },
-  integrations: [sitemap()],
+  integrations: [sitemap(), wikiLink()],
 });
