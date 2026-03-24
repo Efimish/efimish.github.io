@@ -28,8 +28,7 @@ since they might change in the future.
 
 ## Tools
 
-As my frontend framework I chose
-[[Why Astro stands out|Astro]].
+As my frontend framework I chose [[Astro]].
 It allows me to easily build static pages
 with 0 JavaScript by default.
 
