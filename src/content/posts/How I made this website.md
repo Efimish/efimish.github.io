@@ -1,7 +1,8 @@
 ---
 title: How I made this website
 description: Story of creating my personal website
-date: 2025-10-23
+created: 2025-10-23
+updated: 2025-10-27
 tags:
   - development
   - blogging

@@ -6,7 +6,7 @@ import { blog } from "@/consts";
 
 export const GET: APIRoute = async (context) => {
   const posts = (await getCollection("posts")).sort(
-    (a, b) => b.data.date.getTime() - a.data.date.getTime()
+    (a, b) => b.data.created.getTime() - a.data.created.getTime()
   );
 
   return rss({
@@ -16,7 +16,7 @@ export const GET: APIRoute = async (context) => {
     items: posts.map((post) => ({
       title: post.data.title,
       description: post.data.description,
-      pubDate: post.data.date,
+      pubDate: post.data.created,
       categories: post.data.tags,
       link: `/posts/${post.id}/`,
       content: sanitize(post.rendered?.html ?? "", {

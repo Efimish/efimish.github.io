@@ -1,7 +1,8 @@
 ---
 title: Markdown and its standards
 description: Markdown language, CommonMark, GFM, and extensions
-date: 2025-06-28
+created: 2025-06-28
+updated: 2026-03-05
 tags:
   - review
 ---

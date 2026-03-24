@@ -1,7 +1,8 @@
 ---
 title: How to start with Obsidian
 description: How to easily start note-taking with Obsidian.md
-date: 2025-06-24
+created: 2025-06-24
+updated: 2025-11-26
 tags:
   - guide
 ---

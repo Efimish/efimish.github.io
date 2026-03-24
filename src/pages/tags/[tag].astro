@@ -6,7 +6,7 @@ import Post from "@/components/Post.astro";
 
 export async function getStaticPaths() {
   const posts = (await getCollection("posts")).sort(
-    (a, b) => b.data.date.getTime() - a.data.date.getTime()
+    (a, b) => b.data.created.getTime() - a.data.created.getTime()
   );
   const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags)));
 

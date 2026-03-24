@@ -1,7 +1,8 @@
 ---
 title: Astro web framework
 description: Exploring Astro - The web framework for content-driven websites
-date: 2025-06-29
+created: 2025-06-29
+updated: 2026-03-24
 tags:
   - review
 ---

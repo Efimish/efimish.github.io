@@ -1,7 +1,8 @@
 ---
 title: Welcome to my blog!
 description: Introduction post
-date: 2025-06-23
+created: 2025-06-23
+updated: 2026-02-03
 tags:
   - welcome
 ---

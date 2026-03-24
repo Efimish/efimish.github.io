@@ -6,7 +6,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Post from "@/components/Post.astro";
 
 const posts = (await getCollection("posts")).sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+  (a, b) => b.data.created.getTime() - a.data.created.getTime()
 );
 
 const schema = {

@@ -1,7 +1,7 @@
 ---
 title: How I manage packages across systems
 description: Managing packages on MacOS and Windows
-date: 2025-10-28
+created: 2025-10-28
 tags:
   - systems
   - packages

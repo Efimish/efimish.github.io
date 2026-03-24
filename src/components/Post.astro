@@ -8,7 +8,7 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const { title, description, date, tags } = post.data;
+const { title, description, created, tags } = post.data;
 ---
 
 <article>
@@ -19,7 +19,7 @@ const { title, description, date, tags } = post.data;
       </a>
     </h2>
     <p>{description}</p>
-    <Date date={date} />
+    <Date date={created} />
     <ul>
       {
         tags.map((tag) => (

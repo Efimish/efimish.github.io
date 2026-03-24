@@ -7,7 +7,8 @@ const posts = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    date: z.date(),
+    created: z.date(),
+    updated: z.date().nullish(),
     tags: z.string()
       .regex(/^[a-z-]+$/, "Tags must contain lowercase letters and hyphens only")
       .array(),
