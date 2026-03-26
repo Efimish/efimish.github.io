@@ -21,7 +21,7 @@ Markdown is widely used for:
 - Static site generators
 
 I personally use Markdown to write [[Welcome to my blog|this blog]]
-and take notes in [[How to start with obsidian|Obsidian]].
+and take notes in [[Obsidian]].
 
 ## History and Standards
 
