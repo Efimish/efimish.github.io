@@ -7,6 +7,8 @@ export const fullname = `${firstname} ${lastname}`;
 
 export const email = "me@efima.ru";
 export const github = "https://github.com/Efimish";
+export const telegram = "https://t.me/efimish";
+export const vk = "https://vk.com/efim_ish";
 export const linkedin = "https://www.linkedin.com/in/efima";
 
 export const site = {

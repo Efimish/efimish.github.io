@@ -1,8 +1,10 @@
 ---
-import { email, github } from "@/consts";
+import { email, github, telegram, vk } from "@/consts";
 import Resume from "@/assets/icons/resume.svg";
 import Mail from "@/assets/icons/mail.svg";
 import Github from "@/assets/icons/github.svg";
+import Telegram from "@/assets/icons/telegram.svg";
+import VK from "@/assets/icons/vk.svg";
 import RSS from "@/assets/icons/rss.svg";
 import Moon from "@/components/Moon.astro";
 ---
@@ -14,10 +16,24 @@ import Moon from "@/components/Moon.astro";
       <li><Moon /></li>
     </ul>
     <ul>
-      <li><a href="/resume.pdf"><Resume /></a></li>
-      <li><a href=`mailto:${email}`><Mail /></a></li>
-      <li><a href={github} target="_blank"><Github /></a></li>
-      <li><a href="/feed.xml"><RSS /></a></li>
+      <li>
+        <a href="/resume.pdf"><Resume /></a>
+      </li>
+      <li>
+        <a href=`mailto:${email}`><Mail /></a>
+      </li>
+      <li>
+        <a href={github} target="_blank" rel="noreferrer"><Github /></a>
+      </li>
+      <li>
+        <a href={telegram} target="_blank" rel="noreferrer"><Telegram /></a>
+      </li>
+      <li>
+        <a href={vk} target="_blank" rel="noreferrer"><VK /></a>
+      </li>
+      <li>
+        <a href="/feed.xml"><RSS /></a>
+      </li>
     </ul>
   </nav>
 </footer>
