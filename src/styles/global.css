@@ -166,6 +166,7 @@ ol {
 svg {
   vertical-align: text-bottom;
   font-size: 1.2em;
+  overflow: visible;
 }
 
 /* horizontal rule */
