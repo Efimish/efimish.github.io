@@ -4,7 +4,7 @@ import wikiLink from "./src/lib/astro-wiki-link";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://efimish.github.io",
+  site: "https://efimish.dev",
   trailingSlash: "always",
   markdown: {
     shikiConfig: {

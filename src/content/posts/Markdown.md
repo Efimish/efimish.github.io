@@ -193,14 +193,14 @@ console.log("Hello, world!");
 
 ### Links and Images
 
-[My website](https://efimish.github.io)
+[My website](https://efimish.dev)
 
-![My website favicon](https://efimish.github.io/favicon-192.png)
+![My website favicon](https://efimish.dev/favicon-192.png)
 
 ```md
-[My website](https://efimish.github.io)
+[My website](https://efimish.dev)
 
-![My website favicon](https://efimish.github.io/favicon-192.png)
+![My website favicon](https://efimish.dev/favicon-192.png)
 ```
 
 ---

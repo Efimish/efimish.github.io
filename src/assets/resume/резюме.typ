@@ -36,7 +36,7 @@ GitHub: #link("https://github.com/IKIT-Group/u-stipend")[github.com/IKIT-Group/u
 
 *Личный веб-сайт с блогом* #h(1fr) _Astro, TypeScript_ \
 Персональный статический веб-сайт, где можно вести блог. \
-Веб-сайт: #link("https://efimish.github.io/")[efimish.github.io] #h(1em)
+Веб-сайт: #link("https://efimish.dev/")[efimish.dev] #h(1em)
 GitHub: #link("https://github.com/Efimish/efimish.github.io")[github.com/Efimish/efimish.github.io]
 #v(1em)
 

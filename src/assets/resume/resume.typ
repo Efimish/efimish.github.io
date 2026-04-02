@@ -36,7 +36,7 @@ Current status: development finalization, planned for release during March 2026.
 
 *Personal website with blog* #h(1fr) _Astro, TypeScript_ \
 A static personal website where I can blog. \
-Website: #link("https://efimish.github.io/")[efimish.github.io] #h(1em)
+Website: #link("https://efimish.dev/")[efimish.dev] #h(1em)
 GitHub: #link("https://github.com/Efimish/efimish.github.io")[github.com/Efimish/efimish.github.io]
 #v(1em)
 
