@@ -9,6 +9,8 @@ import {
   pronouns,
   email,
   github,
+  telegram,
+  vk,
 } from "@/consts";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
@@ -25,7 +27,7 @@ const person = {
   alternateName: username,
   gender: gender,
   email: `mailto:${email}`,
-  sameAs: [github],
+  sameAs: [github, telegram, vk],
 } satisfies WithContext<Person>;
 
 const profile = {
