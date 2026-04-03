@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import rehypeExternalLinks from "rehype-external-links";
 import sitemap from "@astrojs/sitemap";
 import wikiLink from "./src/lib/astro-wiki-link";
 
@@ -16,6 +17,13 @@ export default defineConfig({
       wrap: true,
     },
     smartypants: false,
+    rehypePlugins: [
+      [rehypeExternalLinks, {
+        content: { type: "text", value: " ↗" },
+        rel: "noreferrer",
+        target: "_blank",
+      }],
+    ],
   },
   integrations: [sitemap(), wikiLink()],
 });
