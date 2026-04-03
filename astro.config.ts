@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import rehypeExternalLinks from "rehype-external-links";
 import sitemap from "@astrojs/sitemap";
 import wikiLink from "./src/lib/astro-wiki-link";
+import internalMarkdown from "./src/lib/astro-internal-markdown";
 
 // https://astro.build/config
 export default defineConfig({
@@ -25,5 +26,5 @@ export default defineConfig({
       }],
     ],
   },
-  integrations: [sitemap(), wikiLink()],
+  integrations: [sitemap(), wikiLink(), internalMarkdown()],
 });

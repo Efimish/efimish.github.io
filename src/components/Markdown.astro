@@ -1,0 +1,11 @@
+---
+import { render } from "@/lib/astro-internal-markdown";
+
+interface Props {
+  content?: string;
+}
+
+const content = Astro.props.content ?? (await Astro.slots.render("default"));
+---
+
+<Fragment set:html={await render(content)} />
