@@ -1,13 +1,17 @@
 ---
+import type { Metadata } from "@/lib/types";
 import { site, fullname, themes } from "@/consts";
+import JsonLD from "@/components/JsonLD.astro";
 
-interface Props {
-  title: string;
-  description: string;
-  image?: string;
-}
+interface Props extends Metadata {}
 
-const { title, description, image = "/favicon-512.png" } = Astro.props;
+const {
+  title,
+  description,
+  image = "/favicon-512.png",
+  og = { "og:type": "website" },
+  schemas = [],
+} = Astro.props;
 ---
 
 <meta charset="utf-8" />
@@ -50,3 +54,17 @@ const { title, description, image = "/favicon-512.png" } = Astro.props;
 <meta property="og:description" content={description} />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:image" content={new URL(image, Astro.url.origin)} />
+<meta property="og:type" content={og["og:type"]} />
+{
+  Object.entries(og)
+    .filter(([key, value]) => key !== "og:type" && typeof value !== "undefined")
+    .flatMap(([key, value]) =>
+      Array.isArray(value) ? (
+        value.map((item) => <meta property={key} content={item} />)
+      ) : (
+        <meta property={key} content={value} />
+      ),
+    )
+}
+
+{schemas.map((schema) => <JsonLD schema={schema} />)}

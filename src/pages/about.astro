@@ -18,6 +18,13 @@ import Markdown from "@/components/Markdown.astro";
 <BaseLayout
   title="About"
   description=`About ${fullname}, an open-source developer and thinker passionate about technology and privacy.`
+  og={{
+    "og:type": "profile",
+    "profile:first_name": firstname,
+    "profile:last_name": lastname,
+    "profile:username": username,
+    "profile:gender": gender.toLowerCase(),
+  }}
   schemas={[
     {
       "@type": "Person",
@@ -41,13 +48,6 @@ import Markdown from "@/components/Markdown.astro";
     },
   ]}
 >
-  <Fragment slot="og">
-    <meta property="og:type" content="profile" />
-    <meta property="profile:first_name" content={firstname} />
-    <meta property="profile:last_name" content={lastname} />
-    <meta property="profile:username" content={username} />
-    <meta property="profile:gender" content={gender.toLowerCase()} />
-  </Fragment>
   <!-- prettier-ignore -->
   <Markdown>
 # About

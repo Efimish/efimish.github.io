@@ -2,30 +2,18 @@
 import "@/styles/normalize.css";
 import "@/styles/global.css";
 
-import type { Schema } from "@/lib/types";
+import type { Metadata } from "@/lib/types";
 import BaseHead from "@/components/BaseHead.astro";
-import JsonLD from "@/components/JsonLD.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 
-interface Props {
-  title: string;
-  description: string;
-  image?: string;
-  schemas?: Schema[];
-}
-
-const { title, description, image, schemas = [] } = Astro.props;
+interface Props extends Metadata {}
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} image={image} />
-    <slot name="og">
-      <meta property="og:type" content="website" />
-    </slot>
-    {schemas.map((schema) => <JsonLD schema={schema} />)}
+    <BaseHead {...Astro.props} />
     <script>
       import "@/scripts/theme";
       import "@/scripts/console";
