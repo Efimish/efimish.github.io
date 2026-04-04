@@ -12,13 +12,34 @@ import {
   vk,
 } from "@/consts";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import JsonLD from "@/components/JsonLD.astro";
 import Markdown from "@/components/Markdown.astro";
 ---
 
 <BaseLayout
   title="About"
   description=`About ${fullname}, an open-source developer and thinker passionate about technology and privacy.`
+  schemas={[
+    {
+      "@type": "Person",
+      "@id": new URL("/#person", Astro.url.origin).href,
+      url: Astro.url.href,
+      givenName: firstname,
+      familyName: lastname,
+      name: fullname,
+      alternateName: username,
+      gender: gender,
+      email: `mailto:${email}`,
+      sameAs: [github, telegram, vk],
+    },
+    {
+      "@type": "ProfilePage",
+      url: Astro.url.href,
+      name: "About",
+      mainEntity: {
+        "@id": new URL("/#person", Astro.url.origin).href,
+      },
+    },
+  ]}
 >
   <Fragment slot="og">
     <meta property="og:type" content="profile" />
@@ -26,32 +47,6 @@ import Markdown from "@/components/Markdown.astro";
     <meta property="profile:last_name" content={lastname} />
     <meta property="profile:username" content={username} />
     <meta property="profile:gender" content={gender.toLowerCase()} />
-  </Fragment>
-  <Fragment slot="head">
-    <JsonLD
-      schema={{
-        "@type": "Person",
-        "@id": new URL("/#person", Astro.url.origin).href,
-        url: Astro.url.href,
-        givenName: firstname,
-        familyName: lastname,
-        name: fullname,
-        alternateName: username,
-        gender: gender,
-        email: `mailto:${email}`,
-        sameAs: [github, telegram, vk],
-      }}
-    />
-    <JsonLD
-      schema={{
-        "@type": "ProfilePage",
-        url: Astro.url.href,
-        name: "About",
-        mainEntity: {
-          "@id": new URL("/#person", Astro.url.origin).href,
-        },
-      }}
-    />
   </Fragment>
   <!-- prettier-ignore -->
   <Markdown>

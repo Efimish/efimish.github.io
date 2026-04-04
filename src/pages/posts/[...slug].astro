@@ -1,7 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import JsonLD from "@/components/JsonLD.astro";
 import Markdown from "@/components/Markdown.astro";
 import Tag from "@/components/Tag.astro";
 import Date from "@/components/Date.astro";
@@ -21,7 +20,27 @@ const { title, description, created, tags } = post.data;
 const ISODate = created.toISOString().slice(0, 10);
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout
+  title={title}
+  description={description}
+  schemas={[
+    {
+      "@type": "BlogPosting",
+      url: Astro.url.href,
+      headline: title,
+      description: description,
+      datePublished: ISODate,
+      keywords: tags,
+      inLanguage: "en",
+      author: {
+        "@id": new URL("/#person", Astro.url.origin).href,
+      },
+      isPartOf: {
+        "@id": new URL("/#blog", Astro.url.origin).href,
+      },
+    },
+  ]}
+>
   <Fragment slot="og">
     <meta property="og:type" content="article" />
     <meta
@@ -30,25 +49,6 @@ const ISODate = created.toISOString().slice(0, 10);
     />
     <meta property="article:published_time" content={ISODate} />
     {tags.map((tag) => <meta property="article:tag" content={tag} />)}
-  </Fragment>
-  <Fragment slot="head">
-    <JsonLD
-      schema={{
-        "@type": "BlogPosting",
-        url: Astro.url.href,
-        headline: title,
-        description: description,
-        datePublished: ISODate,
-        keywords: tags,
-        inLanguage: "en",
-        author: {
-          "@id": new URL("/#person", Astro.url.origin).href,
-        },
-        isPartOf: {
-          "@id": new URL("/#blog", Astro.url.origin).href,
-        },
-      }}
-    />
   </Fragment>
   <article>
     <header>

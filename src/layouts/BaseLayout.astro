@@ -2,7 +2,9 @@
 import "@/styles/normalize.css";
 import "@/styles/global.css";
 
+import type { Schema } from "@/lib/types";
 import BaseHead from "@/components/BaseHead.astro";
+import JsonLD from "@/components/JsonLD.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 
@@ -10,9 +12,10 @@ interface Props {
   title: string;
   description: string;
   image?: string;
+  schemas?: Schema[];
 }
 
-const { title, description, image } = Astro.props;
+const { title, description, image, schemas = [] } = Astro.props;
 ---
 
 <!doctype html>
@@ -22,7 +25,7 @@ const { title, description, image } = Astro.props;
     <slot name="og">
       <meta property="og:type" content="website" />
     </slot>
-    <slot name="head" />
+    {schemas.map((schema) => <JsonLD schema={schema} />)}
     <script>
       import "@/scripts/theme";
       import "@/scripts/console";

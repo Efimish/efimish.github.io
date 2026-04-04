@@ -1,25 +1,25 @@
 ---
 import { site, fullname, pronouns } from "@/consts";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import JsonLD from "@/components/JsonLD.astro";
 import Markdown from "@/components/Markdown.astro";
 ---
 
-<BaseLayout title="Home" description={site.description}>
-  <Fragment slot="head">
-    <JsonLD
-      schema={{
-        "@type": "WebSite",
-        "@id": new URL("/#website", Astro.url.origin).href,
-        url: Astro.url.href,
-        name: site.name,
-        description: site.description,
-        author: {
-          "@id": new URL("/#person", Astro.url.origin).href,
-        },
-      }}
-    />
-  </Fragment>
+<BaseLayout
+  title="Home"
+  description={site.description}
+  schemas={[
+    {
+      "@type": "WebSite",
+      "@id": new URL("/#website", Astro.url.origin).href,
+      url: Astro.url.href,
+      name: site.name,
+      description: site.description,
+      author: {
+        "@id": new URL("/#person", Astro.url.origin).href,
+      },
+    },
+  ]}
+>
   <!-- prettier-ignore -->
   <Markdown>
 # {site.name}
