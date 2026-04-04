@@ -1,42 +1,32 @@
 ---
-import {
-  firstname,
-  lastname,
-  fullname,
-  username,
-  gender,
-  pronouns,
-  email,
-  github,
-  telegram,
-  vk,
-} from "@/consts";
+import { person as p } from "@/consts";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Markdown from "@/components/Markdown.astro";
 ---
 
+<!-- prettier-ignore -->
 <BaseLayout
   title="About"
-  description=`About ${fullname}, an open-source developer and thinker passionate about technology and privacy.`
+  description=`About ${p.fullname}, an open-source developer and thinker passionate about technology and privacy.`
   og={{
     "og:type": "profile",
-    "profile:first_name": firstname,
-    "profile:last_name": lastname,
-    "profile:username": username,
-    "profile:gender": gender.toLowerCase(),
+    "profile:first_name": p.firstname,
+    "profile:last_name": p.lastname,
+    "profile:username": p.username,
+    "profile:gender": p.gender.toLowerCase(),
   }}
   schemas={[
     {
       "@type": "Person",
       "@id": new URL("/#person", Astro.url.origin).href,
       url: Astro.url.href,
-      givenName: firstname,
-      familyName: lastname,
-      name: fullname,
-      alternateName: username,
-      gender: gender,
-      email: `mailto:${email}`,
-      sameAs: [github, telegram, vk],
+      givenName: p.firstname,
+      familyName: p.lastname,
+      name: p.fullname,
+      alternateName: p.username,
+      gender: p.gender,
+      email: `mailto:${p.email}`,
+      sameAs: [p.github, p.telegram, p.vk],
     },
     {
       "@type": "ProfilePage",
@@ -48,13 +38,12 @@ import Markdown from "@/components/Markdown.astro";
     },
   ]}
 >
-  <!-- prettier-ignore -->
   <Markdown>
 # About
 
 Hello, traveler!
 
-I am {fullname} ({pronouns}). I am passionate about technology,
+I am {p.fullname} ({p.pronouns}). I am passionate about technology,
 privacy and open source development. I am from Krasnoyarsk, Russia.
 
 ## 🛠️ Skills

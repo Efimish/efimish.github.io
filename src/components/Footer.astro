@@ -1,5 +1,5 @@
 ---
-import { email, github, telegram, vk } from "@/consts";
+import { person as p } from "@/consts";
 import Resume from "@/assets/icons/resume.svg";
 import Mail from "@/assets/icons/mail.svg";
 import Github from "@/assets/icons/github.svg";
@@ -20,16 +20,16 @@ import Moon from "@/components/Moon.astro";
         <a href="/resume.pdf"><Resume /></a>
       </li>
       <li>
-        <a href=`mailto:${email}`><Mail /></a>
+        <a href=`mailto:${p.email}`><Mail /></a>
       </li>
       <li>
-        <a href={github} target="_blank" rel="noreferrer"><Github /></a>
+        <a href={p.github} rel="noreferrer" target="_blank"><Github /></a>
       </li>
       <li>
-        <a href={telegram} target="_blank" rel="noreferrer"><Telegram /></a>
+        <a href={p.telegram} rel="noreferrer" target="_blank"><Telegram /></a>
       </li>
       <li>
-        <a href={vk} target="_blank" rel="noreferrer"><VK /></a>
+        <a href={p.vk} rel="noreferrer" target="_blank"><VK /></a>
       </li>
       <li>
         <a href="/feed.xml"><RSS /></a>

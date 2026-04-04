@@ -1,24 +1,28 @@
-export const firstname = "Efim";
-export const lastname = "Ishenin";
-export const username = "Efimish";
-export const gender = "Male";
-export const pronouns = "he/him";
-export const fullname = `${firstname} ${lastname}`;
+const firstname = "Efim";
+const lastname = "Ishenin";
 
-export const email = "me@efima.ru";
-export const github = "https://github.com/Efimish";
-export const telegram = "https://t.me/efimish";
-export const vk = "https://vk.com/efim_ish";
-export const linkedin = "https://www.linkedin.com/in/efima";
+export const person = {
+  firstname,
+  lastname,
+  fullname: `${firstname} ${lastname}`,
+  username: "Efimish",
+  gender: "Male",
+  pronouns: "he/him",
+  email: "me@efima.ru",
+  github: "https://github.com/Efimish",
+  telegram: "https://t.me/efimish",
+  vk: "https://vk.com/efim_ish",
+  linkedin: "https://www.linkedin.com/in/efima",
+} as const;
 
 export const site = {
-  name: `${firstname}'s corner`,
-  description: `${fullname}'s personal website: programming, projects, and thoughts.`,
+  name: `${person.firstname}'s corner`,
+  description: `${person.fullname}'s personal website: programming, projects, and thoughts.`,
 } as const;
 
 export const blog = {
-  name: `${fullname}'s Blog`,
-  description: `Posts by ${fullname} on development, technology, and more.`,
+  name: `${person.fullname}'s Blog`,
+  description: `Posts by ${person.fullname} on development, technology, and more.`,
 } as const;
 
 export const themes = {

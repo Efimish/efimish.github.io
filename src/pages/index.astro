@@ -1,5 +1,5 @@
 ---
-import { site, fullname, pronouns } from "@/consts";
+import { person as p, site } from "@/consts";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Markdown from "@/components/Markdown.astro";
 ---
@@ -26,7 +26,7 @@ import Markdown from "@/components/Markdown.astro";
 
 Hello, World! And welcome to my corner of the internet!
 
-I am {fullname} ({pronouns}). I am passionate about technology,
+I am {p.fullname} ({p.pronouns}). I am passionate about technology,
 privacy and open source development. I am from Krasnoyarsk, Russia.
 
 ## Pages

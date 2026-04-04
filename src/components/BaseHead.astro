@@ -1,6 +1,6 @@
 ---
 import type { Metadata } from "@/lib/types";
-import { site, fullname, themes } from "@/consts";
+import { person, site, themes } from "@/consts";
 import JsonLD from "@/components/JsonLD.astro";
 
 interface Props extends Metadata {}
@@ -19,7 +19,7 @@ const {
 
 <title>{title} - {site.name}</title>
 <meta name="description" content={description} />
-<meta name="author" content={fullname} />
+<meta name="author" content={person.fullname} />
 <link rel="canonical" href={Astro.url} />
 
 <link rel="icon" href="/favicon.ico" />

@@ -1,10 +1,13 @@
 ---
-import { fullname } from "@/consts";
+import { person } from "@/consts";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Markdown from "@/components/Markdown.astro";
 ---
 
-<BaseLayout title="Uses" description=`What technologies ${fullname} uses.`>
+<BaseLayout
+  title="Uses"
+  description=`What technologies ${person.fullname} uses.`
+>
   <!-- prettier-ignore -->
   <Markdown>
 # Uses
