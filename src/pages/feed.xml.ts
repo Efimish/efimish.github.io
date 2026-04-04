@@ -6,7 +6,7 @@ import { blog } from "@/consts";
 
 export const GET: APIRoute = async (context) => {
   const posts = (await getCollection("posts")).sort(
-    (a, b) => b.data.created.getTime() - a.data.created.getTime()
+    (a, b) => b.data.created.getTime() - a.data.created.getTime(),
   );
 
   return rss({

@@ -1,37 +1,16 @@
 ---
 import { fullname } from "@/consts";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import Markdown from "@/components/Markdown.astro";
 ---
 
 <BaseLayout title="Projects" description=`${fullname}'s open source projects.`>
-  <h1>Projects</h1>
-  <ul>
-    <li>
-      <a
-        href="https://github.com/Efimish/efimish.github.io"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Personal website with blog
-      </a>
-    </li>
-    <li>
-      <a
-        href="https://github.com/IKIT-Group/backend"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Backend for a pet shelter website
-      </a>
-    </li>
-    <li>
-      <a
-        href="https://github.com/Efimish/Bottie"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Discord bot that replies using Mistral LLM API
-      </a>
-    </li>
-  </ul>
+  <!-- prettier-ignore -->
+  <Markdown>
+# Projects
+
+- [Personal website with blog](https://github.com/Efimish/efimish.github.io)
+- [Backend for a pet shelter website](https://github.com/IKIT-Group/backend)
+- [Discord bot that replies using Mistral LLM API](https://github.com/Efimish/Bottie)
+  </Markdown>
 </BaseLayout>

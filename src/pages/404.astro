@@ -1,7 +1,11 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import Markdown from "@/components/Markdown.astro";
 ---
 
 <BaseLayout title="404: Not Found" description="Page not found">
-  <h1>Page not found</h1>
+  <!-- prettier-ignore -->
+  <Markdown>
+    # Page not found
+  </Markdown>
 </BaseLayout>

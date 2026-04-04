@@ -13,6 +13,7 @@ import {
   vk,
 } from "@/consts";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import Markdown from "@/components/Markdown.astro";
 
 const description = `About ${fullname}, an open-source developer and thinker passionate about technology and privacy.`;
 
@@ -53,25 +54,24 @@ const profile = {
     <script type="application/ld+json" set:html={JSON.stringify(person)} />
     <script type="application/ld+json" set:html={JSON.stringify(profile)} />
   </Fragment>
-  <header>
-    <h1>About</h1>
-    <p>Hello, traveler!</p>
-    <p>
-      I am {fullname} ({pronouns}). I am passionate about technology, privacy
-      and open source development. I am from Krasnoyarsk, Russia.
-    </p>
-  </header>
-  <section>
-    <h2>🛠️ Skills</h2>
-    <ul>
-      <li>TypeScript, Rust, Python, SQL</li>
-      <li>Astro</li>
-      <li>Git, Docker, PostgreSQL, Caddy</li>
-      <li>GitHub Actions</li>
-    </ul>
-  </section>
-  <section>
-    <h2>📚 Education</h2>
-    <p>Siberian Federal University - B.Sc. in Computer Science, 2023-2027</p>
-  </section>
+  <!-- prettier-ignore -->
+  <Markdown>
+# About
+
+Hello, traveler!
+
+I am {fullname} ({pronouns}). I am passionate about technology,
+privacy and open source development. I am from Krasnoyarsk, Russia.
+
+## 🛠️ Skills
+
+- TypeScript, Rust, Python, SQL
+- Astro
+- Git, Docker, PostgreSQL, Caddy
+- GitHub Actions
+
+## 📚 Education
+
+Siberian Federal University - B.Sc. in Computer Science, 2023-2027
+  </Markdown>
 </BaseLayout>

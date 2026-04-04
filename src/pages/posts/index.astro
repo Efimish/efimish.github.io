@@ -3,10 +3,11 @@ import type { WithContext, Blog } from "schema-dts";
 import { getCollection } from "astro:content";
 import { blog } from "@/consts";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import Markdown from "@/components/Markdown.astro";
 import Post from "@/components/Post.astro";
 
 const posts = (await getCollection("posts")).sort(
-  (a, b) => b.data.created.getTime() - a.data.created.getTime()
+  (a, b) => b.data.created.getTime() - a.data.created.getTime(),
 );
 
 const schema = {
@@ -29,6 +30,9 @@ const schema = {
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </Fragment>
-  <h1>Posts</h1>
+  <!-- prettier-ignore -->
+  <Markdown>
+    # Posts
+  </Markdown>
   {posts.map((post) => <Post post={post} />)}
 </BaseLayout>
