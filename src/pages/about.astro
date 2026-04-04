@@ -1,5 +1,4 @@
 ---
-import type { WithContext, Person, ProfilePage } from "schema-dts";
 import {
   firstname,
   lastname,
@@ -13,36 +12,14 @@ import {
   vk,
 } from "@/consts";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import JsonLD from "@/components/JsonLD.astro";
 import Markdown from "@/components/Markdown.astro";
-
-const description = `About ${fullname}, an open-source developer and thinker passionate about technology and privacy.`;
-
-const person = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": new URL("/#person", Astro.url.origin).href,
-  url: Astro.url.href,
-  givenName: firstname,
-  familyName: lastname,
-  name: fullname,
-  alternateName: username,
-  gender: gender,
-  email: `mailto:${email}`,
-  sameAs: [github, telegram, vk],
-} satisfies WithContext<Person>;
-
-const profile = {
-  "@context": "https://schema.org",
-  "@type": "ProfilePage",
-  url: Astro.url.href,
-  name: "About",
-  mainEntity: {
-    "@id": new URL("/#person", Astro.url.origin).href,
-  },
-} satisfies WithContext<ProfilePage>;
 ---
 
-<BaseLayout title="About" description={description}>
+<BaseLayout
+  title="About"
+  description=`About ${fullname}, an open-source developer and thinker passionate about technology and privacy.`
+>
   <Fragment slot="og">
     <meta property="og:type" content="profile" />
     <meta property="profile:first_name" content={firstname} />
@@ -51,8 +28,30 @@ const profile = {
     <meta property="profile:gender" content={gender.toLowerCase()} />
   </Fragment>
   <Fragment slot="head">
-    <script type="application/ld+json" set:html={JSON.stringify(person)} />
-    <script type="application/ld+json" set:html={JSON.stringify(profile)} />
+    <JsonLD
+      schema={{
+        "@type": "Person",
+        "@id": new URL("/#person", Astro.url.origin).href,
+        url: Astro.url.href,
+        givenName: firstname,
+        familyName: lastname,
+        name: fullname,
+        alternateName: username,
+        gender: gender,
+        email: `mailto:${email}`,
+        sameAs: [github, telegram, vk],
+      }}
+    />
+    <JsonLD
+      schema={{
+        "@type": "ProfilePage",
+        url: Astro.url.href,
+        name: "About",
+        mainEntity: {
+          "@id": new URL("/#person", Astro.url.origin).href,
+        },
+      }}
+    />
   </Fragment>
   <!-- prettier-ignore -->
   <Markdown>

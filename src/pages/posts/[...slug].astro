@@ -1,7 +1,7 @@
 ---
-import type { WithContext, BlogPosting } from "schema-dts";
 import { getCollection, render } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import JsonLD from "@/components/JsonLD.astro";
 import Markdown from "@/components/Markdown.astro";
 import Tag from "@/components/Tag.astro";
 import Date from "@/components/Date.astro";
@@ -19,23 +19,6 @@ const { Content } = await render(post);
 
 const { title, description, created, tags } = post.data;
 const ISODate = created.toISOString().slice(0, 10);
-
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  url: Astro.url.href,
-  headline: title,
-  description: description,
-  datePublished: ISODate,
-  keywords: tags,
-  inLanguage: "en",
-  author: {
-    "@id": new URL("/#person", Astro.url.origin).href,
-  },
-  isPartOf: {
-    "@id": new URL("/#blog", Astro.url.origin).href,
-  },
-} satisfies WithContext<BlogPosting>;
 ---
 
 <BaseLayout title={title} description={description}>
@@ -49,7 +32,23 @@ const schema = {
     {tags.map((tag) => <meta property="article:tag" content={tag} />)}
   </Fragment>
   <Fragment slot="head">
-    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <JsonLD
+      schema={{
+        "@type": "BlogPosting",
+        url: Astro.url.href,
+        headline: title,
+        description: description,
+        datePublished: ISODate,
+        keywords: tags,
+        inLanguage: "en",
+        author: {
+          "@id": new URL("/#person", Astro.url.origin).href,
+        },
+        isPartOf: {
+          "@id": new URL("/#blog", Astro.url.origin).href,
+        },
+      }}
+    />
   </Fragment>
   <article>
     <header>

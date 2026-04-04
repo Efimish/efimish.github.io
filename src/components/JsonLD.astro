@@ -1,0 +1,36 @@
+---
+import type {
+  WithContext,
+  WebSite,
+  WebPage,
+  BreadcrumbList,
+  Person,
+  ProfilePage,
+  Blog,
+  BlogPosting,
+} from "schema-dts";
+
+type Schema =
+  | WebSite
+  | WebPage
+  | BreadcrumbList
+  | Person
+  | ProfilePage
+  | Blog
+  | BlogPosting;
+
+interface Props {
+  schema: Schema;
+}
+
+const { schema } = Astro.props;
+
+const data = Object.assign(
+  {
+    "@context": "https://schema.org" as const,
+  },
+  schema,
+) satisfies WithContext<Schema>;
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(data)} />

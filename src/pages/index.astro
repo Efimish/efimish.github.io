@@ -1,25 +1,24 @@
 ---
-import type { WithContext, WebSite } from "schema-dts";
 import { site, fullname, pronouns } from "@/consts";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import JsonLD from "@/components/JsonLD.astro";
 import Markdown from "@/components/Markdown.astro";
-
-const website = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": new URL("/#website", Astro.url.origin).href,
-  url: Astro.url.href,
-  name: site.name,
-  description: site.description,
-  author: {
-    "@id": new URL("/#person", Astro.url.origin).href,
-  },
-} satisfies WithContext<WebSite>;
 ---
 
 <BaseLayout title="Home" description={site.description}>
   <Fragment slot="head">
-    <script type="application/ld+json" set:html={JSON.stringify(website)} />
+    <JsonLD
+      schema={{
+        "@type": "WebSite",
+        "@id": new URL("/#website", Astro.url.origin).href,
+        url: Astro.url.href,
+        name: site.name,
+        description: site.description,
+        author: {
+          "@id": new URL("/#person", Astro.url.origin).href,
+        },
+      }}
+    />
   </Fragment>
   <!-- prettier-ignore -->
   <Markdown>

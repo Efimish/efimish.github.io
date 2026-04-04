@@ -1,34 +1,33 @@
 ---
-import type { WithContext, Blog } from "schema-dts";
 import { getCollection } from "astro:content";
 import { blog } from "@/consts";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import JsonLD from "@/components/JsonLD.astro";
 import Markdown from "@/components/Markdown.astro";
 import Post from "@/components/Post.astro";
 
 const posts = (await getCollection("posts")).sort(
   (a, b) => b.data.created.getTime() - a.data.created.getTime(),
 );
-
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  "@id": new URL("/#blog", Astro.url.origin).href,
-  url: Astro.url.href,
-  name: blog.name,
-  description: blog.description,
-  author: {
-    "@id": new URL("/#person", Astro.url.origin).href,
-  },
-  isPartOf: {
-    "@id": new URL("/#website", Astro.url.origin).href,
-  },
-} satisfies WithContext<Blog>;
 ---
 
 <BaseLayout title="Posts" description={blog.description}>
   <Fragment slot="head">
-    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <JsonLD
+      schema={{
+        "@type": "Blog",
+        "@id": new URL("/#blog", Astro.url.origin).href,
+        url: Astro.url.href,
+        name: blog.name,
+        description: blog.description,
+        author: {
+          "@id": new URL("/#person", Astro.url.origin).href,
+        },
+        isPartOf: {
+          "@id": new URL("/#website", Astro.url.origin).href,
+        },
+      }}
+    />
   </Fragment>
   <!-- prettier-ignore -->
   <Markdown>
