@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import { blog } from "@/consts";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Markdown from "@/components/Markdown.astro";
+import Prose from "@/components/Prose.astro";
 import Tag from "@/components/Tag.astro";
 
 const posts = await getCollection("posts");
@@ -15,17 +15,16 @@ const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags)))
 ---
 
 <BaseLayout title="Tags" description=`Topics covered on ${blog.name}.`>
-  <!-- prettier-ignore -->
-  <Markdown>
-    # Tags
-  </Markdown>
-  <ul>
-    {
-      tags.map(({ tag, count }) => (
-        <li>
-          <Tag tag={tag} /> ({count})
-        </li>
-      ))
-    }
-  </ul>
+  <Prose>
+    <h1>Tags</h1>
+    <ul>
+      {
+        tags.map(({ tag, count }) => (
+          <li>
+            <Tag tag={tag} /> ({count})
+          </li>
+        ))
+      }
+    </ul>
+  </Prose>
 </BaseLayout>

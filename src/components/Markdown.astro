@@ -1,4 +1,5 @@
 ---
+import Prose from "@/components/Prose.astro";
 import { render } from "@/lib/astro-internal-markdown";
 
 interface Props {
@@ -8,4 +9,6 @@ interface Props {
 const content = Astro.props.content ?? (await Astro.slots.render("default"));
 ---
 
-<Fragment set:html={await render(content)} />
+<Prose>
+  <Fragment set:html={await render(content)} />
+</Prose>

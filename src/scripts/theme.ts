@@ -6,10 +6,10 @@ class ThemeColorManager {
 
   constructor() {
     this.metaThemeColorTags = Array.from(
-      document.querySelectorAll<HTMLMetaElement>('meta[name="theme-color"]')
+      document.querySelectorAll<HTMLMetaElement>('meta[name="theme-color"]'),
     );
     this.initialMetaThemeColorTagsValues = this.metaThemeColorTags.map(
-      (meta) => meta.content
+      (meta) => meta.content,
     );
   }
 
@@ -40,7 +40,7 @@ class ThemeColorManager {
     localStorage.setItem("theme", theme);
     document.documentElement.dataset.theme = theme;
     if (theme in themes) {
-      this.setThemeColor(themes[theme as keyof typeof themes].bgPrimary);
+      this.setThemeColor(themes[theme as keyof typeof themes]);
     } else {
       this.resetThemeColor();
     }

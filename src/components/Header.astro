@@ -3,18 +3,35 @@ import ThemeSelector from "@/components/ThemeSelector.astro";
 ---
 
 <header>
-  <nav aria-label="Primary navigation">
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/about/">About</a></li>
+  <nav
+    aria-label="Primary navigation"
+    class="flex flex-wrap justify-between gap-x-4"
+  >
+    <ul class="flex flex-wrap gap-x-4">
+      <li>
+        <a class="text-blue-600 dark:text-blue-500" href="/">Home</a>
+      </li>
+      <li>
+        <a class="text-blue-600 dark:text-blue-500" href="/about/">About</a>
+      </li>
     </ul>
-    <ul>
-      <li><a href="/posts/">Posts</a></li>
-      <li><a href="/tags/">Tags</a></li>
-      <li><a href="/uses/">Uses</a></li>
-      <li><a href="/projects/">Projects</a></li>
+    <ul class="flex flex-wrap gap-x-4">
+      <li>
+        <a class="text-blue-600 dark:text-blue-500" href="/posts/">Posts</a>
+      </li>
+      <li>
+        <a class="text-blue-600 dark:text-blue-500" href="/tags/">Tags</a>
+      </li>
+      <li>
+        <a class="text-blue-600 dark:text-blue-500" href="/uses/">Uses</a>
+      </li>
+      <li>
+        <a class="text-blue-600 dark:text-blue-500" href="/projects/">
+          Projects
+        </a>
+      </li>
       <li><ThemeSelector /></li>
     </ul>
   </nav>
-  <hr />
+  <hr class="my-4 border-neutral-200 dark:border-neutral-700" />
 </header>

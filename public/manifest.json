@@ -3,8 +3,8 @@
   "short_name": "Efimish",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#101010",
-  "background_color": "#101010",
+  "theme_color": "#171717",
+  "background_color": "#171717",
   "icons": [
     {
       "src": "/favicon-192.png",

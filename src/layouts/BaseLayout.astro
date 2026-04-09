@@ -1,6 +1,5 @@
 ---
-import "@/styles/normalize.css";
-import "@/styles/global.css";
+import "@/styles/tailwind.css";
 
 import type { Metadata } from "@/lib/types";
 import BaseHead from "@/components/BaseHead.astro";
@@ -11,7 +10,10 @@ interface Props extends Metadata {}
 ---
 
 <!doctype html>
-<html lang="en">
+<html
+  lang="en"
+  class="bg-neutral-100 text-lg text-neutral-900 accent-blue-500 dark:bg-neutral-900 dark:text-neutral-100 dark:accent-blue-400 scheme-light dark:scheme-dark"
+>
   <head>
     <BaseHead {...Astro.props} />
     <script>
@@ -20,7 +22,7 @@ interface Props extends Metadata {}
     </script>
   </head>
 
-  <body>
+  <body class="mx-auto my-0 max-w-3xl p-4">
     <Header />
     <main>
       <slot />
