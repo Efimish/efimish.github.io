@@ -24,8 +24,8 @@ This repository uses
 feat: rename posts section to notes
 fix: update broken links
 content: add new blog post about Astro
-style: adjust typography scale
 refactor: extract social links component
+style: format code using prettier
 chore: update dependencies
 ci: fix GitHub Pages deployment
 docs: update contributing guide
