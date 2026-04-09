@@ -1,22 +1,22 @@
 import type {
-  WithContext,
-  WebSite,
-  WebPage,
+  Blog,
+  BlogPosting,
   BreadcrumbList,
   Person,
   ProfilePage,
-  Blog,
-  BlogPosting,
+  WebPage,
+  WebSite,
+  WithContext,
 } from "schema-dts";
 
 export type Schema =
-  | WebSite
-  | WebPage
+  | Blog
+  | BlogPosting
   | BreadcrumbList
   | Person
   | ProfilePage
-  | Blog
-  | BlogPosting;
+  | WebPage
+  | WebSite;
 
 export type SchemaWithContext = WithContext<Schema>;
 
@@ -26,4 +26,4 @@ export interface Metadata {
   image?: string;
   og?: { "og:type": string } & Record<string, string | string[] | undefined>;
   schemas?: Schema[];
-};
+}

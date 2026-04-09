@@ -8,6 +8,7 @@ export interface Options {
   permalinks: Map<string, string>;
 }
 
+// prettier-ignore
 export const remarkWikiLink = ({ permalinks }: Options) =>
   (tree: Root) => visit(tree, "text", (node, index, parent) => {
     if (!parent || typeof index !== "number") return;

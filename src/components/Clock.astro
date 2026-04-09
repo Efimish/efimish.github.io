@@ -3,7 +3,9 @@
 <script>
   const updateClock = (clock: HTMLTimeElement) => {
     const now = new Date();
-    const weekday = now.toLocaleDateString("en-US", { weekday: "long" }).slice(0, 2);
+    const weekday = now
+      .toLocaleDateString("en-US", { weekday: "long" })
+      .slice(0, 2);
 
     const year = now.getFullYear().toString();
     const month = (now.getMonth() + 1).toString().padStart(2, "0");

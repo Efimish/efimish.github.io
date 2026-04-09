@@ -10,7 +10,8 @@ const globalStore = globalThis as typeof globalThis & {
 
 export const render = async (content: string) => {
   const processor = globalStore[symbol];
-  if (!processor) throw new Error("[internal-markdown] Processor not initialized");
+  if (!processor)
+    throw new Error("[internal-markdown] Processor not initialized");
 
   const result = await processor.render(content);
   return result.code;

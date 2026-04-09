@@ -19,6 +19,7 @@ export default defineConfig({
       wrap: true,
     },
     smartypants: false,
+    // prettier-ignore
     rehypePlugins: [
       [rehypeExternalLinks, {
         content: { type: "text", value: " ↗" },

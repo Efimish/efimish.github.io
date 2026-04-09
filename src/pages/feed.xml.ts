@@ -22,7 +22,7 @@ export const GET: APIRoute = async (context) => {
       content: sanitize(post.rendered?.html ?? "", {
         allowedTags: sanitize.defaults.allowedTags
           .concat(["del", "input"])
-          .filter(tag => tag !== "span"),
+          .filter((tag) => tag !== "span"),
         allowedAttributes: {
           ...sanitize.defaults.allowedAttributes,
           input: ["type", "checked", "disabled"],
