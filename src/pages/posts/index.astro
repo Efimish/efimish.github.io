@@ -28,6 +28,6 @@ const posts = (await getCollection("posts")).sort(
     },
   ]}
 >
-  <h1 class="my-4 text-4xl font-extrabold">Posts</h1>
+  <h1 class="my-4">Posts</h1>
   {posts.map((post) => <Post post={post} />)}
 </BaseLayout>

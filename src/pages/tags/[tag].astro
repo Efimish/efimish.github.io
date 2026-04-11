@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import { blog } from "@/consts";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Markdown from "@/components/Markdown.astro";
 import Post from "@/components/Post.astro";
 
 export async function getStaticPaths() {
@@ -25,8 +24,6 @@ const { posts } = Astro.props;
   title=`Tag:${tag}`
   description=`Posts tagged with #${tag} on ${blog.name}.`
 >
-  <Markdown>
-    # Tag:{tag}
-  </Markdown>
+  <h1 class="my-4">Tag:{tag}</h1>
   {posts.map((post) => <Post post={post} />)}
 </BaseLayout>

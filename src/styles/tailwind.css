@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
 
 @custom-variant dark {
   &:where([data-theme="dark"], [data-theme="dark"] *) {
@@ -9,6 +8,93 @@
   @media (prefers-color-scheme: dark) {
     &:where(:not([data-theme="light"], [data-theme="light"] *)) {
       @slot;
+    }
+  }
+}
+
+@layer base {
+  :root {
+    @apply bg-neutral-100 text-lg text-neutral-900 accent-blue-500 scheme-light dark:bg-neutral-900 dark:text-neutral-100 dark:accent-blue-400 dark:scheme-dark;
+  }
+  a {
+    @apply text-blue-600 dark:text-blue-500;
+  }
+  :not(pre) > code {
+    @apply rounded-sm bg-neutral-800 px-1;
+  }
+  h1 {
+    @apply text-3xl;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+  h3 {
+    @apply text-xl;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+  hr {
+    @apply border border-neutral-300 dark:border-neutral-700;
+  }
+  svg {
+    @apply overflow-visible text-xl;
+  }
+
+  [data-prose] {
+    a {
+      @apply underline;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    pre,
+    ul,
+    ol,
+    img {
+      @apply my-4;
+    }
+    ul,
+    ol {
+      @apply ps-6 marker:text-neutral-500 dark:marker:text-neutral-400;
+      ul,
+      ol {
+        @apply my-0;
+      }
+    }
+    ul {
+      @apply list-disc;
+    }
+    ol {
+      @apply list-decimal;
+    }
+    hr {
+      @apply my-2;
+    }
+    pre {
+      @apply rounded-md p-4;
+    }
+    blockquote {
+      @apply my-4 border-s-4 border-neutral-300 ps-4 italic dark:border-neutral-700;
+    }
+    table {
+      @apply my-4 w-full table-fixed;
+    }
+    th:not([align]) {
+      @apply text-left;
+    }
+    th,
+    td {
+      @apply border-2 border-neutral-300 px-2 dark:border-neutral-700;
     }
   }
 }

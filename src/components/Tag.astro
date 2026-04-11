@@ -6,6 +6,9 @@ interface Props {
 const { tag } = Astro.props;
 ---
 
-<a class="text-blue-600 no-underline dark:text-blue-500" href=`/tags/${tag}/`>
+<a
+  class="rounded-md bg-blue-600/20 px-1 dark:bg-blue-500/20"
+  href=`/tags/${tag}/`
+>
   #{tag}
 </a>

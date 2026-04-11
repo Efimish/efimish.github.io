@@ -10,17 +10,15 @@ import Moon from "@/components/Moon.astro";
 ---
 
 <footer>
-  <hr class="my-4 border-neutral-200 dark:border-neutral-700" />
+  <hr class="my-4" />
   <nav
-    aria-label="Secondary navigation"
     class="flex flex-wrap justify-between gap-x-4"
+    aria-label="Secondary navigation"
   >
     <ul class="flex flex-wrap gap-x-4" aria-hidden="true">
       <li><Moon /></li>
     </ul>
-    <ul
-      class="flex flex-wrap gap-x-4 text-xl text-blue-600 dark:text-blue-500 [&_svg]:overflow-visible"
-    >
+    <ul class="flex flex-wrap gap-x-4">
       <li>
         <a href="/resume.pdf"><Resume /></a>
       </li>
