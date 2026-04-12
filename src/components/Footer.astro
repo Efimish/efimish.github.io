@@ -20,22 +20,34 @@ import Moon from "@/components/Moon.astro";
     </ul>
     <ul class="flex flex-wrap gap-x-4">
       <li>
-        <a href="/resume.pdf"><Resume /></a>
+        <a href="/resume.pdf">
+          <Resume class="size-5" />
+        </a>
       </li>
       <li>
-        <a href=`mailto:${p.email}`><Mail /></a>
+        <a href=`mailto:${p.email}`>
+          <Mail class="size-5" />
+        </a>
       </li>
       <li>
-        <a href={p.github} rel="noreferrer" target="_blank"><Github /></a>
+        <a href={p.github} rel="noreferrer" target="_blank">
+          <Github class="size-5" />
+        </a>
       </li>
       <li>
-        <a href={p.telegram} rel="noreferrer" target="_blank"><Telegram /></a>
+        <a href={p.telegram} rel="noreferrer" target="_blank">
+          <Telegram class="size-5" />
+        </a>
       </li>
       <li>
-        <a href={p.vk} rel="noreferrer" target="_blank"><VK /></a>
+        <a href={p.vk} rel="noreferrer" target="_blank">
+          <VK class="size-5" />
+        </a>
       </li>
       <li>
-        <a href="/feed.xml"><RSS /></a>
+        <a href="/feed.xml">
+          <RSS class="size-5" />
+        </a>
       </li>
     </ul>
   </nav>

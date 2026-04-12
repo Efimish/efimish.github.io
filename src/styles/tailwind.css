@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@source inline("sr-only");
 
 @custom-variant dark {
   &:where([data-theme="dark"], [data-theme="dark"] *) {
@@ -20,7 +21,7 @@
     @apply text-blue-600 dark:text-blue-500;
   }
   :not(pre) > code {
-    @apply rounded-sm bg-neutral-800 px-1;
+    @apply rounded-sm bg-neutral-200 px-1 py-0.5 text-sm dark:bg-neutral-800;
   }
   h1 {
     @apply text-3xl;
@@ -43,7 +44,7 @@
     @apply border border-neutral-300 dark:border-neutral-700;
   }
   svg {
-    @apply overflow-visible text-xl;
+    @apply overflow-visible;
   }
 
   [data-prose] {
@@ -81,20 +82,20 @@
       @apply my-2;
     }
     pre {
-      @apply rounded-md p-4;
+      @apply rounded-sm p-4;
     }
     blockquote {
       @apply my-4 border-s-4 border-neutral-300 ps-4 italic dark:border-neutral-700;
     }
     table {
-      @apply my-4 w-full table-fixed;
-    }
-    th:not([align]) {
-      @apply text-left;
+      @apply my-4 table-fixed;
     }
     th,
     td {
-      @apply border-2 border-neutral-300 px-2 dark:border-neutral-700;
+      @apply border border-neutral-300 px-2 py-1 dark:border-neutral-700;
+    }
+    [data-footnotes] ol {
+      @apply text-sm text-neutral-500 dark:text-neutral-400;
     }
   }
 }
