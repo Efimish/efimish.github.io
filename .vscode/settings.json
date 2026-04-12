@@ -3,6 +3,7 @@
     "*.css": "tailwindcss"
   },
   "prettier.documentSelectors": ["**/*.astro"],
+  "tinymist.fontPaths": ["src/assets/fonts"],
   "foam.files.include": [
     "src/content/posts/**/*.md",
     "public/**",

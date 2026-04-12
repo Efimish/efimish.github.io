@@ -3,7 +3,10 @@
     "astro-build.astro-vscode",
     "yoavbls.pretty-ts-errors",
     "bradlc.vscode-tailwindcss",
+    "EditorConfig.EditorConfig",
+    "esbenp.prettier-vscode",
+    "myriad-dreamin.tinymist",
     "foam.foam-vscode"
   ],
-  "unwantedRecommendations": []
+  "unwantedRecommendations": ["tomoki1207.pdf"]
 }
