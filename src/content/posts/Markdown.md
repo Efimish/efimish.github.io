@@ -318,5 +318,3 @@ Named footnote[^named].
 
 ![[favicon-192.png]]
 ```
-
----
