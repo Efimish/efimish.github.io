@@ -5,7 +5,6 @@
     "bradlc.vscode-tailwindcss",
     "EditorConfig.EditorConfig",
     "esbenp.prettier-vscode",
-    "myriad-dreamin.tinymist",
     "foam.foam-vscode"
   ],
   "unwantedRecommendations": ["tomoki1207.pdf"]
