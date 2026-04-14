@@ -16,7 +16,6 @@ export default defineConfig({
         dark: "github-dark",
       },
       defaultColor: false,
-      wrap: true,
     },
     smartypants: false,
     // prettier-ignore
