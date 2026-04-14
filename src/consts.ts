@@ -8,7 +8,7 @@ export const person = {
   username: "Efimish",
   gender: "Male",
   pronouns: "he/him",
-  email: "me@efima.ru",
+  email: "efim.ishenin@gmail.com",
   github: "https://github.com/Efimish",
   telegram: "https://t.me/efimish",
   vk: "https://vk.com/efim_ish",
