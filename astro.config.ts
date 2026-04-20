@@ -21,7 +21,6 @@ export default defineConfig({
     // prettier-ignore
     rehypePlugins: [
       [rehypeExternalLinks, {
-        content: { type: "text", value: " ↗" },
         rel: "noreferrer",
         target: "_blank",
       }],
