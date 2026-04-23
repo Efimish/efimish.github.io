@@ -63,14 +63,14 @@ typst compile --font-path src/assets/fonts src/assets/resume/резюме.typ pu
 ### Create QR codes
 
 ```bash
-bunx qrcode -q 1 -s 1 -o qr.png "https://efimish.dev"
-bunx qrcode -q 1 -s 1 -o qr.svg "https://efimish.dev"
+bunx qrcode -q 1 -s 1 -o qr.png "https://efimish.dev/"
+bunx qrcode -q 1 -s 1 -o qr.svg "https://efimish.dev/"
 ```
 
 ### Test website using Unlighthouse
 
 ```bash
-bunx unlighthouse --site "https://efimish.dev"
+bunx unlighthouse --site "https://efimish.dev/"
 ```
 
 ### Check licenses of node_modules

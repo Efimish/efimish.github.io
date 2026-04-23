@@ -7,7 +7,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://efimish.dev",
+  site: "https://efimish.dev/",
   trailingSlash: "always",
   markdown: {
     shikiConfig: {
