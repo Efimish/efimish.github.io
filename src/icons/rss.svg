@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" role="img"
-  viewBox="2 2 20 20"
-  width="1em" height="1em"
+  viewBox="0 0 24 24"
+  width="24" height="24"
   fill="none"
   stroke="currentColor"
-  stroke-width="3"
+  stroke-width="2"
   stroke-linecap="round"
 >
   <path d="M4 11a9 9 0 0 1 9 9" />
   <path d="M4 4a16 16 0 0 1 16 16" />
-  <circle cx="5" cy="19" r="1" fill="currentColor" />
+  <circle cx="5" cy="19" r="1" />
 </svg>
