@@ -1,11 +1,5 @@
 ---
 import { person as p } from "@/consts";
-import Resume from "@/icons/resume.svg";
-import Mail from "@/icons/mail.svg";
-import Github from "@/icons/github.svg";
-import Telegram from "@/icons/telegram.svg";
-import VK from "@/icons/vk.svg";
-import RSS from "@/icons/rss.svg";
 import Moon from "@/components/Moon.astro";
 ---
 
@@ -20,34 +14,40 @@ import Moon from "@/components/Moon.astro";
     </ul>
     <ul class="flex flex-wrap gap-x-3">
       <li>
-        <a href="/resume.pdf">
-          <Resume />
+        <a class="icon-[lucide--file-user] text-xl" href="/resume.pdf"></a>
+      </li>
+      <li>
+        <a class="icon-[lucide--mail] text-xl" href=`mailto:${p.email}`></a>
+      </li>
+      <li>
+        <a
+          class="icon-[simple-icons--github] text-xl"
+          href={p.github}
+          rel="noreferrer"
+          target="_blank"
+        >
         </a>
       </li>
       <li>
-        <a href=`mailto:${p.email}`>
-          <Mail />
+        <a
+          class="icon-[simple-icons--telegram] text-xl"
+          href={p.telegram}
+          rel="noreferrer"
+          target="_blank"
+        >
         </a>
       </li>
       <li>
-        <a href={p.github} rel="noreferrer" target="_blank">
-          <Github />
+        <a
+          class="icon-[simple-icons--vk] text-xl"
+          href={p.vk}
+          rel="noreferrer"
+          target="_blank"
+        >
         </a>
       </li>
       <li>
-        <a href={p.telegram} rel="noreferrer" target="_blank">
-          <Telegram />
-        </a>
-      </li>
-      <li>
-        <a href={p.vk} rel="noreferrer" target="_blank">
-          <VK />
-        </a>
-      </li>
-      <li>
-        <a href="/feed.xml">
-          <RSS />
-        </a>
+        <a class="icon-[lucide--rss] text-xl" href="/feed.xml"></a>
       </li>
     </ul>
   </nav>

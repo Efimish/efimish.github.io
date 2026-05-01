@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@plugin "@iconify/tailwind4";
+
 @source inline("sr-only");
 
 @custom-variant dark {
@@ -56,7 +58,7 @@
     }
     a[href^="http://"]::after,
     a[href^="https://"]::after {
-      @apply ms-0.5 inline-block size-4 bg-current mask-[url("@/icons/external-link.svg")] mask-no-repeat align-middle content-[""];
+      @apply ms-0.5 icon-[lucide--external-link] align-middle content-[""];
     }
     :not(pre) > code {
       @apply rounded-sm bg-neutral-200 px-1 py-0.5 text-sm dark:bg-neutral-800;

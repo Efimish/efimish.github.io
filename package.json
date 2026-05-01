@@ -30,6 +30,9 @@
     "unist-util-visit": "^5.1.0"
   },
   "devDependencies": {
+    "@iconify-json/lucide": "^1.2.105",
+    "@iconify-json/simple-icons": "^1.2.80",
+    "@iconify/tailwind4": "^1.2.3",
     "@types/mdast": "^4.0.4",
     "@types/sanitize-html": "^2.16.1",
     "prettier": "^3.8.3",
