@@ -15,14 +15,22 @@
   }
 }
 
+.astro-code,
+.astro-code span {
+  @apply bg-(--shiki-light-bg) text-(--shiki-light) dark:bg-(--shiki-dark-bg) dark:text-(--shiki-dark);
+}
+
 [data-prose] {
+  > * {
+    @apply my-4;
+  }
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    @apply my-4 font-bold;
+    @apply font-bold;
   }
   h1 {
     @apply text-3xl;
@@ -32,9 +40,6 @@
   }
   h3 {
     @apply text-xl;
-  }
-  p {
-    @apply my-4;
   }
   a {
     @apply text-blue-600 underline dark:text-blue-500;
@@ -47,18 +52,14 @@
     @apply rounded-sm bg-neutral-200 px-1 py-0.5 text-sm dark:bg-neutral-800;
   }
   pre {
-    @apply my-4 rounded-sm p-4;
+    @apply rounded-sm p-4;
   }
   blockquote {
-    @apply my-4 border-s-4 border-neutral-300 ps-4 italic dark:border-neutral-700;
+    @apply border-s-4 border-neutral-200 ps-4 italic dark:border-neutral-700;
   }
   ul,
   ol {
-    @apply my-4 ps-6 marker:text-neutral-500 dark:marker:text-neutral-400;
-    ul,
-    ol {
-      @apply my-0;
-    }
+    @apply ps-6.5 marker:text-neutral-500 dark:marker:text-neutral-400;
   }
   ul {
     @apply list-disc;
@@ -66,25 +67,17 @@
   ol {
     @apply list-decimal;
   }
-  table {
-    @apply my-4;
+  li {
+    @apply ps-1.5;
   }
   th,
   td {
     @apply border border-neutral-300 px-2 py-1 dark:border-neutral-700;
   }
-  img {
-    @apply my-4;
-  }
   hr {
-    @apply my-2 border border-neutral-300 dark:border-neutral-700;
+    @apply border border-neutral-300 dark:border-neutral-700;
   }
   [data-footnotes] ol {
     @apply text-sm text-neutral-500 dark:text-neutral-400;
   }
-}
-
-.astro-code,
-.astro-code span {
-  @apply bg-(--shiki-light-bg) text-(--shiki-light) dark:bg-(--shiki-dark-bg) dark:text-(--shiki-dark);
 }
