@@ -4,7 +4,7 @@ import Moon from "@/components/Moon.astro";
 ---
 
 <footer>
-  <hr class="my-4" />
+  <hr class="my-4 border border-neutral-300 dark:border-neutral-700" />
   <nav
     class="flex flex-wrap justify-between gap-x-3"
     aria-label="Secondary navigation"
@@ -14,40 +14,40 @@ import Moon from "@/components/Moon.astro";
     </ul>
     <ul class="flex flex-wrap gap-x-3">
       <li>
-        <a class="icon-[lucide--file-user] text-xl" href="/resume.pdf"></a>
-      </li>
-      <li>
-        <a class="icon-[lucide--mail] text-xl" href=`mailto:${p.email}`></a>
+        <a
+          class="icon-[lucide--file-user] text-xl text-blue-600 dark:text-blue-500"
+          href="/resume.pdf"></a>
       </li>
       <li>
         <a
-          class="icon-[simple-icons--github] text-xl"
+          class="icon-[lucide--mail] text-xl text-blue-600 dark:text-blue-500"
+          href=`mailto:${p.email}`></a>
+      </li>
+      <li>
+        <a
+          class="icon-[simple-icons--github] text-xl text-blue-600 dark:text-blue-500"
           href={p.github}
           rel="noreferrer"
-          target="_blank"
-        >
-        </a>
+          target="_blank"></a>
       </li>
       <li>
         <a
-          class="icon-[simple-icons--telegram] text-xl"
+          class="icon-[simple-icons--telegram] text-xl text-blue-600 dark:text-blue-500"
           href={p.telegram}
           rel="noreferrer"
-          target="_blank"
-        >
-        </a>
+          target="_blank"></a>
       </li>
       <li>
         <a
-          class="icon-[simple-icons--vk] text-xl"
+          class="icon-[simple-icons--vk] text-xl text-blue-600 dark:text-blue-500"
           href={p.vk}
           rel="noreferrer"
-          target="_blank"
-        >
-        </a>
+          target="_blank"></a>
       </li>
       <li>
-        <a class="icon-[lucide--rss] text-xl" href="/feed.xml"></a>
+        <a
+          class="icon-[lucide--rss] text-xl text-blue-600 dark:text-blue-500"
+          href="/feed.xml"></a>
       </li>
     </ul>
   </nav>

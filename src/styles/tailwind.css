@@ -15,17 +15,14 @@
   }
 }
 
-@layer base {
-  :root {
-    @apply bg-neutral-100 text-lg text-neutral-900 accent-blue-600 scheme-light dark:bg-neutral-900 dark:text-neutral-100 dark:accent-blue-500 dark:scheme-dark;
-  }
+[data-prose] {
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    @apply font-bold;
+    @apply my-4 font-bold;
   }
   h1 {
     @apply text-3xl;
@@ -36,69 +33,54 @@
   h3 {
     @apply text-xl;
   }
+  p {
+    @apply my-4;
+  }
   a {
-    @apply text-blue-600 dark:text-blue-500;
+    @apply text-blue-600 underline dark:text-blue-500;
   }
-  hr {
-    @apply border border-neutral-300 dark:border-neutral-700;
+  a[href^="http://"]::after,
+  a[href^="https://"]::after {
+    @apply ms-0.5 icon-[lucide--external-link] align-middle content-[""];
   }
-
-  [data-prose] {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p {
-      @apply my-4;
-    }
-    a {
-      @apply underline;
-    }
-    a[href^="http://"]::after,
-    a[href^="https://"]::after {
-      @apply ms-0.5 icon-[lucide--external-link] align-middle content-[""];
-    }
-    :not(pre) > code {
-      @apply rounded-sm bg-neutral-200 px-1 py-0.5 text-sm dark:bg-neutral-800;
-    }
-    pre {
-      @apply my-4 rounded-sm p-4;
-    }
-    blockquote {
-      @apply my-4 border-s-4 border-neutral-300 ps-4 italic dark:border-neutral-700;
-    }
+  :not(pre) > code {
+    @apply rounded-sm bg-neutral-200 px-1 py-0.5 text-sm dark:bg-neutral-800;
+  }
+  pre {
+    @apply my-4 rounded-sm p-4;
+  }
+  blockquote {
+    @apply my-4 border-s-4 border-neutral-300 ps-4 italic dark:border-neutral-700;
+  }
+  ul,
+  ol {
+    @apply my-4 ps-6 marker:text-neutral-500 dark:marker:text-neutral-400;
     ul,
     ol {
-      @apply my-4 ps-6 marker:text-neutral-500 dark:marker:text-neutral-400;
-      ul,
-      ol {
-        @apply my-0;
-      }
+      @apply my-0;
     }
-    ul {
-      @apply list-disc;
-    }
-    ol {
-      @apply list-decimal;
-    }
-    table {
-      @apply my-4;
-    }
-    th,
-    td {
-      @apply border border-neutral-300 px-2 py-1 dark:border-neutral-700;
-    }
-    img {
-      @apply my-4;
-    }
-    hr {
-      @apply my-2;
-    }
-    [data-footnotes] ol {
-      @apply text-sm text-neutral-500 dark:text-neutral-400;
-    }
+  }
+  ul {
+    @apply list-disc;
+  }
+  ol {
+    @apply list-decimal;
+  }
+  table {
+    @apply my-4;
+  }
+  th,
+  td {
+    @apply border border-neutral-300 px-2 py-1 dark:border-neutral-700;
+  }
+  img {
+    @apply my-4;
+  }
+  hr {
+    @apply my-2 border border-neutral-300 dark:border-neutral-700;
+  }
+  [data-footnotes] ol {
+    @apply text-sm text-neutral-500 dark:text-neutral-400;
   }
 }
 

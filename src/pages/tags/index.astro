@@ -14,7 +14,7 @@ const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags)))
 ---
 
 <BaseLayout title="Tags" description=`Topics covered on ${blog.name}.`>
-  <h1 class="my-4">Tags</h1>
+  <h1 class="my-4 text-3xl font-bold">Tags</h1>
   <ul>
     {
       tags.map(({ tag, count }) => (

@@ -13,8 +13,10 @@ const { title, description, created, tags } = post.data;
 
 <article class="my-4">
   <header>
-    <h2>
-      <a href=`/posts/${post.id}/`>{title}</a>
+    <h2 class="text-2xl font-bold">
+      <a class="text-blue-600 dark:text-blue-500" href=`/posts/${post.id}/`>
+        {title}
+      </a>
     </h2>
     <p>{description}</p>
     <Date date={created} />
