@@ -1,6 +1,12 @@
 ---
 import { person as p } from "@/consts";
 import Moon from "@/components/Moon.astro";
+import IconLucideFileUser from "~icons/lucide/file-user";
+import IconLucideMail from "~icons/lucide/mail";
+import IconSimpleIconsGithub from "~icons/simple-icons/github";
+import IconSimpleIconsTelegram from "~icons/simple-icons/telegram";
+import IconSimpleIconsVk from "~icons/simple-icons/vk";
+import IconLucideRss from "~icons/lucide/rss";
 ---
 
 <footer>
@@ -14,40 +20,49 @@ import Moon from "@/components/Moon.astro";
     </ul>
     <ul class="flex flex-wrap gap-x-3">
       <li>
-        <a
-          class="icon-[lucide--file-user] text-xl text-blue-600 dark:text-blue-500"
-          href="/resume.pdf"></a>
+        <a class="text-blue-600 dark:text-blue-500" href="/resume.pdf">
+          <IconLucideFileUser />
+        </a>
+      </li>
+      <li>
+        <a class="text-blue-600 dark:text-blue-500" href=`mailto:${p.email}`>
+          <IconLucideMail />
+        </a>
       </li>
       <li>
         <a
-          class="icon-[lucide--mail] text-xl text-blue-600 dark:text-blue-500"
-          href=`mailto:${p.email}`></a>
-      </li>
-      <li>
-        <a
-          class="icon-[simple-icons--github] text-xl text-blue-600 dark:text-blue-500"
+          class="text-blue-600 dark:text-blue-500"
           href={p.github}
           rel="noreferrer"
-          target="_blank"></a>
+          target="_blank"
+        >
+          <IconSimpleIconsGithub />
+        </a>
       </li>
       <li>
         <a
-          class="icon-[simple-icons--telegram] text-xl text-blue-600 dark:text-blue-500"
+          class="text-blue-600 dark:text-blue-500"
           href={p.telegram}
           rel="noreferrer"
-          target="_blank"></a>
+          target="_blank"
+        >
+          <IconSimpleIconsTelegram />
+        </a>
       </li>
       <li>
         <a
-          class="icon-[simple-icons--vk] text-xl text-blue-600 dark:text-blue-500"
+          class="text-blue-600 dark:text-blue-500"
           href={p.vk}
           rel="noreferrer"
-          target="_blank"></a>
+          target="_blank"
+        >
+          <IconSimpleIconsVk />
+        </a>
       </li>
       <li>
-        <a
-          class="icon-[lucide--rss] text-xl text-blue-600 dark:text-blue-500"
-          href="/feed.xml"></a>
+        <a class="text-blue-600 dark:text-blue-500" href="/feed.xml">
+          <IconLucideRss />
+        </a>
       </li>
     </ul>
   </nav>

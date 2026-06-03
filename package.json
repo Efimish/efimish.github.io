@@ -38,6 +38,7 @@
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.0",
-    "schema-dts": "^2.0.0"
+    "schema-dts": "^2.0.0",
+    "unplugin-icons": "^23.0.1"
   }
 }

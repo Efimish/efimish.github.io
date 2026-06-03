@@ -4,6 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import wikiLink from "./src/lib/astro-wiki-link";
 import internalMarkdown from "./src/lib/astro-internal-markdown";
 import tailwindcss from "@tailwindcss/vite";
+import icons from "unplugin-icons/vite";
 
 // https://astro.build/config
 export default defineConfig({
@@ -28,6 +29,6 @@ export default defineConfig({
   },
   integrations: [sitemap(), wikiLink(), internalMarkdown()],
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss(), icons({ compiler: "astro" })],
   },
 });
