@@ -1,4 +1,5 @@
 import type { AstroIntegration } from "astro";
+import { unified } from "@astrojs/markdown-remark";
 import path from "path";
 import { glob } from "tinyglobby";
 import { slug } from "github-slugger";
@@ -48,7 +49,9 @@ export default function wikiLink(): AstroIntegration {
         logger.info(`Loaded ${permalinks.size} permalinks`);
         updateConfig({
           markdown: {
-            remarkPlugins: [[remarkWikiLink, { permalinks }]],
+            processor: unified({
+              remarkPlugins: [[remarkWikiLink, { permalinks }]],
+            }),
           },
         });
       },

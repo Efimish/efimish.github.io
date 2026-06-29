@@ -1,19 +1,19 @@
 import type { AstroIntegration } from "astro";
-import type { MarkdownProcessor } from "@astrojs/markdown-remark";
+import type { MarkdownRenderer } from "@astrojs/markdown-remark";
 import { createMarkdownProcessor } from "@astrojs/markdown-remark";
 
 const symbol = Symbol.for("internal-markdown");
 
 const globalStore = globalThis as typeof globalThis & {
-  [key: symbol]: MarkdownProcessor | undefined;
+  [key: symbol]: MarkdownRenderer | undefined;
 };
 
 export const render = async (content: string) => {
-  const processor = globalStore[symbol];
-  if (!processor)
-    throw new Error("[internal-markdown] Processor not initialized");
+  const renderer = globalStore[symbol];
+  if (!renderer)
+    throw new Error("[internal-markdown] Renderer not initialized");
 
-  const result = await processor.render(content);
+  const result = await renderer.render(content);
   return result.code;
 };
 
@@ -22,8 +22,8 @@ export default function internalMarkdown(): AstroIntegration {
     name: "internal-markdown",
     hooks: {
       "astro:config:done": async ({ config }) => {
-        const processor = await createMarkdownProcessor(config.markdown);
-        globalStore[symbol] = processor;
+        const renderer = await createMarkdownProcessor(config.markdown);
+        globalStore[symbol] = renderer;
       },
     },
   };

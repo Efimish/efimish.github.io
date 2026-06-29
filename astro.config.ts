@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import { unified } from "@astrojs/markdown-remark";
 import rehypeExternalLinks from "rehype-external-links";
 import sitemap from "@astrojs/sitemap";
 import wikiLink from "./src/lib/astro-wiki-link";
@@ -18,14 +19,16 @@ export default defineConfig({
       },
       defaultColor: false,
     },
-    smartypants: false,
-    // prettier-ignore
-    rehypePlugins: [
-      [rehypeExternalLinks, {
-        rel: "noreferrer",
-        target: "_blank",
-      }],
-    ],
+    processor: unified({
+      smartypants: false,
+      // prettier-ignore
+      rehypePlugins: [
+        [rehypeExternalLinks, {
+          rel: "noreferrer",
+          target: "_blank",
+        }],
+      ],
+    }),
   },
   integrations: [sitemap(), wikiLink(), internalMarkdown()],
   vite: {
