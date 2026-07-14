@@ -3,7 +3,6 @@ import { unified } from "@astrojs/markdown-remark";
 import rehypeExternalLinks from "rehype-external-links";
 import sitemap from "@astrojs/sitemap";
 import wikiLink from "./src/lib/astro-wiki-link";
-import internalMarkdown from "./src/lib/astro-internal-markdown";
 import tailwindcss from "@tailwindcss/vite";
 import icons from "unplugin-icons/vite";
 
@@ -30,7 +29,7 @@ export default defineConfig({
       ],
     }),
   },
-  integrations: [sitemap(), wikiLink(), internalMarkdown()],
+  integrations: [sitemap(), wikiLink()],
   vite: {
     plugins: [tailwindcss(), icons({ compiler: "astro" })],
   },

@@ -1,32 +1,36 @@
 ---
 import { person } from "@/consts";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Markdown from "@/components/Markdown.astro";
+import Prose from "@/components/Prose.astro";
 ---
 
 <BaseLayout
   title="Uses"
   description=`What technologies ${person.fullname} uses.`
 >
-  <!-- prettier-ignore -->
-  <Markdown>
-# Uses
-
-- Firefox - browser
-- Bitwarden - password manager
-- Obsidian - notes
-- GitHub - coding projects
-- VSCode - code editor
-- Transmission - torrent client
-- Bun - javascript runtime
-- Podman - container manager
-- Ghostty - terminal emulator
-- ffmpeg - multimedia converter
-- Helix - cli code editor
-- Chezmoi - dotfiles manager
-- Zellij - terminal multiplexer
-- GIMP - image editor
-
-This page was inspired by [uses.tech](https://uses.tech/)
-  </Markdown>
+  <Prose>
+    <h1>Uses</h1>
+    <ul>
+      <li>Firefox - browser</li>
+      <li>Bitwarden - password manager</li>
+      <li>Obsidian - notes</li>
+      <li>GitHub - coding projects</li>
+      <li>VSCode - code editor</li>
+      <li>Transmission - torrent client</li>
+      <li>Bun - javascript runtime</li>
+      <li>Podman - container manager</li>
+      <li>Ghostty - terminal emulator</li>
+      <li>ffmpeg - multimedia converter</li>
+      <li>Helix - cli code editor</li>
+      <li>Chezmoi - dotfiles manager</li>
+      <li>Zellij - terminal multiplexer</li>
+      <li>GIMP - image editor</li>
+    </ul>
+    <p>
+      This page was inspired by{" "}
+      <a href="https://uses.tech/" rel="noreferrer" target="_blank">
+        uses.tech
+      </a>
+    </p>
+  </Prose>
 </BaseLayout>

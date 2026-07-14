@@ -1,7 +1,7 @@
 ---
 import { person as p, site } from "@/consts";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Markdown from "@/components/Markdown.astro";
+import Prose from "@/components/Prose.astro";
 ---
 
 <BaseLayout
@@ -20,19 +20,18 @@ import Markdown from "@/components/Markdown.astro";
     },
   ]}
 >
-  <!-- prettier-ignore -->
-  <Markdown>
-# {site.name}
-
-Hello, World! And welcome to my corner of the internet!
-
-I am {p.fullname} ({p.pronouns}). I am passionate about technology,
-privacy and open source development. I am from Krasnoyarsk, Russia.
-
-## Pages
-
-- [About me](/about/)
-- [My posts (blog)](/posts/)
-- [My projects](/projects/)
-  </Markdown>
+  <Prose>
+    <h1>{site.name}</h1>
+    <p>Hello, World! And welcome to my corner of the internet!</p>
+    <p>
+      I am {p.fullname} ({p.pronouns}). I am passionate about technology,
+      privacy and open source development. I am from Krasnoyarsk, Russia.
+    </p>
+    <h2>Pages</h2>
+    <ul>
+      <li><a href="/about/">About me</a></li>
+      <li><a href="/posts/">My posts (blog)</a></li>
+      <li><a href="/projects/">My projects</a></li>
+    </ul>
+  </Prose>
 </BaseLayout>
