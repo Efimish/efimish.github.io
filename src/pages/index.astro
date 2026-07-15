@@ -2,23 +2,22 @@
 import { person as p, site } from "@/consts";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Prose from "@/components/Prose.astro";
+import { defineWebSite } from "@unhead/schema-org";
 ---
 
 <BaseLayout
-  title="Home"
-  description={site.description}
-  schemas={[
-    {
-      "@type": "WebSite",
-      "@id": new URL("/#website", Astro.url.origin).href,
+  meta={{
+    description: site.description,
+    schema: defineWebSite({
+      "@id": "/#website",
       url: Astro.url.href,
       name: site.name,
       description: site.description,
       author: {
         "@id": new URL("/#person", Astro.url.origin).href,
       },
-    },
-  ]}
+    }),
+  }}
 >
   <Prose>
     <h1>{site.name}</h1>

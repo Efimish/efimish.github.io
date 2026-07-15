@@ -13,7 +13,12 @@ const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags)))
   .sort((a, b) => b.count - a.count || a.tag.localeCompare(b.tag));
 ---
 
-<BaseLayout title="Tags" description=`Topics covered on ${blog.name}.`>
+<BaseLayout
+  meta={{
+    title: "Tags",
+    description: `Topics covered on ${blog.name}.`,
+  }}
+>
   <h1 class="my-4 text-3xl font-bold">Tags</h1>
   <ul>
     {

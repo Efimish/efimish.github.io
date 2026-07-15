@@ -1,0 +1,92 @@
+---
+import type { Metadata } from "@/lib/types";
+import { createHead } from "unhead/server";
+import {
+  CanonicalPlugin,
+  MinifyPlugin,
+  TemplateParamsPlugin,
+  ValidatePlugin,
+} from "unhead/plugins";
+import { RemoveDataAttributesPlugin } from "@/lib/unhead-remove-data-attributes";
+import { DeterministicSortingPlugin } from "@/lib/unhead-deterministic-sorting";
+import { useHead, useSeoMeta } from "unhead";
+import { useSchemaOrg } from "@unhead/schema-org";
+import { person, site, themes } from "@/consts";
+
+interface Props extends Metadata {}
+
+const { meta: { schema, ...meta } = {} } = Astro.props;
+
+const head = createHead({
+  disableDefaults: true,
+  plugins: [
+    TemplateParamsPlugin,
+    CanonicalPlugin({
+      canonicalHost: Astro.url.origin,
+      trailingSlash: true,
+    }),
+    MinifyPlugin(),
+    ValidatePlugin(),
+    DeterministicSortingPlugin,
+    RemoveDataAttributesPlugin,
+  ],
+});
+
+useSeoMeta(head, {
+  charset: "utf-8",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+  },
+});
+
+useHead(head, {
+  templateParams: {
+    separator: "|",
+    site,
+  },
+  titleTemplate: "%s %separator %site.name",
+});
+
+useHead(head, {
+  link: [
+    { rel: "canonical", href: Astro.url.href },
+    { rel: "icon", href: "/favicon.ico" },
+    { rel: "icon", href: "/favicon.svg", sizes: "any", type: "image/svg+xml" },
+    { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+    { rel: "manifest", href: "/manifest.json" },
+    { rel: "sitemap", href: "/sitemap-index.xml" },
+    {
+      rel: "alternate",
+      href: "/feed.xml",
+      type: "application/rss+xml",
+      title: "RSS",
+    },
+  ],
+});
+
+useSeoMeta(head, {
+  author: person.fullname,
+  colorScheme: "light dark",
+  themeColor: [
+    { content: themes.light, media: "(prefers-color-scheme: light)" },
+    { content: themes.dark, media: "(prefers-color-scheme: dark)" },
+  ],
+  generator: Astro.generator,
+  ogTitle: meta.title?.toString() ?? "%site.name",
+  ogDescription: meta.description,
+  ogImage: "/favicon-512.png",
+  ogImageHeight: 512,
+  ogImageWidth: 512,
+  ogSiteName: "%site.name",
+  ogType: "website",
+  ogUrl: Astro.url.href,
+});
+
+useSeoMeta(head, meta);
+useSchemaOrg(head, schema, { tagPosition: "head" });
+
+const { headTags } = head.render();
+---
+
+<Fragment set:html={headTags} />

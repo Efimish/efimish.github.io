@@ -10,23 +10,10 @@ const posts = (await getCollection("posts")).sort(
 ---
 
 <BaseLayout
-  title="Posts"
-  description={blog.description}
-  schemas={[
-    {
-      "@type": "Blog",
-      "@id": new URL("/#blog", Astro.url.origin).href,
-      url: Astro.url.href,
-      name: blog.name,
-      description: blog.description,
-      author: {
-        "@id": new URL("/#person", Astro.url.origin).href,
-      },
-      isPartOf: {
-        "@id": new URL("/#website", Astro.url.origin).href,
-      },
-    },
-  ]}
+  meta={{
+    title: "Posts",
+    description: blog.description,
+  }}
 >
   <h1 class="my-4 text-3xl font-bold">Posts</h1>
   {posts.map((post) => <Post post={post} />)}

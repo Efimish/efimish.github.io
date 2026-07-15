@@ -5,8 +5,10 @@ import Prose from "@/components/Prose.astro";
 ---
 
 <BaseLayout
-  title="Projects"
-  description=`${person.fullname}'s open source projects.`
+  meta={{
+    title: "Projects",
+    description: `${person.fullname}'s open source projects.`,
+  }}
 >
   <Prose>
     <h1>Projects</h1>

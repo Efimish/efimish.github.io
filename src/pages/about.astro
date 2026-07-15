@@ -1,41 +1,42 @@
 ---
+import { definePerson, defineWebPage } from "@unhead/schema-org";
 import { person as p } from "@/consts";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Prose from "@/components/Prose.astro";
 ---
 
 <BaseLayout
-  title="About"
-  description=`About ${p.fullname}, an open-source developer and thinker passionate about technology and privacy.`
-  og={{
-    "og:type": "profile",
-    "profile:first_name": p.firstname,
-    "profile:last_name": p.lastname,
-    "profile:username": p.username,
-    "profile:gender": p.gender.toLowerCase(),
+  meta={{
+    title: "About",
+    description: `About ${p.fullname}, an open-source developer and thinker passionate about technology and privacy.`,
+    ogType: "profile",
+    profileFirstName: p.firstname,
+    profileLastName: p.lastname,
+    profileUsername: p.username,
+    profileGender: p.gender.toLowerCase(),
+    schema: [
+      definePerson({
+        "@id": "/#person",
+        url: Astro.url.href,
+        givenName: p.firstname,
+        familyName: p.lastname,
+        name: p.fullname,
+        alternateName: p.username,
+        gender: p.gender,
+        email: `mailto:${p.email}`,
+        sameAs: [p.github, p.telegram, p.vk],
+      }),
+      defineWebPage({
+        "@type": "ProfilePage",
+        "@id": "about",
+        url: Astro.url.href,
+        name: "About",
+        mainEntity: {
+          "@id": new URL("/#person", Astro.url.origin).href,
+        },
+      }),
+    ],
   }}
-  schemas={[
-    {
-      "@type": "Person",
-      "@id": new URL("/#person", Astro.url.origin).href,
-      url: Astro.url.href,
-      givenName: p.firstname,
-      familyName: p.lastname,
-      name: p.fullname,
-      alternateName: p.username,
-      gender: p.gender,
-      email: `mailto:${p.email}`,
-      sameAs: [p.github, p.telegram, p.vk],
-    },
-    {
-      "@type": "ProfilePage",
-      url: Astro.url.href,
-      name: "About",
-      mainEntity: {
-        "@id": new URL("/#person", Astro.url.origin).href,
-      },
-    },
-  ]}
 >
   <Prose>
     <h1>About</h1>
