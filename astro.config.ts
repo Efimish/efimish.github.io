@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import { unified } from "@astrojs/markdown-remark";
 import rehypeExternalLinks from "rehype-external-links";
 import sitemap from "@astrojs/sitemap";
-import wikiLink from "./src/lib/astro-wiki-link";
+import wikiLink from "@/lib/astro-wiki-link";
 import tailwindcss from "@tailwindcss/vite";
 import icons from "unplugin-icons/vite";
 

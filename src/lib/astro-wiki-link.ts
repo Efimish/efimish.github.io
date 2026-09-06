@@ -3,7 +3,7 @@ import { unified } from "@astrojs/markdown-remark";
 import path from "path";
 import { glob } from "tinyglobby";
 import { slug } from "github-slugger";
-import { remarkWikiLink } from "./remark-wiki-link";
+import { remarkWikiLink } from "@/lib/remark-wiki-link";
 
 const getPermalinks = async () => {
   const permalinks = new Map<string, string>();
